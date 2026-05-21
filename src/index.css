@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-white: #FFFFFF;
+  --color-brand-black: #0A0A0A;
+  --color-brand-gold: #D4AF37;
+  --color-brand-gray: #F5F5F5;
+
+  --font-sans: "Inter", "SF Pro Display", "Neue Montreal", "Satoshi", "Helvetica Now", sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-gold-shimmer: gold-shimmer 2s infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes gold-shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+}
+
+@layer base {
+  :root {
+    background-color: #FFFFFF;
+    color: #0A0A0A;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased selection:bg-brand-gold/30 selection:text-brand-black overflow-x-hidden;
+  }
+}
+
+@layer components {
+  /* Glassmorphism utility */
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-black/70 backdrop-blur-md border border-white/10;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-brand-gray;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-black/20 hover:bg-brand-gold transition-colors;
+}
+
+/* Lenis Smooth Scroll Support */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
