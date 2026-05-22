@@ -1,0 +1,126 @@
+/* === MENU === */
+.menu {
+  padding: var(--space-2xl) 0;
+  background: var(--ash);
+}
+
+.menu__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.menu__tabs-nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scrollbar-width: none;
+}
+.menu__tabs-nav::-webkit-scrollbar { display: none; }
+
+.menu-tab {
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--cream-muted);
+  padding: 0.8rem 1.5rem;
+  border-radius: 100px;
+  background: rgba(245, 240, 232, 0.03);
+  border: 1px solid rgba(245, 240, 232, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-tab.is-active {
+  background: var(--gold);
+  color: var(--coal);
+  border-color: var(--gold);
+}
+
+.menu__panel {
+  display: none;
+}
+.menu__panel.is-active {
+  display: block;
+}
+
+.menu__panel-header {
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.menu__panel-header .icon { font-size: 2rem; }
+.menu__panel-header h3 { font-family: var(--font-display); font-size: var(--text-xl); color: var(--gold); }
+.menu__panel-header p { font-family: var(--font-body); font-size: var(--text-sm); color: var(--cream-muted); margin-top: 0.5rem; }
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.menu-card {
+  background: rgba(15, 14, 12, 0.5);
+  border: 1px solid rgba(245, 240, 232, 0.05);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  transition: transform 0.4s var(--ease-out-expo), border-color 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(200, 169, 110, 0.3);
+}
+
+.menu-card__meta {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    border-radius: 2px;
+    background: rgba(200, 169, 110, 0.1);
+    color: var(--gold);
+}
+
+.menu-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+}
+
+.menu-card__desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--cream-muted);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.menu-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(245, 240, 232, 0.05);
+  padding-top: 1rem;
+}
+
+.menu-card__price {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--gold);
+}

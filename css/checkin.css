@@ -1,0 +1,244 @@
+/* === CHECKIN / RESERVAS === */
+.reservas {
+  padding: var(--space-2xl) 0;
+  background: var(--coal);
+}
+
+.reservas__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.reservas__grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.reservas__lead {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--cream-muted);
+  margin-top: 1.5rem;
+  line-height: 1.6;
+}
+
+.info-list {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-item {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.info-item .icon {
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+
+.info-item h5 {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: var(--cream);
+  margin-bottom: 0.3rem;
+}
+
+.info-item p {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--cream-muted);
+  line-height: 1.5;
+}
+
+/* FORM */
+.reservas__form-wrapper {
+  background: var(--ash);
+  padding: 3rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(200, 169, 110, 0.05);
+}
+
+.form-stepper {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.form-step {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(200, 169, 110, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--cream-muted);
+  transition: all 0.3s ease;
+}
+
+.form-step.is-active {
+  background: var(--gold);
+  color: var(--coal);
+  border-color: var(--gold);
+}
+
+.form-step.is-completed {
+  background: rgba(200, 169, 110, 0.1);
+  color: var(--gold);
+}
+
+.form-panel {
+  display: none;
+}
+.form-panel.is-active {
+  display: block;
+}
+
+.form-panel h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  margin-bottom: 2rem;
+  color: var(--cream);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cream-muted);
+}
+
+input, select, textarea {
+  background: rgba(245, 240, 232, 0.03);
+  border: 1px solid rgba(245, 240, 232, 0.1);
+  padding: 1rem;
+  color: var(--cream);
+  font-family: var(--font-body);
+  border-radius: var(--border-radius);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--gold);
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 0.5rem;
+}
+
+.time-opt {
+  position: relative;
+  cursor: pointer;
+  padding: 0.8rem;
+  border: 1px solid rgba(245, 240, 232, 0.1);
+  text-align: center;
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+  font-size: 12px;
+}
+
+.time-opt input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.time-opt:has(input:checked) {
+  background: var(--gold);
+  color: var(--coal);
+  border-color: var(--gold);
+}
+
+.form-actions {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.summary-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(0,0,0,0.2);
+    border-radius: var(--border-radius);
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+.summary-item span:first-child { color: var(--cream-muted); }
+.summary-item span:last-child { color: var(--gold); font-weight: 700; }
+
+.form-errors {
+    color: #ff4444;
+    font-size: 12px;
+    margin-bottom: 1rem;
+}
+
+/* CONTACTO */
+.contacto {
+    padding: var(--space-2xl) 0;
+    background: var(--ash);
+}
+.contacto__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+}
+.contacto__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-xl);
+    align-items: center;
+}
+.contacto__map-wrapper {
+    aspect-ratio: 16/9;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    filter: grayscale(1) invert(0.9);
+}
+.contacto__details {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.contacto__details p {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--cream-muted);
+}
+.contacto__details strong {
+    color: var(--gold);
+}
+
+@media (max-width: 1024px) {
+    .reservas__grid, .contacto__grid { grid-template-columns: 1fr; gap: 4rem; }
+}

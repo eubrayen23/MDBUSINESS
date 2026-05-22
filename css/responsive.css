@@ -1,0 +1,49 @@
+/* === RESPONSIVE FIXES === */
+
+@media (max-width: 1200px) {
+  :root {
+    --container-pad: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-pad: 1.5rem;
+  }
+
+  .hero__title { font-size: 3.5rem; }
+  .hero__subtitle { font-size: 1rem; }
+
+  .section-title { font-size: 2.2rem; }
+
+  .sobre__experience-badge {
+      position: relative;
+      bottom: 0; left: 0;
+      margin-top: 2rem;
+      width: fit-content;
+  }
+
+  .form-row { grid-template-columns: 1fr; }
+
+  .stats__container { gap: 1.5rem; }
+  .stat-divider { display: none; }
+  .stat-item { min-width: 45%; }
+}
+
+@media (max-width: 480px) {
+  .hero__title { font-size: 2.8rem; }
+  .hero__ctas { flex-direction: column; width: 100%; }
+  .btn { width: 100%; justify-content: center; }
+
+  .stat-item { min-width: 100%; }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
