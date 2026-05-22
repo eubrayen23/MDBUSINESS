@@ -66,8 +66,8 @@ const Cart: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="flex gap-4 group"
                   >
-                    <div className="w-20 h-20 bg-brand-gray rounded-2xl overflow-hidden flex-shrink-0">
-                      <img src={item.image} alt={item.title} className="w-full h-full object-cover grayscale" />
+                    <div className="w-20 h-20 bg-black rounded-2xl flex-shrink-0 flex items-center justify-center text-white border border-brand-gold/20">
+                      <ShoppingBag size={24} className="opacity-50" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-bold text-brand-black group-hover:text-brand-gold transition-colors">{item.title}</h4>

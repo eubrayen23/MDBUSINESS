@@ -6,9 +6,10 @@ interface CheckoutModalProps {
   isOpen: boolean;
   onClose: () => void;
   orderTotal: string;
+  items: { title: string; price: string }[];
 }
 
-const Checkout: React.FC<CheckoutModalProps> = ({ isOpen, onClose, orderTotal }) => {
+const Checkout: React.FC<CheckoutModalProps> = ({ isOpen, onClose, orderTotal, items }) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -61,10 +62,21 @@ const Checkout: React.FC<CheckoutModalProps> = ({ isOpen, onClose, orderTotal })
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
-                  onClick={onClose}
+                  onClick={() => {
+                    const itemSummary = items.map(i => `${i.title} (${i.price})`).join('\n- ');
+                    const message = `Olá MD Business!\n\nGostaria de solicitar um orçamento para:\n- ${itemSummary}\n\nTotal estimado: ${orderTotal}`;
+                    window.open(`https://wa.me/244934859497?text=${encodeURIComponent(message)}`, '_blank');
+                    onClose();
+                  }}
                   className="flex-1 py-4 bg-brand-black text-brand-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-brand-gold hover:text-brand-black transition-all duration-300"
                 >
-                  Continuar no Ecossistema
+                  Confirmar via WhatsApp
+                </button>
+                <button
+                  onClick={onClose}
+                  className="flex-1 py-4 border border-brand-black/10 text-brand-black rounded-full font-bold uppercase tracking-widest text-xs hover:bg-brand-black hover:text-brand-white transition-all duration-300"
+                >
+                  Fechar
                 </button>
               </div>
             </div>

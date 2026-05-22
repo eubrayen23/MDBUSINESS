@@ -40,7 +40,7 @@ const CustomCursor = () => {
 };
 
 const AppContent = () => {
-  const { total, clearCart, isCheckoutOpen, setIsCheckoutOpen } = useCart();
+  const { cart, total, clearCart, isCheckoutOpen, setIsCheckoutOpen } = useCart();
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -108,6 +108,7 @@ const AppContent = () => {
             clearCart();
         }}
         orderTotal={formatPrice(total)}
+        items={cart}
       />
     </div>
   );

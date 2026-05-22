@@ -1,26 +1,6 @@
-@import "tailwindcss";
-
-@theme {
-  --color-brand-white: #FFFFFF;
-  --color-brand-black: #0A0A0A;
-  --color-brand-gold: #D4AF37;
-  --color-brand-gray: #F5F5F5;
-
-  --font-sans: "Inter", "SF Pro Display", "Neue Montreal", "Satoshi", "Helvetica Now", sans-serif;
-
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-gold-shimmer: gold-shimmer 2s infinite;
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-  }
-
-  @keyframes gold-shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-  }
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   :root {
@@ -35,13 +15,8 @@
 }
 
 @layer components {
-  /* Glassmorphism utility */
   .glass {
     @apply bg-white/70 backdrop-blur-md border border-white/20;
-  }
-
-  .glass-dark {
-    @apply bg-black/70 backdrop-blur-md border border-white/10;
   }
 }
 
@@ -69,12 +44,4 @@ html.lenis {
 
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
 }

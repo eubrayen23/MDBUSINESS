@@ -102,27 +102,46 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-b overflow-hidden"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-50 bg-white flex flex-col md:hidden"
           >
-            <div className="flex flex-col p-6 space-y-6">
-              {navLinks.map((link) => (
-                <a
+            <div className="flex justify-between items-center p-6 border-b">
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-brand-black flex items-center justify-center rounded-lg">
+                  <span className="text-brand-gold font-bold text-sm">MD</span>
+                </div>
+                <span className="text-xl font-bold tracking-tighter text-brand-black">BUSINESS</span>
+              </div>
+              <button onClick={() => setIsOpen(false)} className="p-2">
+                <X size={32} />
+              </button>
+            </div>
+
+            <div className="flex-1 flex flex-col justify-center p-12 space-y-8">
+              {navLinks.map((link, i) => (
+                <motion.a
                   key={link.name}
                   href={link.href}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
                   onClick={() => setIsOpen(false)}
-                  className="text-xl font-medium text-brand-black/80"
+                  className="text-5xl font-black uppercase tracking-tighter hover:text-brand-gold transition-colors"
                 >
                   {link.name}
-                </a>
+                </motion.a>
               ))}
-              <button className="w-full py-4 bg-brand-black text-brand-white rounded-xl font-bold uppercase tracking-widest">
+            </div>
+
+            <div className="p-12 border-t">
+              <button className="w-full py-6 bg-brand-black text-brand-white font-black uppercase tracking-[0.2em] text-sm">
                 Falar com Especialista
               </button>
             </div>
