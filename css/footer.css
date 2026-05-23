@@ -1,0 +1,204 @@
+/**
+ * FAQ & FOOTER SECTIONS — CHURRASCARIA NANDINHOS
+ * -------------------------------------------------------------------------
+ * These sections provide informational support and site closure.
+ */
+
+/* === FAQ SECTION === */
+
+.faq {
+    padding: var(--space-2xl) 0;
+    background: var(--ash);
+}
+
+.faq__container {
+    max-width: 800px; /* Optimal reading width for text-heavy content */
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+}
+
+.faq__grid {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq__item {
+    border: 1px solid rgba(227, 18, 18, 0.05);
+    background: var(--coal);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.faq__item.is-open {
+    border-color: rgba(227, 18, 18, 0.3);
+}
+
+.faq__question {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--cream);
+    font-weight: 500;
+}
+
+.faq__icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.faq__icon::before, .faq__icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--brasa);
+    transition: transform 0.4s ease;
+}
+
+.faq__icon::before { width: 12px; height: 1px; }
+.faq__icon::after { width: 1px; height: 12px; }
+
+/* Rotate icon on open state */
+.faq__item.is-open .faq__icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    opacity: 0;
+}
+
+.faq__answer {
+    padding: 0 2rem 2rem;
+}
+
+.faq__answer p {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--cream-muted);
+}
+
+/* === FOOTER SECTION === */
+
+.footer {
+    padding: 6rem var(--container-pad) 3rem;
+    background: #080807; /* Purest dark for the end of the page */
+    border-top: 1px solid rgba(227, 18, 18, 0.1);
+}
+
+.footer__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+}
+
+/**
+ * Footer Branding & Navigation
+ */
+.footer__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+}
+
+.footer__logo {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--brasa);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.footer__tagline {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--cream-muted);
+}
+
+.footer__nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer__nav a {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--cream-muted);
+    transition: color 0.3s ease;
+}
+
+.footer__nav a:hover { color: var(--brasa); }
+
+/**
+ * Footer Legal & Credits
+ */
+.footer__bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__credits p {
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--cream-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.developed-by strong {
+  color: var(--brasa);
+}
+
+.footer__tech-stack {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.2);
+    margin-bottom: 1.5rem;
+}
+
+.footer__legal-links {
+    font-size: 11px;
+    color: var(--cream-muted);
+}
+
+.footer__legal-links a {
+    transition: color 0.3s ease;
+}
+
+.footer__legal-links a:hover {
+    color: var(--brasa);
+}
+
+.footer__social {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer__social a {
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--brasa);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Response for FAQ & Footer */
+@media (max-width: 768px) {
+    .footer__top { flex-direction: column; gap: 3rem; }
+    .footer__bottom { flex-direction: column; text-align: center; gap: 2rem; }
+}

@@ -1,0 +1,241 @@
+/**
+ * NAVBAR COMPONENT — CHURRASCARIA NANDINHOS
+ * -------------------------------------------------------------------------
+ * The navigation system is built for high-contrast visibility and
+ * effortless user flow. It transitions from a transparent aesthetic
+ * to a blurred glass effect (is-scrolled) to maintain hierarchy over
+ * dynamic backgrounds.
+ *
+ * DESIGN SPECIFICATIONS:
+ * - Height: Variable (compressed on scroll)
+ * - Backdrop: 20px Gaussian Blur (Webkit compatible)
+ * - Brand: Playfair Display Italic (Dourado/Brasa)
+ *
+ * ACCESSIBILITY:
+ * - High contrast ratios for all states.
+ * - Semantic <nav> and <a> elements.
+ */
+
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: var(--z-nav);
+  padding: 1.5rem var(--container-pad);
+  transition: background var(--duration-mid) var(--ease-smooth),
+              padding var(--duration-mid) var(--ease-smooth),
+              backdrop-filter var(--duration-mid) ease,
+              transform 0.4s var(--ease-smooth);
+}
+
+/**
+ * Scrolled State
+ * Triggered via reveals.js when scroll > 80px.
+ */
+.navbar.is-scrolled {
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 1rem var(--container-pad);
+  border-bottom: 1px solid rgba(227, 18, 18, 0.1);
+}
+
+/**
+ * Navigation Hidden State
+ * Triggered on scroll-down to maximize content focus.
+ */
+.navbar.is-hidden {
+  transform: translateY(-100%);
+}
+
+.navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+/**
+ * Branding Cluster
+ * Houses the logo and the live operational status.
+ */
+.navbar__branding {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar__logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__logo-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  color: var(--brasa);
+  line-height: 1;
+}
+
+.navbar__logo-sub {
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  margin-top: 2px;
+}
+
+/**
+ * Live Operational Status
+ * Logic handled in js/status.js
+ */
+.operational-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--cream-muted);
+}
+
+.status-text {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--cream-muted);
+}
+
+.operational-status.is-open .status-dot {
+    background: #25D366;
+    box-shadow: 0 0 10px #25D366;
+}
+
+.operational-status.is-open .status-text { color: var(--cream); }
+.operational-status.is-closed .status-dot { background: var(--brasa); }
+
+/**
+ * Desktop Navigation Links
+ */
+.navbar__nav {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-link {
+  position: relative;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--cream-muted);
+  transition: color var(--duration-fast) ease;
+}
+
+/* Sliding underscore effect */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--brasa);
+  transition: width var(--duration-mid) var(--ease-out-expo);
+}
+
+.nav-link:hover, .nav-link.is-active { color: var(--cream); }
+.nav-link:hover::after, .nav-link.is-active::after { width: 100%; }
+
+/**
+ * Hamburger Toggle — Mobile Only
+ */
+.navbar__mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  width: 30px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: calc(var(--z-nav) + 2);
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--brasa);
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+}
+
+/* Animation to 'X' state */
+.navbar__mobile-toggle.is-active .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.navbar__mobile-toggle.is-active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.navbar__mobile-toggle.is-active .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Responsive Logic for Navbar visibility */
+@media (max-width: 1024px) {
+    .navbar__nav, .navbar__actions { display: none; }
+    .navbar__mobile-toggle { display: flex; }
+}
+
+/**
+ * MOBILE MENU OVERLAY
+ * -------------------------------------------------------------------------
+ * A full-screen container that slides down to reveal mobile-specific navigation.
+ */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--coal);
+    z-index: calc(var(--z-nav) + 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+    transition: transform 0.6s var(--ease-in-out);
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.mobile-menu.is-active {
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.mobile-menu__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.mobile-nav-link {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    color: var(--cream);
+    font-style: italic;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-link:active {
+    color: var(--brasa);
+}

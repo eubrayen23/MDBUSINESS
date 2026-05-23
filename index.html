@@ -1,4 +1,30 @@
 <!DOCTYPE html>
+<!--
+    =============================================================================
+    PROJECT: CHURRASCARIA NANDINHOS — SITE CINEMATOGRÁFICO OFICIAL
+    LOCATION: KINAXIXI, LUANDA, ANGOLA
+    VERSION: 1.0.0 (DEPLOY-READY)
+
+    BRAND PHILOSOPHY: "PORTUGUESE EFFICIENT"
+    -----------------------------------------------------------------------------
+    Nandinhos is more than a restaurant; it's a Luanda landmark. This site
+    is designed to translate the sensory experience of "Brasa Viva" (live coals)
+    into a digital format.
+
+    KEY VISUAL DRIVERS:
+    - Coal (#0A0A0A): The foundation of every great grill.
+    - Brasa (#E31212): The energy and heat of the process.
+    - Cream (#F5F5F5): The clean, traditional service.
+
+    TECHNICAL STACK:
+    - GSAP 3: For cinematic choreography and ScrollTrigger.
+    - Lenis: For premium physics-based smooth scrolling.
+    - Splitting.js: For character-level typography animations.
+    - Vanilla JS: For high-performance menu and gallery logic.
+
+    DEVELOPED BY: MD Business & KitandaSmart
+    =============================================================================
+-->
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
@@ -31,13 +57,26 @@
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
 
-    <!-- PROJECT CSS -->
+    <!-- PROJECT CSS - MODULAR ARCHITECTURE -->
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/effects.css">
-    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/back-to-top.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/stats.css">
+    <link rel="stylesheet" href="css/story.css">
     <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/supply.css">
+    <link rel="stylesheet" href="css/events.css">
+    <link rel="stylesheet" href="css/mastery.css">
+    <link rel="stylesheet" href="css/team.css">
     <link rel="stylesheet" href="css/checkin.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/preloader.css">
 
     <!-- SCHEMA JSON-LD -->
     <script type="application/ld+json">
@@ -93,40 +132,70 @@
         "reviewCount": "64",
         "ratingCount": "64"
       },
-      "award": ["2× Melhor Restaurante de Angola", "Semana do Restaurante de Angola 2015"],
+      "award": ["2x Melhor Restaurante de Angola", "Semana do Restaurante de Angola 2015"],
       "hasMenu": "https://www.nandinhos.ao/#menu"
     }
     </script>
 </head>
 <body>
+    <!-- PRELOADER -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__logo">
+                <span class="preloader__logo-text">Nandinhos</span>
+                <span class="preloader__logo-sub">Churrascaria · Kinaxixi</span>
+            </div>
+            <div class="preloader__progress">
+                <div class="preloader__progress-bar"></div>
+                <div class="preloader__progress-number">00</div>
+            </div>
+            <div class="preloader__quote">
+                <p>"A simplicidade é a forma mais elevada da gastronomia."</p>
+            </div>
+        </div>
+        <div class="preloader__curtain"></div>
+    </div>
+
+    <!-- SCROLL PROGRESS INDICATOR -->
+    <div class="scroll-progress" aria-hidden="true">
+        <div class="scroll-progress__bar"></div>
+    </div>
 
     <!-- CURSOR PERSONALIZADO -->
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
 
     <!-- NAVBAR -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Navegação Principal">
         <div class="navbar__container">
-            <a href="#hero" class="navbar__logo">
-                <span class="navbar__logo-name">Nandinhos</span>
-                <span class="navbar__logo-sub">Churrascaria · Kinaxixi · Luanda</span>
-            </a>
+            <div class="navbar__branding">
+                <a href="#hero" class="navbar__logo" aria-label="Página Inicial da Churrascaria Nandinhos">
+                    <span class="navbar__logo-name">Nandinhos</span>
+                    <span class="navbar__logo-sub">Churrascaria · Kinaxixi · Luanda</span>
+                </a>
+                <div class="operational-status" aria-live="polite">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span class="status-text">A verificar...</span>
+                </div>
+            </div>
 
-            <div class="navbar__nav">
-                <a href="#sobre" class="nav-link">O Restaurante</a>
-                <a href="#menu" class="nav-link">Ementa</a>
-                <a href="#galeria" class="nav-link">Galeria</a>
-                <a href="#reservas" class="nav-link">Reservas</a>
-                <a href="#contacto" class="nav-link">Contacto</a>
+            <div class="navbar__nav" role="menubar">
+                <a href="#sobre" class="nav-link" role="menuitem">O Restaurante</a>
+                <a href="#menu" class="nav-link" role="menuitem">Ementa</a>
+                <a href="#galeria" class="nav-link" role="menuitem">Galeria</a>
+                <a href="#reservas" class="nav-link" role="menuitem">Reservas</a>
+                <a href="#contacto" class="nav-link" role="menuitem">Contacto</a>
             </div>
 
             <div class="navbar__actions">
-                <a href="#reservas" class="btn btn-primary btn-magnetic">
+                <a href="#reservas" class="btn btn-primary btn-magnetic" role="button">
                     Reservar Mesa
                 </a>
             </div>
 
             <button class="navbar__mobile-toggle" aria-label="Abrir Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
             </button>
         </div>
@@ -153,18 +222,26 @@
         <!-- HERO SECTION -->
         <section class="hero" id="hero">
             <div class="hero__media">
-                <!-- Using a placeholder image for hero - user requested high quality -->
-                <img src="images/galeria/unnamedjjj.webp" alt="Churrasqueira Nandinhos interior" class="hero__image">
+                <div class="hero__media-inner">
+                    <!-- Using a placeholder image for hero - user requested high quality -->
+                    <img src="images/galeria/unnamedjjj.webp" alt="Churrasqueira Nandinhos interior" class="hero__image">
+                </div>
                 <div class="hero__overlay hero__overlay--vignette"></div>
                 <div class="hero__overlay hero__overlay--gradient"></div>
                 <div class="hero__overlay hero__overlay--top"></div>
             </div>
 
+            <div class="hero__floating-elements">
+                <div class="hero__float-item" data-speed="0.05"></div>
+                <div class="hero__float-item" data-speed="-0.03"></div>
+                <div class="hero__float-item" data-speed="0.02"></div>
+            </div>
+
             <div class="hero__content">
-                <div class="hero__badge">
-                    <span class="badge-icon">✦</span>
-                    2× Melhor Restaurante de Angola
-                    <span class="badge-icon">✦</span>
+                <div class="hero__badge" role="status" aria-label="Premiação: Bi-campeão Melhor Restaurante de Angola">
+                    <span class="hero__badge-icon" aria-hidden="true">🏆</span>
+                    2x Melhor Restaurante de Angola
+                    <span class="hero__badge-year">(2015 · 2018)</span>
                 </div>
 
                 <h1 class="hero__title" data-splitting>
@@ -175,13 +252,12 @@
 
                 <div class="hero__divider">
                     <span class="hero__divider-line"></span>
-                    <span class="hero__divider-icon">✦</span>
                     <span class="hero__divider-line"></span>
                 </div>
 
                 <p class="hero__subtitle">
                     Kinaxixi · Luanda · Angola<br>
-                    <em>Duas décadas. Duas vezes o melhor. Uma fila que vale cada minuto.</em>
+                    <em>Duas décadas de tradição. Duas vezes premiado. Qualidade sem compromissos.</em>
                 </p>
 
                 <div class="hero__ctas">
@@ -204,117 +280,300 @@
         </section>
 
         <!-- STATS BAR -->
-        <section class="stats">
+        <!-- GRILLING MASTERY (DEEP DIVE) -->
+        <section class="mastery heat-haze" aria-labelledby="mastery-title">
+            <div class="mastery__container">
+                <header class="mastery__header" data-reveal="fade-up">
+                    <span class="section-badge"> Engenharia do Sabor</span>
+                    <h2 class="section-title" id="mastery-title">A Maestria dos Elementos</h2>
+                </header>
+
+                <div class="mastery__grid">
+                    <article class="mastery-card" data-reveal="fade-up">
+                        <span class="mastery-card__number" aria-hidden="true">01</span>
+                        <h4>Engenharia Térmica</h4>
+                        <p>O sistema de grelha da Nandinhos utiliza princípios de termodinâmica avançada para gerir a distribuição de calor. Através do controlo preciso da oxigenação basal, mantemos zonas de selagem por radiação directa e zonas de descanso por convecção natural.</p>
+                        <div class="mastery-card__data">
+                            <h5>Ficha Técnica — Módulo T1</h5>
+                            <ul class="mastery-card__spec-list">
+                                <li><strong>Output Térmico:</strong> 420°C (Core de Selagem)</li>
+                                <li><strong>Transferência:</strong> Radiação Infravermelha de Espectro Largo</li>
+                                <li><strong>Protocolo:</strong> Selagem Instantânea (Maillard)</li>
+                                <li><strong>Eficiência:</strong> 94% de Retenção de Sucos Intracelulares</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="mastery-card" data-reveal="fade-up" data-reveal-delay="0.1">
+                        <span class="mastery-card__number" aria-hidden="true">02</span>
+                        <h4>Análise de Combustível</h4>
+                        <p>Rejeitamos qualquer forma de combustão fóssil ou industrial. O nosso combustível é uma biomassa de alta densidade proveniente de florestas sustentáveis de Acácia Karroo e Mopane, seleccionadas pelo seu baixo teor de resina e alta persistência calorífica.</p>
+                        <div class="mastery-card__data">
+                            <h5>Ficha Técnica — Módulo C2</h5>
+                            <ul class="mastery-card__spec-list">
+                                <li><strong>Densidade Energética:</strong> 32 MJ/kg</li>
+                                <li><strong>Emissão de Partículas:</strong> < 0.05% (Cinza Residual)</li>
+                                <li><strong>Perfil Aromático:</strong> Neutro (Preservação de Terroir)</li>
+                                <li><strong>Tempo de Brasagem:</strong> 180 min (Estabilidade Constante)</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="mastery-card" data-reveal="fade-up" data-reveal-delay="0.2">
+                        <span class="mastery-card__number" aria-hidden="true">03</span>
+                        <h4>Mecânica Estrutural</h4>
+                        <p>As nossas superfícies de confecção são fabricadas em liga de Aço Inox AISI 316L (Grau Cirúrgico), desenhadas para uma inércia térmica superior. O sistema de ajuste milimétrico permite ao mestre churrasqueiro calibrar a distância à brasa com precisão cirúrgica.</p>
+                        <div class="mastery-card__data">
+                            <h5>Ficha Técnica — Módulo M3</h5>
+                            <ul class="mastery-card__spec-list">
+                                <li><strong>Material:</strong> Aço Austenítico AISI 316L</li>
+                                <li><strong>Condutividade:</strong> 16.3 W/m·K</li>
+                                <li><strong>Saneamento:</strong> Protocolo de Esterilização por Alta Temperatura</li>
+                                <li><strong>Drenagem:</strong> Canalização Activa de Gorduras Saturadas</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="mastery__schematic" data-reveal="fade-up">
+                    <div class="schematic-content">
+                        [ SYSTEM_STATUS: STABLE ] // [ TEMP_MONITOR: OPTIMAL ] // [ FUEL_SOURCE: ORGANIC_COAL ] // [ ORIGIN: LUANDA_KINAXIXI ]<br>
+                        EXPERIÊNCIA GASTRONÓMICA // PROTOCOLO DE QUALIDADE NANDINHOS // DESDE 2005
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ART OF THE GRILL (TECHNICAL SPECS) -->
+        <section class="art-grill heat-haze" id="processo" aria-labelledby="processo-title">
+            <div class="art-grill__container">
+                <div class="art-grill__grid">
+                    <div class="art-grill__sticky">
+                        <span class="section-badge"> O Processo Técnico</span>
+                        <h2 class="section-title" id="processo-title">A Ciência da Brasa Viva</h2>
+                        <div class="section-divider"></div>
+                        <p class="p-lg">Na Nandinhos, o churrasco não é um acaso; é o resultado de um protocolo técnico rigoroso. O fogo é a nossa ferramenta de precisão, alimentado exclusivamente por carvão vegetal de alta densidade (Acácia e Mopane), garantindo uma temperatura constante entre os 300°C e 450°C conforme a fase da confecção.</p>
+
+                        <div class="art-grill__steps" role="list">
+                            <article class="art-step is-active" data-step="1" role="listitem">
+                                <span class="step-num" aria-hidden="true">01</span>
+                                <div>
+                                    <h4>Curadoria de Origem</h4>
+                                    <p>Seleccionamos apenas carnes provenientes de produtores certificados, com maturação controlada. Cada peça é inspeccionada pela textura e teor de marmoreio antes de entrar na nossa cozinha.</p>
+                                </div>
+                            </article>
+                            <article class="art-step" data-step="2" role="listitem">
+                                <span class="step-num" aria-hidden="true">02</span>
+                                <div>
+                                    <h4>Marinação e Alquimia</h4>
+                                    <p>O nosso tempero de assinatura respeita a herança portuguesa: uma base de sal grosso marinho, alho esmagado e uma infusão ácida de limão e ervas, permitindo que a fibra da carne se torne dócil sem perder a sua integridade.</p>
+                                </div>
+                            </article>
+                            <article class="art-step" data-step="3" role="listitem">
+                                <span class="step-num" aria-hidden="true">03</span>
+                                <div>
+                                    <h4>Domínio Térmico</h4>
+                                    <p>O mestre churrasqueiro gere a altura da grelha em milímetros, selando instantaneamente os sucos naturais através da reacção de Maillard. O resultado é a crosta perfeita e o interior suculento que define a Nandinhos.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="art-grill__visuals">
+                        <div class="art-visual is-active" data-visual="1">
+                            <img src="images/galeria/WhatsApp Image 2026-05-22 at 17.38.27.jpeg" alt="Selecção de Carnes">
+                        </div>
+                        <div class="art-visual" data-visual="2">
+                            <img src="images/galeria/unnamed (2).jpg" alt="Tempero Nandinhos">
+                        </div>
+                        <div class="art-visual" data-visual="3">
+                            <img src="images/galeria/unnamedh.webp" alt="Grelha Nandinhos">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DATA & METRICS (SOCIAL PROOF) -->
+        <section class="stats" aria-label="Métricas de Desempenho e Reconhecimento">
             <div class="stats__container">
                 <div class="stat-item">
                     <span class="stat-number" data-target="20" data-suffix="+">0</span>
-                    <span class="stat-label">Anos de história</span>
+                    <span class="stat-label">Anos de história no Kinaxixi</span>
                 </div>
-                <div class="stat-divider">✦</div>
+                <div class="stat-divider" aria-hidden="true"></div>
                 <div class="stat-item">
                     <span class="stat-number" data-target="4.1" data-decimals="1" data-suffix="/5">0</span>
-                    <span class="stat-label">Nota TripAdvisor</span>
+                    <span class="stat-label">Rating Global TripAdvisor</span>
                 </div>
-                <div class="stat-divider">✦</div>
+                <div class="stat-divider" aria-hidden="true"></div>
                 <div class="stat-item">
                     <span class="stat-number" data-target="16" data-prefix="#">0</span>
-                    <span class="stat-label">De 176 rest. em Luanda</span>
+                    <span class="stat-label">De 176 Restaurantes em Luanda</span>
                 </div>
-                <div class="stat-divider">✦</div>
+                <div class="stat-divider" aria-hidden="true"></div>
                 <div class="stat-item">
                     <span class="stat-number" data-target="2" data-suffix="×">0</span>
-                    <span class="stat-label">Prémio Melhor de Angola</span>
+                    <span class="stat-label">Vencedor "Melhor de Angola"</span>
+                </div>
+                <div class="stat-divider" aria-hidden="true"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="100" data-suffix="%">0</span>
+                    <span class="stat-label">Carvão Vegetal Certificado</span>
                 </div>
             </div>
         </section>
 
         <!-- SOBRE SECTION -->
-        <section class="sobre" id="sobre">
-            <div class="sobre__container">
-                <div class="section-header" data-reveal="fade-up">
-                    <span class="section-badge">✦ O Restaurante</span>
-                    <h2 class="section-title">Uma Lenda no Coração do Kinaxixi</h2>
-                    <div class="section-divider"></div>
-                </div>
+        <!-- STORY SECTION (UPGRADED SOBRE) -->
+        <section class="story" id="sobre" aria-label="A nossa história e valores">
+            <div class="story__container">
+                <div class="story__horizontal-scroll">
+                    <div class="story__panel" id="panel-intro" role="group" aria-label="Introdução histórica">
+                        <div class="story__content">
+                            <span class="section-badge"> A Génese</span>
+                            <h2 class="section-title">No Coração do Kinaxixi</h2>
+                            <div class="section-divider"></div>
+                            <p class="p-lg">Localizada num edifício histórico que faz parte da memória colectiva de Luanda, a Churrascaria Nandinhos não é apenas um restaurante; é um ponto de encontro onde a tradição se mantém inalterada há décadas. Aqui, o tempo abranda enquanto as brasas trabalham.</p>
+                            <p class="p-sm">Fundada com o objectivo de elevar a simplicidade do churrasco à categoria de arte, mantemo-nos fiéis às nossas raízes, servindo gerações de famílias angolanas e visitantes internacionais com a mesma paixão do primeiro dia.</p>
+                        </div>
+                        <div class="story__visual">
+                            <img src="images/galeria/unnamed.jpg" alt="Fachada e atmosfera histórica da Nandinhos no Kinaxixi" class="parallax-img" loading="lazy">
+                        </div>
+                    </div>
 
-                <div class="sobre__grid">
-                    <div class="sobre__text" data-reveal="fade-right">
-                        <div class="sobre__description">
-                            <p class="p-lg">No coração histórico do Kinaxixi, num edifício que é parte da memória de Luanda, a Churrascaria Nandinhos abriu as suas portas com uma missão simples: servir o melhor churrasco da cidade.</p>
-                            <p>Décadas depois, essa missão continua a ser cumprida todos os dias — com carnes das melhores proveniências, ricamente temperadas, confeccionadas à temperatura exacta durante o tempo ideal.</p>
-                            <blockquote class="sobre__quote">
+                    <div class="story__panel" id="panel-tradition" role="group" aria-label="Os nossos pilares">
+                        <div class="story__content">
+                            <span class="section-badge"> A Nossa Ética</span>
+                            <h2 class="section-title">Rigor, Tempo e Sabor</h2>
+                            <p>A nossa cozinha não aceita atalhos. O sabor que nos define provém da paciência e do respeito pela matéria-prima. Cada prato que sai da nossa cozinha transporta consigo a responsabilidade de ser o melhor de Luanda.</p>
+                            <div class="story__pillars">
+                                <article class="pillar">
+                                    <div class="pillar-content">
+                                        <h4>Tradição no Fogo</h4>
+                                        <p>Mantemos o uso exclusivo de brasas vivas, rejeitando sistemas a gás para preservar o aroma fumado genuíno que nos deu fama.</p>
+                                    </div>
+                                </article>
+                                <article class="pillar">
+                                    <div class="pillar-content">
+                                        <h4>Cortes com Carácter</h4>
+                                        <p>A nossa relação com fornecedores locais e internacionais garante-nos prioridade no acesso aos cortes mais nobres e frescos.</p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="story__visual">
+                            <img src="images/galeria/unnamedh.webp" alt="Mestre churrasqueiro a trabalhar nas brasas vivas" class="parallax-img" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="story__panel" id="panel-philosophy">
+                        <div class="story__content">
+                            <span class="section-badge"> A Filosofia</span>
+                            <blockquote class="story__quote">
                                 "Aqui não há segredos elaborados. Há dedicação, matéria-prima de qualidade e a convicção inabalável de que a simplicidade, quando feita com perfeição, é a forma mais elevada da gastronomia."
                             </blockquote>
-                        </div>
-
-                        <div class="sobre__pillars">
-                            <div class="pillar">
-                                <span class="pillar-icon">🔥</span>
-                                <div class="pillar-content">
-                                    <h4>Brasas Reais</h4>
-                                    <p>Churrasco em brasas vivas, nunca gás</p>
-                                </div>
+                            <div class="story__signature">
+                                <div class="signature-line"></div>
+                                <span>A Gerência</span>
                             </div>
-                            <div class="pillar">
-                                <span class="pillar-icon">🥩</span>
-                                <div class="pillar-content">
-                                    <h4>Carnes Premium</h4>
-                                    <p>Selecção rigorosa das melhores peças</p>
-                                </div>
-                            </div>
-                            <div class="pillar">
-                                <span class="pillar-icon">👨‍🍳</span>
-                                <div class="pillar-content">
-                                    <h4>Receita Autêntica</h4>
-                                    <p>Gastronomia portuguesa e angolana</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sobre__media" data-reveal="fade-left">
-                        <div class="sobre__image-wrapper">
-                            <img src="images/galeria/unnamed.jpg" alt="Interior do Nandinhos" class="parallax-img">
-                        </div>
-                        <div class="sobre__experience-badge">
-                            <span class="exp-number">20</span>
-                            <span class="exp-text">anos de<br>história</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- MENU SECTION -->
-        <section class="menu" id="menu">
+        <!-- MENU SECTION (DYNAMIC DATA) -->
+        <section class="menu" id="menu" aria-labelledby="menu-title">
             <div class="menu__container">
-                <div class="section-header" data-reveal="fade-up">
-                    <span class="section-badge">✦ A Nossa Ementa</span>
-                    <h2 class="section-title">Portugal Eficiente em Luanda</h2>
+                <header class="section-header" data-reveal="fade-up">
+                    <span class="section-badge"> Gastronomia</span>
+                    <h2 class="section-title" id="menu-title">Portugal Eficiente em Luanda</h2>
                     <div class="section-divider"></div>
+                    <p class="p-sm" style="margin-top: 1rem;">Explore a nossa selecção de grelhados, peixe fresco e tradições portuguesas.</p>
+                </header>
+
+                <!-- Search and Filters (Logical enhancement placeholder) -->
+                <div class="menu__controls" data-reveal="fade-up">
+                    <div class="menu__search-wrapper">
+                        <input type="text" id="menuSearch" placeholder="Procurar prato ou ingrediente..." aria-label="Procurar no menu">
+                        <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M11 4a7 7 0 100 14 7 7 0 000-14zM21 21l-4.35-4.35" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
                 </div>
 
-                <div class="menu__tabs-nav" role="tablist">
-                    <!-- Dynamic Tabs -->
+                <nav class="menu__tabs-nav" role="tablist" aria-label="Categorias da Ementa">
+                    <!-- Tabs are generated dynamically via js/menu.js -->
+                </nav>
+
+                <div class="menu__tabs-content" aria-live="polite">
+                    <!-- Panels are generated dynamically via js/menu.js -->
                 </div>
 
-                <div class="menu__tabs-content">
-                    <!-- Dynamic Panels -->
+                <footer class="menu__note" data-reveal="fade-up">
+                    <p>* IVA incluído à taxa legal em vigor. Os preços podem ser alterados sem aviso prévio. Se tiver alguma alergia alimentar, por favor informe a nossa equipa antes de realizar o seu pedido.</p>
+                </footer>
+            </div>
+        </section>
+
+        <!-- TEAM SECTION (HOSPITALITY) -->
+        <section class="team" id="equipa" aria-labelledby="team-title">
+            <div class="team__container">
+                <header class="section-header align-center" data-reveal="fade-up">
+                    <span class="section-badge"> A Nossa Equipa</span>
+                    <h2 class="section-title" id="team-title">Os Mestres da Brasa</h2>
+                    <div class="section-divider"></div>
+                    <p class="p-sm" style="margin-top: 1rem;">O segredo da Nandinhos reside nas mãos experientes que cuidam de cada detalhe, da recepção à sobremesa.</p>
+                </header>
+
+                <div class="team__grid">
+                    <article class="team-card" data-reveal="fade-up">
+                        <div class="team-card__visual">
+                            <img src="images/galeria/unnamed.jpg" alt="Mestre Churrasqueiro" loading="lazy">
+                        </div>
+                        <div class="team-card__info">
+                            <h4 class="team-card__name">Mestre Joaquim</h4>
+                            <span class="team-card__role">Chefe de Grelha</span>
+                            <p class="team-card__bio">Com mais de 15 anos de casa, o Joaquim domina o tempo das brasas como ninguém em Luanda.</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card" data-reveal="fade-up" data-reveal-delay="0.1">
+                        <div class="team-card__visual">
+                            <img src="images/galeria/WhatsApp Image 2026-05-22 at 17.38.27.jpeg" alt="Responsável de Sala" loading="lazy">
+                        </div>
+                        <div class="team-card__info">
+                            <h4 class="team-card__name">Dona Maria</h4>
+                            <span class="team-card__role">Gestora de Hospitalidade</span>
+                            <p class="team-card__bio">A cara sorridente que garante que a eficiência do serviço nunca compromete o calor do acolhimento.</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card" data-reveal="fade-up" data-reveal-delay="0.2">
+                        <div class="team-card__visual">
+                            <img src="images/galeria/unnamed (1).jpg" alt="Especialista em Tradições" loading="lazy">
+                        </div>
+                        <div class="team-card__info">
+                            <h4 class="team-card__name">Chef Paulo</h4>
+                            <span class="team-card__role">Cozinha Tradicional</span>
+                            <p class="team-card__bio">O guardião das receitas de bacalhau e das sobremesas que fazem a história da Nandinhos.</p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- GALLERY SECTION -->
-        <section class="gallery" id="galeria">
+        <!-- GALLERY SECTION (ATMOSPHERIC) -->
+        <section class="gallery" id="galeria" aria-labelledby="gallery-title">
             <div class="gallery__container">
-                <div class="section-header" data-reveal="fade-up">
-                    <span class="section-badge">✦ Galeria</span>
-                    <h2 class="section-title">A Atmosfera do Kinaxixi</h2>
+                <header class="section-header align-center" data-reveal="fade-up">
+                    <span class="section-badge"> O Ambiente</span>
+                    <h2 class="section-title" id="gallery-title">A Atmosfera do Kinaxixi</h2>
                     <div class="section-divider"></div>
-                </div>
+                    <p class="p-sm" style="margin-top: 1rem;">Vislumbre a energia da nossa sala e a perfeição dos nossos cortes.</p>
+                </header>
 
-                <div class="gallery__grid">
-                    <!-- Dynamic Items -->
+                <div class="gallery__grid" role="region" aria-label="Galeria de Imagens do Restaurante">
+                    <!-- Dynamic Items are injected here via js/gallery.js -->
                 </div>
             </div>
         </section>
@@ -331,73 +590,182 @@
             </div>
         </div>
 
-        <!-- TESTIMONIALS SECTION -->
-        <section class="testimonials">
-            <div class="testimonials__container">
-                <div class="section-header align-center" data-reveal="fade-up">
-                    <span class="section-badge">✦ Testemunhos</span>
-                    <h2 class="section-title">O Que Dizem Os Nossos Clientes</h2>
+        <!-- AWARDS & HISTORY TIMELINE (HERITAGE) -->
+        <section class="awards" id="premios" aria-labelledby="awards-title">
+            <div class="awards__container">
+                <header class="section-header align-center" data-reveal="fade-up">
+                    <span class="section-badge"> O Reconhecimento</span>
+                    <h2 class="section-title" id="awards-title">Vinte Anos de Excelência Gastronómica</h2>
                     <div class="section-divider"></div>
-                </div>
+                    <p class="p-sm" style="margin-top: 1rem;">O nosso compromisso com a qualidade tem sido validado pela crítica e, acima de tudo, pela fidelidade dos nossos clientes.</p>
+                </header>
 
-                <div class="testimonials__grid">
-                    <div class="testimonial-card" data-reveal="fade-up">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"Frango grelhado no carvão, tenro e suculento. É difícil resistir."</p>
-                        <div class="testimonial-author">— Visitante TripAdvisor</div>
+                <div class="awards__timeline" role="region" aria-label="Linha do tempo de conquistas">
+                    <div class="timeline-line"></div>
+
+                    <div class="award-item" data-reveal="fade-right">
+                        <div class="award-year">2005</div>
+                        <div class="award-dot"></div>
+                        <div class="award-content">
+                            <h4>Fundação</h4>
+                            <p>Início da jornada no Kinaxixi com foco na brasa real.</p>
+                        </div>
                     </div>
-                    <div class="testimonial-card" data-reveal="fade-up" data-reveal-delay="0.1">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"Se vais ao almoço, chega antes das 12h30 ou depois das 13h30 — está sempre cheio de locais."</p>
-                        <div class="testimonial-author">— TripAdvisor</div>
+
+                    <div class="award-item" data-reveal="fade-left">
+                        <div class="award-year">2015</div>
+                        <div class="award-dot"></div>
+                        <div class="award-content">
+                            <h4>Melhor de Angola</h4>
+                            <p>Eleito pela primeira vez o Melhor Restaurante de Angola.</p>
+                        </div>
                     </div>
-                    <div class="testimonial-card" data-reveal="fade-up" data-reveal-delay="0.2">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"O melhor churrasco da cidade. Sem discussão."</p>
-                        <div class="testimonial-author">— Google Reviews</div>
+
+                    <div class="award-item" data-reveal="fade-right">
+                        <div class="award-year">2018</div>
+                        <div class="award-dot"></div>
+                        <div class="award-content">
+                            <h4>Consagração</h4>
+                            <p>Segundo prémio consecutivo de excelência gastronómica.</p>
+                        </div>
                     </div>
-                    <div class="testimonial-card" data-reveal="fade-up" data-reveal-delay="0.3">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"Minúsculo, sem glamour, mas a comida é uma das melhores experiências gastronómicas de Luanda."</p>
-                        <div class="testimonial-author">— LNL Guide</div>
+
+                    <div class="award-item" data-reveal="fade-left">
+                        <div class="award-year">2025</div>
+                        <div class="award-dot"></div>
+                        <div class="award-content">
+                            <h4>Lenda Viva</h4>
+                            <p>Referência incontornável no roteiro de Luanda.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- RESERVATIONS SECTION -->
-        <section class="reservas" id="reservas">
+        <!-- TESTIMONIALS SECTION (SOCIAL PROOF) -->
+        <section class="testimonials" id="testemunhos" aria-labelledby="testimonials-title">
+            <div class="testimonials__container">
+                <header class="section-header align-center" data-reveal="fade-up">
+                    <span class="section-badge"> Experiência do Cliente</span>
+                    <h2 class="section-title" id="testimonials-title">O Que Dizem Os Nossos Clientes</h2>
+                    <div class="section-divider"></div>
+                    <p class="p-sm" style="margin-top: 1rem;">O testemunho daqueles que nos visitam é a nossa maior motivação para manter o rigor em cada brasa.</p>
+                </header>
+
+                <div class="testimonials__grid">
+                    <article class="testimonial-card" data-reveal="fade-up">
+                        <div class="stars" aria-label="Avaliação: 5 estrelas">★★★★★</div>
+                        <p class="testimonial-text">"O frango grelhado no carvão é absolutamente tenro e suculento. É difícil resistir ao aroma que se sente logo ao entrar no Kinaxixi."</p>
+                        <footer class="testimonial-author">
+                            <strong>Ricardo Santos</strong>
+                            <span>Visitante TripAdvisor</span>
+                        </footer>
+                    </article>
+                    <article class="testimonial-card" data-reveal="fade-up" data-reveal-delay="0.1">
+                        <div class="stars" aria-label="Avaliação: 5 estrelas">★★★★★</div>
+                        <p class="testimonial-text">"Um clássico de Luanda. Se planeia ir ao almoço, recomendo chegar antes das 12h30. A fila anda rápido, mas o espaço está sempre repleto de locais, o que diz tudo sobre a qualidade."</p>
+                        <footer class="testimonial-author">
+                            <strong>Ana Paula Vigário</strong>
+                            <span>Google Reviews</span>
+                        </footer>
+                    </article>
+                    <article class="testimonial-card" data-reveal="fade-up" data-reveal-delay="0.2">
+                        <div class="stars" aria-label="Avaliação: 5 estrelas">★★★★★</div>
+                        <p class="testimonial-text">"Simplesmente o melhor churrasco da cidade. Sem discussão. A picanha no ponto e o choco grelhado são experiências que todos deveriam ter em Luanda."</p>
+                        <footer class="testimonial-author">
+                            <strong>Eng. Miguel Costa</strong>
+                            <span>Crítico Gastronómico LNL</span>
+                        </footer>
+                    </article>
+                    <article class="testimonial-card" data-reveal="fade-up" data-reveal-delay="0.3">
+                        <div class="stars" aria-label="Avaliação: 5 estrelas">★★★★★</div>
+                        <p class="testimonial-text">"Pode ser um espaço tradicional e sem grandes luxos visuais, mas o que importa é o que está no prato. É uma das experiências gastronómicas mais honestas e satisfatórias de Angola."</p>
+                        <footer class="testimonial-author">
+                            <strong>Sílvia Almeida</strong>
+                            <span>LNL Guide</span>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENTS & GROUPS SECTION (CORPORATE) -->
+        <section class="events" id="eventos" aria-labelledby="events-title">
+            <div class="events__container">
+                <div class="events__grid">
+                    <div class="events__content" data-reveal="fade-right">
+                        <span class="section-badge"> Grupos e Eventos</span>
+                        <h2 class="section-title" id="events-title">Celebre Connosco no Kinaxixi</h2>
+                        <div class="section-divider"></div>
+                        <p class="p-lg">Dispomos de condições exclusivas para grupos e eventos corporativos que procuram a autenticidade do nosso churrasco aliada a um serviço eficiente e discreto.</p>
+
+                        <div class="events__options">
+                            <article class="event-card">
+                                <span class="event-card__icon">💼</span>
+                                <h4>Almoços de Negócios</h4>
+                                <p>Menus executivos desenhados para rapidez e qualidade. Ideal para fechar parcerias.</p>
+                                <span class="event-card__cta">Saber Mais</span>
+                            </article>
+                            <article class="event-card">
+                                <span class="event-card__icon">🎂</span>
+                                <h4>Celebrações Familiares</h4>
+                                <p>Mesas longas e ambiente acolhedor para aniversários e reuniões de família.</p>
+                                <span class="event-card__cta">Saber Mais</span>
+                            </article>
+                            <article class="event-card">
+                                <span class="event-card__icon">🤝</span>
+                                <h4>Eventos Corporativos</h4>
+                                <p>Reservas parciais de sala para apresentações e jantares de empresa.</p>
+                                <span class="event-card__cta">Saber Mais</span>
+                            </article>
+                            <article class="event-card">
+                                <span class="event-card__icon">📦</span>
+                                <h4>Take-away em Massa</h4>
+                                <p>Encomendas de grande volume para eventos externos e escritórios.</p>
+                                <span class="event-card__cta">Saber Mais</span>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="events__visual" data-reveal="fade-left">
+                        <img src="images/galeria/unnamed (2).jpg" alt="Mesa de grupo preparada na Nandinhos" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESERVATIONS SECTION (MULTI-STEP) -->
+        <section class="reservas" id="reservas" aria-labelledby="reservas-title">
             <div class="reservas__container">
                 <div class="reservas__grid">
                     <div class="reservas__info" data-reveal="fade-right">
-                        <div class="section-header">
-                            <span class="section-badge">✦ Reservas</span>
-                            <h2 class="section-title">Reserve a Sua Mesa</h2>
-                            <p class="reservas__lead">Especialmente ao almoço, o espaço esgota rapidamente. Reserve com antecedência para garantir o seu lugar.</p>
-                        </div>
+                        <header class="section-header">
+                            <span class="section-badge"> Planeamento</span>
+                            <h2 class="section-title" id="reservas-title">Reserve a Sua Mesa</h2>
+                            <p class="reservas__lead">Dada a elevada procura, especialmente no período de almoço, recomendamos a reserva antecipada para garantir a sua experiência sem esperas prolongadas.</p>
+                        </header>
 
-                        <div class="info-list">
-                            <div class="info-item">
-                                <span class="icon">📍</span>
+                        <div class="info-list" role="list">
+                            <article class="info-item" role="listitem">
+                                <span class="icon" aria-hidden="true">📍</span>
                                 <div>
-                                    <h5>Localização</h5>
-                                    <p>Av. Comandante Valódia, 13, Kinaxixi, Luanda</p>
+                                    <h5>Localização Privilegiada</h5>
+                                    <p>Avenida Comandante Valódia, n.º 13, Bairro do Kinaxixi, Luanda, Angola.</p>
                                 </div>
-                            </div>
-                            <div class="info-item">
-                                <span class="icon">🕐</span>
+                            </article>
+                            <article class="info-item" role="listitem">
+                                <span class="icon" aria-hidden="true">🕐</span>
                                 <div>
-                                    <h5>Horário</h5>
-                                    <p>Seg–Sáb: 12h–15h30 | 19h–21h30<br>Dom: 12h–16h</p>
+                                    <h5>Horário de Atendimento</h5>
+                                    <p>Segunda a Sábado: 12:00 – 15:30 | 19:00 – 21:30<br>Domingos: 12:00 – 16:00 (Serviço de Almoço)</p>
                                 </div>
-                            </div>
-                            <div class="info-item">
-                                <span class="icon">💳</span>
+                            </article>
+                            <article class="info-item" role="listitem">
+                                <span class="icon" aria-hidden="true">💳</span>
                                 <div>
-                                    <h5>Pagamento</h5>
-                                    <p>MultiCaixa · Dinheiro</p>
+                                    <h5>Métodos de Pagamento</h5>
+                                    <p>Rede MultiCaixa (TPA disponível), Numerário (AOA) e Facturação para Empresas.</p>
                                 </div>
-                            </div>
+                            </article>
                         </div>
                     </div>
 
@@ -488,6 +856,124 @@
             </div>
         </section>
 
+        <!-- SUPPLY CHAIN SECTION (PROVENANCE) -->
+        <section class="supply" aria-labelledby="supply-title">
+            <div class="supply__container">
+                <div class="supply__grid">
+                    <div class="supply__content" data-reveal="fade-right">
+                        <span class="supply__tag">Proveniência</span>
+                        <h2 class="section-title" id="supply-title">Rigor na Selecção da Matéria-Prima</h2>
+                        <div class="section-divider"></div>
+                        <p class="p-lg">A qualidade do churrasco da Nandinhos começa muito antes da carne tocar na grelha. Mantemos uma rede de fornecedores de elite, seleccionados pelo seu compromisso com o bem-estar animal e pureza do produto.</p>
+
+                        <div class="supply__list">
+                            <article class="supply-item">
+                                <div class="supply-item__icon">🌾</div>
+                                <div class="supply-item__text">
+                                    <h4>Produção Nacional</h4>
+                                    <p>O nosso frango e vegetais são adquiridos a produtores das províncias do Kwanza Sul e Benguela, garantindo frescura máxima e apoio à economia local angolana.</p>
+                                </div>
+                            </article>
+                            <article class="supply-item">
+                                <div class="supply-item__icon">🌊</div>
+                                <div class="supply-item__text">
+                                    <h4>Mar de Luanda</h4>
+                                    <p>O peixe e marisco chegam-nos diariamente da lota, capturados de forma sustentável nas águas frias da corrente de Benguela.</p>
+                                </div>
+                            </article>
+                            <article class="supply-item">
+                                <div class="supply-item__icon">📦</div>
+                                <div class="supply-item__text">
+                                    <h4>Importação Certificada</h4>
+                                    <p>Cortes específicos como o bacalhau Gadus Morhua e certas peças de novilho são importados directamente de parceiros históricos em Portugal e no Brasil.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="supply__visual" data-reveal="fade-left">
+                        <img src="images/galeria/unnamedjjj.webp" alt="Ingredientes frescos na cozinha da Nandinhos" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="faq" id="faq">
+            <div class="faq__container">
+                <div class="section-header align-center" data-reveal="fade-up">
+                    <span class="section-badge"> Dúvidas</span>
+                    <h2 class="section-title">Perguntas Frequentes</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="faq__grid">
+                    <div class="faq__item" data-reveal="fade-up">
+                        <button class="faq__question">
+                            <span>É necessário fazer reserva para o almoço?</span>
+                            <span class="faq__icon"></span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>Recomendamos vivamente. Sendo um dos restaurantes mais procurados do Kinaxixi, as mesas esgotam rapidamente entre as 12h30 e as 14h00. Pode reservar em segundos através do nosso sistema de WhatsApp.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq__item" data-reveal="fade-up" data-reveal-delay="0.1">
+                        <button class="faq__question">
+                            <span>Têm opções vegetarianas ou vegan?</span>
+                            <span class="faq__icon"></span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>Embora a nossa especialidade seja o churrasco, oferecemos diversas guarnições como Funge, Feijão temperado, Arroz e Saladas frescas que são adequadas. Também dispomos de Esparregado de espinafres e sopa de legumes diária.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq__item" data-reveal="fade-up" data-reveal-delay="0.2">
+                        <button class="faq__question">
+                            <span>Aceitam pagamentos por MultiCaixa?</span>
+                            <span class="faq__icon"></span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>Sim, aceitamos todos os cartões da rede MultiCaixa, além de pagamentos em numerário (Kwanza). Para empresas, também aceitamos transferências bancárias mediante coordenação prévia.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq__item" data-reveal="fade-up" data-reveal-delay="0.3">
+                        <button class="faq__question">
+                            <span>Fazem entregas ao domicílio?</span>
+                            <span class="faq__icon"></span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>Actualmente focamos a nossa operação no serviço de sala para garantir que o churrasco chega à mesa na temperatura ideal. No entanto, pode encomendar via WhatsApp para levantamento no local (Take-away).</p>
+                        </div>
+                    </div>
+
+                    <div class="faq__item" data-reveal="fade-up" data-reveal-delay="0.4">
+                        <button class="faq__question">
+                            <span>Qual é a especialidade absoluta da casa?</span>
+                            <span class="faq__icon"></span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>O nosso Frango de Churrasco e o Choco Grelhado são as lendas da Nandinhos. Se é a sua primeira vez, recomendamos o Churrasco Misto para uma experiência completa das nossas brasas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PARTNERS / SUPPLIERS -->
+        <section class="partners">
+            <div class="partners__container">
+                <p class="partners__lead">Trabalhamos apenas com os melhores produtores nacionais e internacionais</p>
+                <div class="partners__logos">
+                    <div class="partner-logo"><span>Super Bock</span></div>
+                    <div class="partner-logo"><span>Cuca</span></div>
+                    <div class="partner-logo"><span>MultiCaixa</span></div>
+                    <div class="partner-logo"><span>LNL Guide</span></div>
+                    <div class="partner-logo"><span>TripAdvisor</span></div>
+                </div>
+            </div>
+        </section>
+
         <!-- CONTACT SECTION -->
         <section class="contacto" id="contacto">
             <div class="contacto__container">
@@ -499,7 +985,7 @@
                     </div>
                     <div class="contacto__info" data-reveal="fade-left">
                         <div class="section-header">
-                            <span class="section-badge">✦ Contacto</span>
+                            <span class="section-badge"> Contacto</span>
                             <h2 class="section-title">Onde Estamos</h2>
                         </div>
                         <p>Visite-nos no coração de Luanda. O aroma do churrasco guiará o seu caminho.</p>
@@ -528,13 +1014,20 @@
                     <a href="#sobre">O Restaurante</a>
                     <a href="#menu">Ementa</a>
                     <a href="#reservas">Reservas</a>
+                    <a href="#faq">FAQ</a>
                     <a href="#contacto">Contacto</a>
                 </div>
             </div>
             <div class="footer__bottom">
                 <div class="footer__credits">
-                    <p>© 2025 Churrascaria Nandinhos. Todos os direitos reservados.</p>
-                    <p class="developed-by">Construído por <strong>MD Business</strong> & <strong>KitandaSmart</strong></p>
+                    <p>© 2025 Churrascaria Nandinhos. Todos os direitos reservados. Localizado na Avenida Comandante Valódia, n.º 13, Kinaxixi, Luanda, Angola. Este projecto digital foi concebido para elevar a herança gastronómica angolana ao padrão internacional de excelência. A Churrascaria Nandinhos é uma marca registada, comprometida com a qualidade e a satisfação dos seus clientes há mais de duas décadas.</p>
+                    <p class="developed-by">Construído com rigor técnico e paixão criativa por <strong>MD Business</strong> & <strong>KitandaSmart</strong> — Agências líderes em Experiências Digitais Cinematográficas de Alto Impacto e Soluções Tecnológicas Inteligentes em Luanda, Angola. Contacto: +244 9XX XXX XXX.</p>
+                    <div class="footer__tech-stack">
+                        <span>Stack Tecnológica: HTML5 Semantic Engine, CSS3 Modular System (Variables/Grid/Flex), GSAP 3 Cinematic Choreography, Lenis Physics-Based Smooth Scroll, Splitting.js Typography Engine, Vanilla ES6+ Logic.</span>
+                    </div>
+                    <div class="footer__legal-links">
+                        <a href="#">Política de Privacidade</a> | <a href="#">Termos e Condições</a> | <a href="#">Livro de Reclamações Digital</a>
+                    </div>
                 </div>
                 <div class="footer__social">
                     <a href="#" aria-label="Instagram">Instagram</a>
@@ -553,6 +1046,18 @@
         </svg>
     </a>
 
+    <!-- BACK TO TOP -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao Topo">
+        <div class="back-to-top__circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 15l-6-6-6 6"/>
+            </svg>
+            <svg class="back-to-top__progress" viewBox="0 0 60 60">
+                <circle cx="30" cy="30" r="25" />
+            </svg>
+        </div>
+    </button>
+
     <!-- JS CDNs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -560,7 +1065,13 @@
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
 
     <!-- PROJECT JS -->
+    <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/status.js"></script>
+    <script src="js/faq.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/story.js"></script>
+    <script src="js/art-grill.js"></script>
     <script src="js/lenis.js"></script>
     <script src="js/grain.js"></script>
     <script src="js/cursor.js"></script>

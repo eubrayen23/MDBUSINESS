@@ -1,0 +1,166 @@
+/**
+ * ART OF THE GRILL & STATS — CHURRASCARIA NANDINHOS
+ * -------------------------------------------------------------------------
+ * These sections focus on the technical process of the "Brasa Viva"
+ * and the social proof metrics of the establishment.
+ */
+
+/* === ART OF THE GRILL (PROCESSO) === */
+
+.art-grill {
+  padding: var(--space-2xl) 0;
+  background: var(--coal);
+}
+
+.art-grill__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.art-grill__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+/**
+ * Sticky Content Column
+ * Keeps the text visible while the user scrolls through the visuals.
+ */
+.art-grill__sticky {
+  position: sticky;
+  top: 15vh;
+}
+
+.art-grill__steps {
+  margin-top: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/**
+ * Grilling Step Item
+ * Opacity logic handled via js/art-grill.js
+ */
+.art-step {
+  display: flex;
+  gap: 1.5rem;
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
+}
+
+.art-step.is-active {
+  opacity: 1;
+}
+
+.step-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--brasa);
+}
+
+.art-step h4 {
+  font-family: var(--font-body);
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.art-step p {
+  font-size: var(--text-sm);
+  color: var(--cream-muted);
+}
+
+/**
+ * Visual Display Column
+ * A stack of images that switch based on the active step.
+ */
+.art-grill__visuals {
+  position: relative;
+  height: 80vh;
+}
+
+.art-visual {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 0.8s ease, transform 1.2s var(--ease-out-expo);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.art-visual.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.art-visual img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+/* === STATS BAR SECTION === */
+
+.stats {
+  background: var(--ash);
+  padding: 4rem var(--container-pad);
+  border-top: 1px solid rgba(227, 18, 18, 0.1);
+  border-bottom: 1px solid rgba(227, 18, 18, 0.1);
+}
+
+.stats__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 150px;
+}
+
+/**
+ * Stat Number
+ * Target value stored in data-target for js/counter.js
+ */
+.stat-number {
+  font-family: var(--font-body);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--brasa);
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cream-muted);
+  margin-top: 0.5rem;
+}
+
+.stat-divider {
+  color: var(--brasa);
+  font-size: 10px;
+  opacity: 0.3;
+}
+
+/**
+ * Mobile Adjustments for Art & Stats
+ */
+@media (max-width: 1024px) {
+    .art-grill__grid { grid-template-columns: 1fr; }
+    .art-grill__sticky { position: relative; top: 0; margin-bottom: 4rem; }
+    /* Visuals are switched to relative/block in responsive.css */
+}

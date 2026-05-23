@@ -1,12 +1,84 @@
 /* === RESPONSIVE FIXES === */
 
+/**
+ * =============================================================================
+ * RESPONSIVE ADAPTATION ENGINE — CHURRASCARIA NANDINHOS
+ * -------------------------------------------------------------------------
+ * This module manages the layout transitions across the device spectrum.
+ * It uses a combination of fluid typography (clamp) and targeted
+ * media query overrides to ensure the "Portuguese Efficient" experience
+ * is maintained from 320px to 4K displays.
+ *
+ * BREAKPOINT STRATEGY:
+ * - Desktop (Large): > 1200px
+ * - Tablet (Portrait): 769px - 1024px
+ * - Mobile (Large/Tablet Mini): 481px - 768px
+ * - Mobile (Small): < 480px
+ * =============================================================================
+ */
+
+/* === 1. LARGE DESKTOP & WIDE SCREENS === */
+@media (min-width: 1441px) {
+    :root {
+        --container-pad: 8rem;
+    }
+}
+
+/* === 2. STANDARD LAPTOP & DESKTOP === */
 @media (max-width: 1200px) {
   :root {
     --container-pad: 3rem;
   }
+
+  .section-title {
+    font-size: var(--text-2xl);
+  }
+
+  .hero__title {
+      font-size: 5.5rem;
+  }
 }
 
+/* === 3. TABLET & SMALL LAPTOPS === */
+@media (max-width: 1024px) {
+    /**
+     * Component Specific Overrides for Tablet
+     */
+    .navbar__branding { gap: 1rem; }
+
+    .story__container { height: auto; }
+    .story__horizontal-scroll {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        transform: none !important;
+    }
+
+    .story__panel {
+        width: 100%;
+        height: auto;
+        padding: 6rem var(--container-pad);
+        flex-direction: column;
+    }
+
+    .story__visual { width: 100%; height: 350px; }
+
+    .art-grill__grid { grid-template-columns: 1fr; }
+    .art-grill__sticky { position: relative; top: 0; margin-bottom: 4rem; }
+
+    .contacto__grid { grid-template-columns: 1fr; gap: 4rem; }
+
+    .mastery__grid { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+/* === 4. MOBILE LANDSCAPE & LARGE PHONES === */
 @media (max-width: 768px) {
+  /**
+   * Hero Compression
+   */
+  .hero__title {
+    font-size: 3.8rem;
+  }
   :root {
     --container-pad: 1.5rem;
   }
@@ -16,11 +88,77 @@
 
   .section-title { font-size: 2.2rem; }
 
+  /* FIX MOBILE OVERFLOW AND VISIBILITY */
+  .mobile-menu {
+    width: 100vw;
+    max-width: 100%;
+  }
+
+  .navbar__logo-sub {
+    display: none;
+  }
+
+  .navbar {
+    padding: 1rem var(--container-pad);
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.0) !important;
+  }
+
+  .hero__media {
+      width: 100%;
+      overflow: hidden;
+  }
+
+  .menu__tabs-nav {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+  }
+
+  .art-visual {
+      width: 100% !important;
+      left: 0 !important;
+      right: 0 !important;
+      position: relative !important;
+      height: 300px !important;
+      opacity: 1 !important;
+      transform: none !important;
+      display: none;
+  }
+
+  .art-visual.is-active {
+      display: block;
+  }
+
+  .art-grill__visuals {
+      height: auto !important;
+  }
+
   .sobre__experience-badge {
       position: relative;
       bottom: 0; left: 0;
       margin-top: 2rem;
       width: fit-content;
+  }
+
+  section {
+      overflow-x: hidden !important;
   }
 
   .form-row { grid-template-columns: 1fr; }
@@ -36,9 +174,54 @@
   .btn { width: 100%; justify-content: center; }
 
   .stat-item { min-width: 100%; }
+
+  .footer__top {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .footer__nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  /**
+   * Mastery Schematic visibility on mobile
+   */
+  .mastery__schematic {
+      padding: 2rem;
+      font-size: 8px;
+  }
+
+  .faq__question {
+      padding: 1.2rem 1.5rem;
+      font-size: 14px;
+  }
 }
 
-/* Accessibility */
+/* === 6. ULTRA-SMALL DEVICES (320px) === */
+@media (max-width: 350px) {
+    :root {
+        --container-pad: 1rem;
+    }
+
+    .hero__title {
+        font-size: 2.2rem;
+    }
+
+    .navbar__logo-name {
+        font-size: 1.2rem;
+    }
+}
+
+/**
+ * =============================================================================
+ * ACCESSIBILITY & PERFORMANCE DEGRADATION
+ * -------------------------------------------------------------------------
+ * For users who have indicated a preference for reduced motion, we disable
+ * all non-essential GSAP and CSS animations. This ensures the site remains
+ * "Efficient" and inclusive for all visitors.
+ * =============================================================================
+ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -46,4 +229,19 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  /* Disable Grain and Blur for maximum clarity */
+  #grain-canvas { display: none !important; }
+  .navbar.is-scrolled { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+}
+
+/**
+ * PRINT OPTIMIZATION
+ * Ensure the menu and contact info are legible when printed.
+ */
+@media print {
+    .navbar, .hero, .whatsapp-float, .back-to-top, .preloader { display: none !important; }
+    body { background: white !important; color: black !important; }
+    .menu__tabs-nav { display: none !important; }
+    .menu__panel { display: block !important; opacity: 1 !important; }
 }

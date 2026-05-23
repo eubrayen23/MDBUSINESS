@@ -1,0 +1,130 @@
+/**
+ * GRILLING MASTERY — TECHNICAL SPECIFICATIONS
+ * -------------------------------------------------------------------------
+ * This section provides a deep dive into the thermodynamics and
+ * material science behind the Nandinhos grilling method.
+ */
+
+.mastery {
+    padding: var(--space-2xl) 0;
+    background: var(--coal);
+}
+
+.mastery__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+}
+
+.mastery__header {
+    margin-bottom: 6rem;
+}
+
+.mastery__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+/**
+ * Mastery Card
+ * Focuses on a specific technical pillar of the process.
+ */
+.mastery-card {
+    position: relative;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(227, 18, 18, 0.2);
+}
+
+.mastery-card__number {
+    position: absolute;
+    top: -0.8rem;
+    left: 0;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--brasa);
+    background: var(--coal);
+    padding-right: 1rem;
+}
+
+.mastery-card h4 {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.mastery-card p {
+    font-size: 14px;
+    color: var(--cream-muted);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.mastery-card__data {
+    background: rgba(227, 18, 18, 0.03);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border-left: 2px solid var(--brasa);
+}
+
+.mastery-card__data h5 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--brasa);
+    margin-bottom: 1rem;
+}
+
+.mastery-card__spec-list {
+    margin-top: 2rem;
+    list-style: none;
+    padding: 0;
+}
+
+.mastery-card__spec-list li {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--brasa);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mastery-card__spec-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--brasa);
+    border-radius: 50%;
+}
+
+@media (max-width: 1024px) {
+    .mastery__grid { grid-template-columns: 1fr; gap: 4rem; }
+}
+
+/**
+ * TECHNICAL SCHEMATIC OVERLAY
+ * Subtle background elements that imply engineering and precision.
+ */
+.mastery__schematic {
+    margin-top: 8rem;
+    padding: 4rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px dashed rgba(255,255,255,0.1);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+}
+
+.schematic-content {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.2);
+    line-height: 2;
+    text-transform: uppercase;
+}

@@ -1,8 +1,28 @@
-// checkin.js — Sistema completo de check-in/reservas
+/**
+ * CHECKIN & RESERVATIONS ENGINE — CHURRASCARIA NANDINHOS
+ * -------------------------------------------------------------------------
+ * This module manages the multi-step reservation process. It ensures
+ * data integrity through step-by-step validation and handles the
+ * final handoff to the WhatsApp Business API.
+ *
+ * CORE FEATURES:
+ * 1. Sequential form navigation with dynamic panel switching.
+ * 2. Real-time validation for required fields.
+ * 3. Dynamic summary generation for user review.
+ * 4. Automated message formatting for WhatsApp.
+ */
 
+/**
+ * The official management number for direct WhatsApp integration.
+ * Format: [Country Code][Number] without spaces or symbols.
+ */
 const WHATSAPP_NUMBER = '244934859497';
 
 class CheckinSystem {
+  /**
+   * Initializes the reservation system by binding navigation events,
+   * setting constraints, and preparing the summary engine.
+   */
   constructor() {
     this.currentStep = 1;
     this.formData    = {};
@@ -12,7 +32,9 @@ class CheckinSystem {
     this.initWhatsApp();
   }
 
-  // Define data mínima como hoje
+  /**
+   * Restricts the date picker to future dates only.
+   */
   initDateMin() {
     const dateInput = document.getElementById('res-data');
     if (dateInput) {
@@ -21,8 +43,11 @@ class CheckinSystem {
     }
   }
 
+  /**
+   * Binds click events to navigation buttons.
+   */
   initNavigation() {
-    // Botões "Avançar"
+    // "Next" buttons — navigate forward if validation passes
     document.querySelectorAll('.form-next').forEach(btn => {
       btn.addEventListener('click', () => {
         const nextStep = parseInt(btn.dataset.next);
@@ -34,7 +59,7 @@ class CheckinSystem {
       });
     });
 
-    // Botões "Voltar"
+    // "Back" buttons — navigate to the previous logical state
     document.querySelectorAll('.form-back').forEach(btn => {
       btn.addEventListener('click', () => {
         const prevStep = parseInt(btn.dataset.back);
@@ -43,6 +68,11 @@ class CheckinSystem {
     });
   }
 
+  /**
+   * Validates user input for the current active panel.
+   * @param {number} step - The current panel index.
+   * @returns {boolean} - True if the step is valid.
+   */
   validateStep(step) {
     const errors = [];
 
@@ -70,6 +100,9 @@ class CheckinSystem {
     return true;
   }
 
+  /**
+   * Visualizes errors in the UI.
+   */
   showErrors(errors) {
     this.clearErrors();
     const panel = document.querySelector(`.form-panel[data-panel="${this.currentStep}"]`);
@@ -79,10 +112,16 @@ class CheckinSystem {
     panel.prepend(el);
   }
 
+  /**
+   * Cleans up the error display.
+   */
   clearErrors() {
     document.querySelectorAll('.form-errors').forEach(el => el.remove());
   }
 
+  /**
+   * Extracts values from the DOM and stores them in the local state.
+   */
   collectData() {
     this.formData = {
       nome:    document.getElementById('res-nome').value.trim(),
@@ -112,6 +151,11 @@ class CheckinSystem {
     `;
   }
 
+  /**
+   * Finalizes the process by constructing the WhatsApp API URL.
+   * Redirects the user to WhatsApp with a pre-filled, professionally
+   * formatted message containing all reservation details.
+   */
   initWhatsApp() {
     const btn = document.getElementById('btnWhatsApp');
     if (!btn) return;
@@ -119,11 +163,16 @@ class CheckinSystem {
     btn.addEventListener('click', () => {
       const { nome, pessoas, data, hora, obs, tel } = this.formData;
 
+      // Ensure date is valid for formatting
       const dataFormatada = data
         ? new Date(data + 'T12:00:00')
             .toLocaleDateString('pt-PT', { day: 'numeric', month: 'long', year: 'numeric' })
         : data;
 
+      /**
+       * MESSAGE CONSTRUCTION
+       * Using emojis for visual structure and clear field identification.
+       */
       const msg = [
         `Olá! Gostaria de reservar uma mesa na Churrascaria Nandinhos.`,
         ``,
@@ -137,8 +186,27 @@ class CheckinSystem {
         `Aguardo confirmação. Obrigado(a)!`,
       ].filter(Boolean).join('\n');
 
+      // URI encode the message to ensure safe transmission through the URL
       const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-      window.open(url, '_blank');
+
+      /**
+       * SUCCESS FEEDBACK LOOP
+       * Provides immediate visual confirmation to the user that the action
+       * is being processed before the redirect occurs.
+       */
+      const originalText = btn.textContent;
+      btn.textContent = 'A abrir WhatsApp...';
+      btn.classList.add('is-loading');
+
+      setTimeout(() => {
+          window.open(url, '_blank');
+          btn.textContent = originalText;
+          btn.classList.remove('is-loading');
+
+          // Optional: Move form back to step 1 for subsequent entries
+          this.goToStep(1);
+          document.getElementById('checkinForm').reset();
+      }, 800);
     });
   }
 

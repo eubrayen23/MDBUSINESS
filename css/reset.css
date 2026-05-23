@@ -1,15 +1,19 @@
 :root {
-  /* PALETA PRINCIPAL */
-  --coal:        #0F0E0C;   /* fundo mais escuro — carvão puro */
-  --ash:         #1A1816;   /* fundo dark secundário */
-  --ember:       #2C2419;   /* fundo dark terciário */
-  --gold:        #C8A96E;   /* dourado principal — acento */
-  --gold-light:  #E2C99A;   /* dourado claro — hover */
-  --gold-dark:   #8B6D3F;   /* dourado escuro — sombras */
-  --brasa:       #7A2800;   /* vermelho brasa — acento 2 */
-  --cream:       #F5F0E8;   /* creme quente — textos claros */
-  --cream-muted: #B8AD9E;   /* creme apagado — subtextos */
-  --white:       #FAFAF7;   /* branco quente — superfícies */
+  /* PALETA PRINCIPAL — TEMA RED & BLACK */
+  --coal:        #0A0A0A;   /* fundo mais escuro — preto absoluto */
+  --ash:         #121212;   /* fundo dark secundário */
+  --ember:       #1A1A1A;   /* fundo dark terciário */
+
+  --brasa:       #E31212;   /* vermelho brasa vibrante — acento principal */
+  --brasa-dark:  #8B0000;   /* vermelho escuro — profundidade */
+  --brasa-light: #FF3232;   /* vermelho claro — hover */
+
+  --gold:        #C8A96E;   /* dourado — mantido apenas para detalhes de luxo */
+  --gold-muted:  rgba(227, 18, 18, 0.4);
+
+  --cream:       #F5F5F5;   /* branco gelo — textos claros */
+  --cream-muted: #A0A0A0;   /* cinza médio — subtextos */
+  --white:       #FFFFFF;   /* branco puro */
 
   /* TIPOGRAFIA */
   --font-display: 'Playfair Display', 'Georgia', serif;
@@ -66,7 +70,12 @@ body {
   background: var(--coal);
   color: var(--cream);
   overflow-x: hidden;
+  width: 100%;
   cursor: none; /* cursor personalizado substituirá */
+}
+
+@media (max-width: 1024px) {
+    body { cursor: auto; }
 }
 img, video { max-width: 100%; height: auto; display: block; }
 a { text-decoration: none; color: inherit; }

@@ -1,0 +1,13 @@
+# ROBOTS.TXT FOR CHURRASCARIA NANDINHOS
+# -------------------------------------------------------------------------
+# Optimization for web crawlers (Googlebot, Bingbot, etc.)
+
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://www.nandinhos.ao/sitemap.xml
+
+# Prevent indexing of temporary or internal files if any
+Disallow: /js/internal/
+Disallow: /css/tests/

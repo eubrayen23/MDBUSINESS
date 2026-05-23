@@ -1,0 +1,105 @@
+/**
+ * CONTACT & WHATSAPP COMPONENTS — CHURRASCARIA NANDINHOS
+ * -------------------------------------------------------------------------
+ * These components handle the final conversion points:
+ * finding the restaurant and starting a WhatsApp conversation.
+ */
+
+/* === CONTACT SECTION === */
+
+.contacto {
+    padding: var(--space-2xl) 0;
+    background: var(--ash);
+}
+
+.contacto__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+}
+
+.contacto__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-xl);
+    align-items: center;
+}
+
+/**
+ * Google Maps Wrapper
+ * Features a dark-mode filter to match the site's aesthetic.
+ */
+.contacto__map-wrapper {
+    aspect-ratio: 16/9;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    filter: grayscale(1) invert(0.9);
+}
+
+.contacto__details {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contacto__details p {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--cream-muted);
+}
+
+.contacto__details strong {
+    color: var(--brasa);
+}
+
+/* === FLOATING WHATSAPP BUTTON === */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px; height: 60px;
+  background: #25D366; /* Official WA Brand Color */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+  transition: transform 0.3s var(--ease-out-expo),
+              box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+}
+
+/**
+ * Pulse Animation
+ * Draws attention to the contact button without being intrusive.
+ */
+.whatsapp-float__pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.6);
+  animation: waPulse 2.5s ease-out infinite;
+}
+
+@keyframes waPulse {
+  0%   { transform: scale(1); opacity: 0.8; }
+  70%  { transform: scale(1.5); opacity: 0; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/**
+ * Mobile Logic for Contact
+ */
+@media (max-width: 1024px) {
+    .contacto__grid { grid-template-columns: 1fr; gap: 4rem; }
+    .whatsapp-float { bottom: 1.5rem; right: 1.5rem; width: 50px; height: 50px; }
+}
