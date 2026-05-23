@@ -53,7 +53,7 @@ const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
           transition={{ duration: 1 }}
           className="mb-12"
         >
-          <img src="/logo.png" alt="MD Business" className="w-32 h-auto grayscale contrast-125" />
+          <img src="/logo.png" alt="MD Business" className="w-32 h-auto grayscale contrast-125 rounded-full" />
         </motion.div>
 
         <div className="w-64 h-[1px] bg-black/5 relative overflow-hidden">

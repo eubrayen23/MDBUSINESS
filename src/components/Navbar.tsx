@@ -18,9 +18,9 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Início', href: '#' },
+    { name: 'Sobre', href: '#about' },
     { name: 'Serviços', href: '#services' },
-    { name: 'Portfólio', href: '#portfolio' },
-    { name: 'Contacto', href: '#contact' },
+    { name: 'Equipa', href: '#team' },
   ];
 
   return (
@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center"
         >
-          <img src="/logo.png" alt="MD Business" className="h-8 md:h-12 w-auto grayscale contrast-125" />
+          <img src="/logo.png" alt="MD Business" className="h-8 md:h-12 w-auto grayscale contrast-125 rounded-full" />
         </motion.div>
 
         {/* Desktop Navigation */}
@@ -111,7 +111,7 @@ const Navbar: React.FC = () => {
           >
             <div className="flex justify-between items-center p-6 border-b">
               <div className="flex items-center">
-                 <img src="/logo.png" alt="MD Business" className="h-8 w-auto grayscale" />
+                 <img src="/logo.png" alt="MD Business" className="h-8 w-auto grayscale rounded-full" />
               </div>
               <button onClick={() => setIsOpen(false)} className="p-2">
                 <X size={32} />

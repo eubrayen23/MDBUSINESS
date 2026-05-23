@@ -6,6 +6,9 @@ import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import Strategy from './components/Strategy';
+import About from './components/About';
+import Team from './components/Team';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import Preloader from './components/Preloader';
@@ -84,12 +87,15 @@ const AppContent = () => {
       <Navbar />
       <main id="main-content">
         <Hero />
+        <Strategy />
+        <About />
         <Services />
+        <Team />
       </main>
       <footer className="py-20 border-t border-brand-black/5 bg-brand-gray">
         <div className="container mx-auto px-6 text-center">
           <div className="flex flex-col items-center mb-12">
-            <img src="/logo.png" alt="MD Business" className="w-32 h-auto grayscale mb-6" />
+            <img src="/logo.png" alt="MD Business" className="w-32 h-auto grayscale mb-6 rounded-full" />
             <p className="text-brand-black/40 text-xs font-bold uppercase tracking-[0.4em]">
               Sistemas Digitais de Alto Impacto
             </p>
