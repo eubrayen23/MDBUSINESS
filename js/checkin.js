@@ -108,7 +108,7 @@ class CheckinSystem {
     const panel = document.querySelector(`.form-panel[data-panel="${this.currentStep}"]`);
     const el = document.createElement('div');
     el.className = 'form-errors';
-    el.innerHTML = errors.map(e => `⚠ ${e}`).join('<br>');
+    el.innerHTML = errors.map(e => `Aviso: ${e}`).join('<br>');
     panel.prepend(el);
   }
 
@@ -142,13 +142,33 @@ class CheckinSystem {
           .toLocaleDateString('pt-PT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
       : '—';
 
-    grid.innerHTML = `
-      <div class="summary-item"><span>Nome:</span> <span>${this.formData.nome}</span></div>
-      <div class="summary-item"><span>Pessoas:</span> <span>${this.formData.pessoas}</span></div>
-      <div class="summary-item"><span>Data:</span> <span>${dataFormatada}</span></div>
-      <div class="summary-item"><span>Hora:</span> <span>${this.formData.hora}</span></div>
-      ${this.formData.tel ? `<div class="summary-item"><span>Contacto:</span> <span>${this.formData.tel}</span></div>` : ''}
-    `;
+    grid.innerHTML = '';
+
+    const fields = [
+      { label: 'Nome:', value: this.formData.nome },
+      { label: 'Pessoas:', value: this.formData.pessoas },
+      { label: 'Data:', value: dataFormatada },
+      { label: 'Hora:', value: this.formData.hora }
+    ];
+
+    if (this.formData.tel) {
+      fields.push({ label: 'Contacto:', value: this.formData.tel });
+    }
+
+    fields.forEach(field => {
+      const item = document.createElement('div');
+      item.className = 'summary-item';
+
+      const label = document.createElement('span');
+      label.textContent = field.label;
+
+      const value = document.createElement('span');
+      value.textContent = field.value;
+
+      item.appendChild(label);
+      item.appendChild(value);
+      grid.appendChild(item);
+    });
   }
 
   /**
@@ -174,16 +194,16 @@ class CheckinSystem {
        * Using emojis for visual structure and clear field identification.
        */
       const msg = [
-        `Olá! Gostaria de reservar uma mesa na Churrascaria Nandinhos.`,
+        `Solicitação de Reserva - Churrascaria Nandinhos`,
         ``,
-        `👤 Nome: ${nome}`,
-        `👥 Pessoas: ${pessoas}`,
-        `📅 Data: ${dataFormatada}`,
-        `🕐 Hora: ${hora}`,
-        tel ? `📱 Contacto: ${tel}` : '',
-        obs ? `📝 Observações: ${obs}` : '',
+        `Nome: ${nome}`,
+        `Número de Pessoas: ${pessoas}`,
+        `Data: ${dataFormatada}`,
+        `Hora: ${hora}`,
+        tel ? `Contacto: ${tel}` : '',
+        obs ? `Observações: ${obs}` : '',
         ``,
-        `Aguardo confirmação. Obrigado(a)!`,
+        `Aguardamos confirmação.`,
       ].filter(Boolean).join('\n');
 
       // URI encode the message to ensure safe transmission through the URL

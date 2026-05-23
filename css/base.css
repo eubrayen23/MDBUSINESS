@@ -37,8 +37,8 @@ html {
  * via classes injected by ScrollTrigger logic in reveals.js.
  */
 body {
-    background-color: var(--coal);
-    color: var(--cream);
+    background-color: var(--cream);
+    color: var(--text-main);
     font-family: var(--font-body);
     font-size: var(--text-base);
     line-height: 1.6;
@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     font-weight: 700;
     line-height: 1.1;
-    color: var(--white);
+    color: var(--text-main);
     margin: 0;
     letter-spacing: -0.02em;
 }
@@ -114,6 +114,8 @@ p {
     font-size: var(--text-sm);
     color: var(--cream-muted);
 }
+
+.text-white { color: var(--white); }
 
 /* Italic Serif Accents */
 em, i, .serif-italic {
@@ -228,9 +230,10 @@ img {
 .text-gold { color: var(--gold); }
 .text-muted { color: var(--cream-muted); }
 
-.bg-coal { background-color: var(--coal); }
-.bg-ash { background-color: var(--ash); }
-.bg-ember { background-color: var(--ember); }
+.bg-coal { background-color: var(--coal); color: var(--white); }
+.bg-ash { background-color: var(--ash); color: var(--white); }
+.bg-cream { background-color: var(--cream); color: var(--text-main); }
+.bg-cream-dark { background-color: var(--cream-dark); color: var(--text-main); }
 
 .mt-xl { margin-top: var(--space-xl); }
 .mb-xl { margin-bottom: var(--space-xl); }
@@ -263,4 +266,32 @@ img {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+/* === PARTNERS SECTION === */
+.partners {
+    background: var(--cream);
+}
+
+.partners__logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+.partner-logo {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cream-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.partner-logo:hover {
+    opacity: 1;
 }

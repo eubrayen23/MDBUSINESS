@@ -109,6 +109,7 @@
   padding: 4rem var(--container-pad);
   border-top: 1px solid rgba(227, 18, 18, 0.1);
   border-bottom: 1px solid rgba(227, 18, 18, 0.1);
+  color: var(--white);
 }
 
 .stats__container {

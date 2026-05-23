@@ -170,15 +170,15 @@
   font-size: var(--text-lg);
   font-weight: 300;
   line-height: 1.8;
-  color: var(--cream-muted);
-  opacity: 0;
+  color: var(--white);
+  opacity: 0.8;
   transform: translateY(20px);
   margin-bottom: 3rem;
 }
 
 .hero__subtitle em {
   font-style: italic;
-  color: var(--cream);
+  color: var(--white);
 }
 
 /**

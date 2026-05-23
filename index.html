@@ -239,8 +239,12 @@
 
             <div class="hero__content">
                 <div class="hero__badge" role="status" aria-label="Premiação: Bi-campeão Melhor Restaurante de Angola">
-                    <span class="hero__badge-icon" aria-hidden="true">🏆</span>
-                    2x Melhor Restaurante de Angola
+                    <span class="hero__badge-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                            <path d="M20 7h-1.209A4.92 4.92 0 0 0 19 5.5C19 3.57 17.43 2 15.5 2c-1.622 0-3.005 1.104-3.44 2.61L12 4.545l-.06-.035C11.505 3.104 10.122 2 8.5 2 6.57 2 5 3.57 5 5.5c0 .54.12 1.05.333 1.5H4c-1.103 0-2 .897-2 2v2c0 1.103.897 2 2 2h1v3c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-3h1c1.103 0 2-.897 2-2V9c0-1.103-.897-2-2-2zM15.5 4c.827 0 1.5.673 1.5 1.5S16.327 7 15.5 7H13.44a4.89 4.89 0 0 0 .06-1.5c0-.827.673-1.5 1.5-1.5zM8.5 4c.827 0 1.5.673 1.5 1.5 0 .54-.12 1.05-.333 1.5H7.06c.04.5.06.99.06 1.5s-.02 1-.06 1.5h2.61l.44-1.5C10.56 5.5 11.943 4.396 13.383 4.43c.125-.137.245-.282.357-.43.112.148.232.293.357.43C15.557 4.396 16.94 5.5 18.5 7.045V18H7.5V7.045C9.06 5.5 10.443 4.396 11.883 4.43c.117-.128.233-.263.342-.405l.275.14.275-.14c.109.142.225.277.342.405 1.44-.034 2.823 1.066 3.383 2.615l.44 1.5H4.5V9h13v2H4.5V9z"/>
+                        </svg>
+                    </span>
+                    Melhor Restaurante de Angola
                     <span class="hero__badge-year">(2015 · 2018)</span>
                 </div>
 
@@ -280,66 +284,45 @@
         </section>
 
         <!-- STATS BAR -->
-        <!-- GRILLING MASTERY (DEEP DIVE) -->
-        <section class="mastery heat-haze" aria-labelledby="mastery-title">
-            <div class="mastery__container">
-                <header class="mastery__header" data-reveal="fade-up">
-                    <span class="section-badge"> Engenharia do Sabor</span>
-                    <h2 class="section-title" id="mastery-title">A Maestria dos Elementos</h2>
-                </header>
-
-                <div class="mastery__grid">
-                    <article class="mastery-card" data-reveal="fade-up">
-                        <span class="mastery-card__number" aria-hidden="true">01</span>
-                        <h4>Engenharia Térmica</h4>
-                        <p>O sistema de grelha da Nandinhos utiliza princípios de termodinâmica avançada para gerir a distribuição de calor. Através do controlo preciso da oxigenação basal, mantemos zonas de selagem por radiação directa e zonas de descanso por convecção natural.</p>
-                        <div class="mastery-card__data">
-                            <h5>Ficha Técnica — Módulo T1</h5>
-                            <ul class="mastery-card__spec-list">
-                                <li><strong>Output Térmico:</strong> 420°C (Core de Selagem)</li>
-                                <li><strong>Transferência:</strong> Radiação Infravermelha de Espectro Largo</li>
-                                <li><strong>Protocolo:</strong> Selagem Instantânea (Maillard)</li>
-                                <li><strong>Eficiência:</strong> 94% de Retenção de Sucos Intracelulares</li>
-                            </ul>
+        <!-- FEATURES SECTION (REPLACING MASTERY FOR THE REVISION) -->
+        <section class="features py-2xl" id="excelencia">
+            <div class="container">
+                <div class="features__grid">
+                    <article class="feature-card" data-reveal="fade-up">
+                        <div class="feature-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                         </div>
+                        <h3>Qualidade Certificada</h3>
+                        <p>Matéria-prima de origem controlada e protocolos rigorosos de segurança alimentar.</p>
+                        <a href="#sobre" class="feature-card__link">Saiba Mais</a>
                     </article>
 
-                    <article class="mastery-card" data-reveal="fade-up" data-reveal-delay="0.1">
-                        <span class="mastery-card__number" aria-hidden="true">02</span>
-                        <h4>Análise de Combustível</h4>
-                        <p>Rejeitamos qualquer forma de combustão fóssil ou industrial. O nosso combustível é uma biomassa de alta densidade proveniente de florestas sustentáveis de Acácia Karroo e Mopane, seleccionadas pelo seu baixo teor de resina e alta persistência calorífica.</p>
-                        <div class="mastery-card__data">
-                            <h5>Ficha Técnica — Módulo C2</h5>
-                            <ul class="mastery-card__spec-list">
-                                <li><strong>Densidade Energética:</strong> 32 MJ/kg</li>
-                                <li><strong>Emissão de Partículas:</strong> < 0.05% (Cinza Residual)</li>
-                                <li><strong>Perfil Aromático:</strong> Neutro (Preservação de Terroir)</li>
-                                <li><strong>Tempo de Brasagem:</strong> 180 min (Estabilidade Constante)</li>
-                            </ul>
+                    <article class="feature-card" data-reveal="fade-up" data-reveal-delay="0.1">
+                        <div class="feature-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
                         </div>
+                        <h3>Serviço Eficiente</h3>
+                        <p>Logística de sala e cozinha optimizada para garantir agilidade sem comprometer o rigor.</p>
+                        <a href="#reservas" class="feature-card__link">Reservar Mesa</a>
                     </article>
 
-                    <article class="mastery-card" data-reveal="fade-up" data-reveal-delay="0.2">
-                        <span class="mastery-card__number" aria-hidden="true">03</span>
-                        <h4>Mecânica Estrutural</h4>
-                        <p>As nossas superfícies de confecção são fabricadas em liga de Aço Inox AISI 316L (Grau Cirúrgico), desenhadas para uma inércia térmica superior. O sistema de ajuste milimétrico permite ao mestre churrasqueiro calibrar a distância à brasa com precisão cirúrgica.</p>
-                        <div class="mastery-card__data">
-                            <h5>Ficha Técnica — Módulo M3</h5>
-                            <ul class="mastery-card__spec-list">
-                                <li><strong>Material:</strong> Aço Austenítico AISI 316L</li>
-                                <li><strong>Condutividade:</strong> 16.3 W/m·K</li>
-                                <li><strong>Saneamento:</strong> Protocolo de Esterilização por Alta Temperatura</li>
-                                <li><strong>Drenagem:</strong> Canalização Activa de Gorduras Saturadas</li>
-                            </ul>
+                    <article class="feature-card" data-reveal="fade-up" data-reveal-delay="0.2">
+                        <div class="feature-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
                         </div>
+                        <h3>Pagamento Facilitado</h3>
+                        <p>Aceitamos todos os cartões da rede MultiCaixa e oferecemos facturação corporativa.</p>
+                        <a href="#contacto" class="feature-card__link">Contacto</a>
                     </article>
-                </div>
 
-                <div class="mastery__schematic" data-reveal="fade-up">
-                    <div class="schematic-content">
-                        [ SYSTEM_STATUS: STABLE ] // [ TEMP_MONITOR: OPTIMAL ] // [ FUEL_SOURCE: ORGANIC_COAL ] // [ ORIGIN: LUANDA_KINAXIXI ]<br>
-                        EXPERIÊNCIA GASTRONÓMICA // PROTOCOLO DE QUALIDADE NANDINHOS // DESDE 2005
-                    </div>
+                    <article class="feature-card" data-reveal="fade-up" data-reveal-delay="0.3">
+                        <div class="feature-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        </div>
+                        <h3>Check-out Ágil</h3>
+                        <p>Processamento rápido de pedidos e emissão de documentos simplificada para o cliente.</p>
+                        <a href="#faq" class="feature-card__link">Ver FAQ</a>
+                    </article>
                 </div>
             </div>
         </section>
@@ -701,26 +684,34 @@
 
                         <div class="events__options">
                             <article class="event-card">
-                                <span class="event-card__icon">💼</span>
-                                <h4>Almoços de Negócios</h4>
-                                <p>Menus executivos desenhados para rapidez e qualidade. Ideal para fechar parcerias.</p>
-                                <span class="event-card__cta">Saber Mais</span>
+                                <span class="event-card__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                                </span>
+                                <h4>Almoços Executivos</h4>
+                                <p>Menus configurados para eficiência e qualidade em ambiente profissional.</p>
+                                <span class="event-card__cta">Consultar</span>
                             </article>
                             <article class="event-card">
-                                <span class="event-card__icon">🎂</span>
-                                <h4>Celebrações Familiares</h4>
-                                <p>Mesas longas e ambiente acolhedor para aniversários e reuniões de família.</p>
-                                <span class="event-card__cta">Saber Mais</span>
+                                <span class="event-card__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                </span>
+                                <h4>Reservas de Grupo</h4>
+                                <p>Coordenação de grandes mesas para celebrações e reuniões institucionais.</p>
+                                <span class="event-card__cta">Consultar</span>
                             </article>
                             <article class="event-card">
-                                <span class="event-card__icon">🤝</span>
+                                <span class="event-card__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                </span>
                                 <h4>Eventos Corporativos</h4>
-                                <p>Reservas parciais de sala para apresentações e jantares de empresa.</p>
-                                <span class="event-card__cta">Saber Mais</span>
+                                <p>Serviço dedicado para apresentações e jantares de empresa.</p>
+                                <span class="event-card__cta">Consultar</span>
                             </article>
                             <article class="event-card">
-                                <span class="event-card__icon">📦</span>
-                                <h4>Take-away em Massa</h4>
+                                <span class="event-card__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                                </span>
+                                <h4>Logística Take-away</h4>
                                 <p>Encomendas de grande volume para eventos externos e escritórios.</p>
                                 <span class="event-card__cta">Saber Mais</span>
                             </article>
@@ -746,24 +737,30 @@
 
                         <div class="info-list" role="list">
                             <article class="info-item" role="listitem">
-                                <span class="icon" aria-hidden="true">📍</span>
+                                <span class="icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                </span>
                                 <div>
-                                    <h5>Localização Privilegiada</h5>
-                                    <p>Avenida Comandante Valódia, n.º 13, Bairro do Kinaxixi, Luanda, Angola.</p>
+                                    <h5>Localização</h5>
+                                    <p>Avenida Comandante Valódia, n.º 13, Kinaxixi, Luanda, Angola.</p>
                                 </div>
                             </article>
                             <article class="info-item" role="listitem">
-                                <span class="icon" aria-hidden="true">🕐</span>
+                                <span class="icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                </span>
                                 <div>
-                                    <h5>Horário de Atendimento</h5>
-                                    <p>Segunda a Sábado: 12:00 – 15:30 | 19:00 – 21:30<br>Domingos: 12:00 – 16:00 (Serviço de Almoço)</p>
+                                    <h5>Horário</h5>
+                                    <p>Segunda a Sábado: 12:00 – 15:30 | 19:00 – 21:30<br>Domingos: 12:00 – 16:00</p>
                                 </div>
                             </article>
                             <article class="info-item" role="listitem">
-                                <span class="icon" aria-hidden="true">💳</span>
+                                <span class="icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                                </span>
                                 <div>
-                                    <h5>Métodos de Pagamento</h5>
-                                    <p>Rede MultiCaixa (TPA disponível), Numerário (AOA) e Facturação para Empresas.</p>
+                                    <h5>Pagamentos</h5>
+                                    <p>Rede MultiCaixa, Numerário e Facturação Corporativa.</p>
                                 </div>
                             </article>
                         </div>
@@ -868,21 +865,27 @@
 
                         <div class="supply__list">
                             <article class="supply-item">
-                                <div class="supply-item__icon">🌾</div>
+                                <div class="supply-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                                </div>
                                 <div class="supply-item__text">
                                     <h4>Produção Nacional</h4>
                                     <p>O nosso frango e vegetais são adquiridos a produtores das províncias do Kwanza Sul e Benguela, garantindo frescura máxima e apoio à economia local angolana.</p>
                                 </div>
                             </article>
                             <article class="supply-item">
-                                <div class="supply-item__icon">🌊</div>
+                                <div class="supply-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                </div>
                                 <div class="supply-item__text">
                                     <h4>Mar de Luanda</h4>
                                     <p>O peixe e marisco chegam-nos diariamente da lota, capturados de forma sustentável nas águas frias da corrente de Benguela.</p>
                                 </div>
                             </article>
                             <article class="supply-item">
-                                <div class="supply-item__icon">📦</div>
+                                <div class="supply-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                                </div>
                                 <div class="supply-item__text">
                                     <h4>Importação Certificada</h4>
                                     <p>Cortes específicos como o bacalhau Gadus Morhua e certas peças de novilho são importados directamente de parceiros históricos em Portugal e no Brasil.</p>
@@ -961,9 +964,9 @@
         </section>
 
         <!-- PARTNERS / SUPPLIERS -->
-        <section class="partners">
-            <div class="partners__container">
-                <p class="partners__lead">Trabalhamos apenas com os melhores produtores nacionais e internacionais</p>
+        <section class="partners py-2xl bg-cream">
+            <div class="container align-center">
+                <p class="p-sm mb-xl" style="text-align: center;">Trabalhamos em estreita colaboração com produtores nacionais e parceiros internacionais de referência.</p>
                 <div class="partners__logos">
                     <div class="partner-logo"><span>Super Bock</span></div>
                     <div class="partner-logo"><span>Cuca</span></div>
@@ -1007,7 +1010,7 @@
             <div class="footer__top">
                 <div class="footer__brand">
                     <span class="footer__logo">Nandinhos</span>
-                    <p class="footer__tagline">O Melhor Churrasco de Luanda desde sempre.</p>
+                    <p class="footer__tagline text-white">O Melhor Churrasco de Luanda desde sempre.</p>
                 </div>
                 <div class="footer__nav">
                     <a href="#hero">Início</a>

@@ -32,11 +32,11 @@
  * Triggered via reveals.js when scroll > 80px.
  */
 .navbar.is-scrolled {
-  background: rgba(10, 10, 10, 0.92);
+  background: rgba(251, 248, 243, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 1rem var(--container-pad);
-  border-bottom: 1px solid rgba(227, 18, 18, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /**
@@ -120,7 +120,8 @@
     box-shadow: 0 0 10px #25D366;
 }
 
-.operational-status.is-open .status-text { color: var(--cream); }
+.operational-status.is-open .status-text { color: var(--cream-muted); }
+.navbar.is-scrolled .operational-status.is-open .status-text { color: var(--text-main); }
 .operational-status.is-closed .status-dot { background: var(--brasa); }
 
 /**
@@ -135,10 +136,14 @@
   position: relative;
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 0.08em;
   color: var(--cream-muted);
   transition: color var(--duration-fast) ease;
+}
+
+.navbar.is-scrolled .nav-link {
+    color: var(--text-main);
 }
 
 /* Sliding underscore effect */
@@ -151,7 +156,8 @@
   transition: width var(--duration-mid) var(--ease-out-expo);
 }
 
-.nav-link:hover, .nav-link.is-active { color: var(--cream); }
+.nav-link:hover, .nav-link.is-active { color: var(--text-main); }
+.navbar:not(.is-scrolled) .nav-link:hover, .navbar:not(.is-scrolled) .nav-link.is-active { color: var(--white); }
 .nav-link:hover::after, .nav-link.is-active::after { width: 100%; }
 
 /**

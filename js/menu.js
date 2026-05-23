@@ -17,8 +17,8 @@ const MENU_DATA = {
 
   churrasco: {
     label: 'Grelhados & Brasas',
-    icon:  '🔥',
-    desc:  'A nossa especialidade absoluta. Carnes seleccionadas, temperadas com segredos de décadas e grelhadas em brasas vivas de carvão vegetal de alta densidade.',
+    icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M8 12h8m-8 4h8m-10-8h12M4 20h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"></path></svg>',
+    desc:  'Especialidades da casa. Carnes seleccionadas, temperadas com rigor e grelhadas em brasas de carvão vegetal de alta densidade.',
     items: [
       {
         id: 'frango-churrasco',
@@ -99,8 +99,8 @@ const MENU_DATA = {
 
   peixe: {
     label: 'Mar & Marisco',
-    icon:  '🐟',
-    desc:  'A frescura das águas angolanas directamente para a sua mesa, respeitando o ciclo natural da pesca.',
+    icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M20 12c0 4.418-3.582 8-8 8s-8-3.582-8-8 3.582-8 8-8 8 3.582 8 8z"></path><path d="M12 8v8m-4-4h8"></path></svg>',
+    desc:  'Produtos capturados nas águas angolanas, servidos com foco na frescura e integridade da matéria-prima.',
     items: [
       {
         id: 'choco-grelhado',
@@ -150,9 +150,9 @@ const MENU_DATA = {
   },
 
   bacalhau: {
-    label: 'Fiel Amigo (Bacalhau)',
-    icon:  '🧆',
-    desc:  'A tradição portuguesa fielmente transportada para o Kinaxixi. Usamos bacalhau de cura tradicional, demolhado na casa.',
+    label: 'Bacalhau Tradicional',
+    icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>',
+    desc:  'A herança gastronómica portuguesa. Bacalhau de cura tradicional, demolhado rigorosamente nas nossas instalações.',
     items: [
       {
         id: 'bacalhau-cozido',
@@ -188,9 +188,9 @@ const MENU_DATA = {
   },
 
   acompanhamentos: {
-    label: 'Acompanhamentos & Guarnições',
-    icon:  '🍟',
-    desc:  'O complemento ideal para as nossas carnes e peixes. Ingredientes frescos preparados diariamente.',
+    label: 'Acompanhamentos',
+    icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>',
+    desc:  'Complementos essenciais. Ingredientes frescos processados diariamente para acompanhar grelhados e peixes.',
     items: [
       { id: 'batata-frita', name: 'Batata Frita à Rodela', desc: 'Batata nacional cortada à mão e frita em azeite/óleo de qualidade. Sempre crocante.', price: '2.500 Kz', tags: ['bestseller'] },
       { id: 'arroz-branco', name: 'Arroz Branco Solto', desc: 'Arroz agulha de primeira qualidade, cozido com um dente de alho.', price: '1.500 Kz', tags: [] },
@@ -202,9 +202,9 @@ const MENU_DATA = {
   },
 
   sobremesas: {
-    label: 'Doces & Sobremesas',
-    icon:  '🍮',
-    desc:  'Receitas caseiras que atravessam gerações. O final perfeito para a sua refeição na Nandinhos.',
+    label: 'Sobremesas',
+    icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>',
+    desc:  'Receitas tradicionais. O encerramento da experiência gastronómica com foco na doçaria clássica.',
     items: [
       {
         id: 'mousse-maracuja',
@@ -240,9 +240,9 @@ const MENU_DATA = {
   },
 
   bebidas: {
-    label: 'Bar & Bebidas',
-    icon:  '🍺',
-    desc:  'Bebidas servidas à temperatura ideal para acompanhar o calor das nossas brasas.',
+    label: 'Bebidas & Bar',
+    icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>',
+    desc:  'Selecção de bebidas mantidas em temperatura controlada para harmonização.',
     items: [
       { id: 'fino-sb', name: 'Fino Super Bock (Pressão)', desc: 'Cerveja de pressão bem gelada, servida em copo refrescado.', price: '1.200 Kz', tags: ['popular'] },
       { id: 'cuca-lata', name: 'Cerveja Cuca (Lata/Garrafa)', desc: 'A cerveja nacional de Angola, sempre gelada.', price: '1.000 Kz', tags: ['nacional'] },
@@ -257,9 +257,9 @@ const MENU_DATA = {
   },
 
   sopas: {
-    label: 'Sopas & Entradas',
-    icon:  '🍲',
-    desc:  'A abertura da experiência gastronómica. Receitas reconfortantes que preparam o paladar para a intensidade das brasas.',
+    label: 'Entradas & Sopas',
+    icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>',
+    desc:  'Início da experiência. Receitas equilibradas que preparam o paladar para a intensidade da brasa.',
     items: [
       {
         id: 'caldo-verde',
@@ -306,9 +306,9 @@ const MENU_DATA = {
    * These items represent the pinnacle of our grilling technology.
    */
   premium: {
-    label: 'Cortes de Assinatura',
-    icon:  '🌟',
-    desc:  'Cortes exclusivos de disponibilidade limitada, preparados com protocolos térmicos avançados.',
+    label: 'Cortes Especiais',
+    icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>',
+    desc:  'Disponibilidade limitada. Cortes submetidos a protocolos térmicos de alta precisão.',
     items: [
       {
         id: 'tomahawk-reserva',
@@ -341,9 +341,9 @@ const MENU_DATA = {
   },
 
   vinhos: {
-    label: 'Carta de Vinhos',
-    icon:  '🍷',
-    desc:  'Uma viagem pelas melhores regiões vinícolas de Portugal, seleccionada para harmonizar com a intensidade das nossas brasas.',
+    label: 'Garrafeira',
+    icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>',
+    desc:  'Curadoria de vinhos portugueses seleccionados para harmonização com grelhados.',
     items: [
       {
         id: 'vinho-reserva-douro',
@@ -392,8 +392,8 @@ const MENU_DATA = {
 
   cafetaria: {
     label: 'Cafetaria & Digestivos',
-    icon:  '☕',
-    desc:  'O fecho da experiência Nandinhos, com o rigor do café bem tirado.',
+    icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>',
+    desc:  'Encerramento do serviço. Protocolo de extração de café e selecção de digestivos.',
     items: [
       { id: 'cafe-expresso', name: 'Café Expresso', desc: 'Lote seleccionado, tirado com pressão perfeita.', price: '500 Kz', tags: [] },
       { id: 'cafe-duplo', name: 'Café Duplo', desc: 'Para quem precisa de energia extra.', price: '900 Kz', tags: [] },
@@ -412,9 +412,9 @@ const MENU_DATA = {
    * Designed for the Luanda professional who demands quality and speed.
    */
   combos: {
-    label: 'Executivo & Combos',
-    icon:  '💼',
-    desc:  'Soluções completas desenhadas para o profissional que valoriza um almoço de qualidade superior mas necessita de um serviço ágil e eficiente.',
+    label: 'Menus Executivos',
+    icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>',
+    desc:  'Soluções optimizadas para o sector corporativo que exige qualidade e agilidade no serviço.',
     items: [
       {
         id: 'menu-executivo-frango',
@@ -470,9 +470,9 @@ const MENU_DATA = {
    * Extra portions of our traditional sides to customize your experience.
    */
   extras: {
-    label: 'Extras & Guarnições',
-    icon:  '➕',
-    desc:  'Doses extra dos nossos acompanhamentos tradicionais para personalizar a sua refeição.',
+    label: 'Guarnições Extra',
+    icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>',
+    desc:  'Personalização da refeição através de porções adicionais de acompanhamentos.',
     items: [
       { id: 'extra-arroz', name: 'Dose Extra Arroz', desc: 'Uma taça generosa de arroz agulha solto.', price: '1.500 Kz', tags: [] },
       { id: 'extra-batata', name: 'Dose Extra Batata', desc: 'Batata nacional frita no ponto ideal.', price: '2.500 Kz', tags: [] },
@@ -492,8 +492,8 @@ const MENU_DATA = {
    */
   kids: {
     label: 'Menu Infantil',
-    icon:  '👶',
-    desc:  'Doses e sabores equilibrados para os nossos pequenos grandes mestres. Ingredientes naturais e preparação cuidada.',
+    icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>',
+    desc:  'Porções e temperos ajustados para o público infantil. Foco na nutrição e segurança alimentar.',
     items: [
       {
         id: 'bitoque-mini',
@@ -531,9 +531,9 @@ const MENU_DATA = {
    * Optimized packaging for maintaining thermal integrity.
    */
   takeaway: {
-    label: 'Nandinhos em Casa',
-    icon:  '🥡',
-    desc:  'Leve o sabor da nossa brasa para o seu lar. Embalagens térmicas especiais incluídas.',
+    label: 'Serviço Take-away',
+    icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="21 8 21 21 3 21 3 8"></polyline><rect x="1" y="3" width="22" height="5"></rect><line x1="10" y1="12" x2="14" y2="12"></line></svg>',
+    desc:  'Logística de recolha local. Embalagem técnica para manutenção da integridade térmica.',
     items: [
       { id: 'frango-caixa', name: 'Frango Inteiro (Take-away)', desc: 'Inclui batata e arroz. Pronto a levar.', price: '12.500 Kz', tags: ['rápido'] },
       { id: 'pote-piripiri-grande', name: 'Molho Piripiri Extra (250ml)', desc: 'Para os verdadeiros amantes do picante Nandinhos.', price: '5.500 Kz', tags: ['essencial'] }
@@ -605,7 +605,13 @@ function renderMenu(filter = '') {
 
       const tagsHtml = item.tags.map(t => `<span class="tag">${t}</span>`).join('');
 
+      // Select a placeholder image from galeria if item doesn't have one
+      const itemImage = item.image || `images/galeria/unnamed (${(index % 2) + 1}).jpg`;
+
       card.innerHTML = `
+          <div class="menu-card__image-wrapper">
+              <img src="${itemImage}" alt="${item.name}" loading="lazy">
+          </div>
           <div class="menu-card__inner">
               <div class="menu-card__meta">${tagsHtml}</div>
               <h4 class="menu-card__title">${item.name}</h4>

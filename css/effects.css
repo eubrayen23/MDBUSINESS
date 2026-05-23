@@ -76,6 +76,7 @@ body.bg-shift-active {
 
 .theme-ash { background-color: var(--ash) !important; }
 .theme-coal { background-color: var(--coal) !important; }
+.theme-cream { background-color: var(--cream) !important; }
 
 /* === HEAT HAZE EFFECT === */
 /* Applied to grill-related sections for atmospheric realism */

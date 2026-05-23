@@ -206,32 +206,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /**
    * 10. DYNAMIC BACKGROUND THEMING
-   * Shifts the body background between --coal and --ash to create visual rhythm.
+   * Modified to support the new light-themed revision while maintaining
+   * immersive transitions.
    */
   const sections = gsap.utils.toArray('section');
   document.body.classList.add('bg-shift-active');
 
-  /**
-   * 10. DYNAMIC BACKGROUND THEMING
-   * Shifts the body background between --coal and --ash to create visual rhythm
-   * and maintain high contrast across different content types.
-   */
   sections.forEach((section, i) => {
-      // Use a consistent alternating pattern:
-      // Even sections (0, 2, 4...) -> Pure Black Coal
-      // Odd sections (1, 3, 5...) -> Deep Grey Ash
-      const targetTheme = i % 2 === 0 ? 'theme-coal' : 'theme-ash';
+      let targetTheme = 'theme-cream';
+
+      // Keep dark themes for Hero and Stats only for cinematic impact
+      if (section.classList.contains('hero')) targetTheme = 'theme-coal';
+      if (section.classList.contains('stats')) targetTheme = 'theme-ash';
 
       ScrollTrigger.create({
           trigger: section,
           start: 'top 50%',
           end: 'bottom 50%',
           onEnter: () => {
-              document.body.classList.remove('theme-coal', 'theme-ash');
+              document.body.classList.remove('theme-coal', 'theme-ash', 'theme-cream');
               document.body.classList.add(targetTheme);
           },
           onEnterBack: () => {
-              document.body.classList.remove('theme-coal', 'theme-ash');
+              document.body.classList.remove('theme-coal', 'theme-ash', 'theme-cream');
               document.body.classList.add(targetTheme);
           },
       });
@@ -313,13 +310,14 @@ document.addEventListener('DOMContentLoaded', () => {
       start: 0,
       end: 'max',
       onUpdate: (self) => {
-          const isAsh = document.body.classList.contains('theme-ash');
+          const isDark = document.body.classList.contains('theme-coal') || document.body.classList.contains('theme-ash');
           const cursorDot = document.querySelector('.cursor-dot');
           const cursorRing = document.querySelector('.cursor-ring');
 
           if (cursorDot && cursorRing) {
-              if (isAsh) {
-                  gsap.to([cursorDot, cursorRing], { borderColor: 'rgba(255,255,255,0.8)', backgroundColor: 'rgba(255,255,255,0.8)', duration: 0.4 });
+              if (isDark) {
+                  gsap.to(cursorDot, { backgroundColor: '#FFFFFF', duration: 0.4 });
+                  gsap.to(cursorRing, { borderColor: 'rgba(255,255,255,0.5)', duration: 0.4 });
               } else {
                   gsap.to(cursorDot, { backgroundColor: '#E31212', duration: 0.4 });
                   gsap.to(cursorRing, { borderColor: 'rgba(227, 18, 18, 0.5)', duration: 0.4 });

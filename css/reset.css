@@ -1,19 +1,17 @@
 :root {
-  /* PALETA PRINCIPAL — TEMA RED & BLACK */
-  --coal:        #0A0A0A;   /* fundo mais escuro — preto absoluto */
-  --ash:         #121212;   /* fundo dark secundário */
-  --ember:       #1A1A1A;   /* fundo dark terciário */
+  /* PALETA PRINCIPAL — REVISÃO PROFISSIONAL CLARA */
+  --coal:        #0A0A0A;   /* fundos escuros ocasionais */
+  --ash:         #121212;
 
-  --brasa:       #E31212;   /* vermelho brasa vibrante — acento principal */
-  --brasa-dark:  #8B0000;   /* vermelho escuro — profundidade */
-  --brasa-light: #FF3232;   /* vermelho claro — hover */
+  --brasa:       #E31212;   /* vermelho acento principal */
+  --brasa-dark:  #8B0000;
+  --brasa-light: #FF3232;
 
-  --gold:        #C8A96E;   /* dourado — mantido apenas para detalhes de luxo */
-  --gold-muted:  rgba(227, 18, 18, 0.4);
-
-  --cream:       #F5F5F5;   /* branco gelo — textos claros */
-  --cream-muted: #A0A0A0;   /* cinza médio — subtextos */
-  --white:       #FFFFFF;   /* branco puro */
+  --cream:       #FBF8F3;   /* fundo principal claro (referência imagem) */
+  --cream-dark:  #F5F0E8;   /* fundo secundário claro */
+  --cream-muted: #9E9485;   /* subtextos em fundos claros */
+  --text-main:   #1A1A1A;   /* texto principal em fundos claros */
+  --white:       #FFFFFF;
 
   /* TIPOGRAFIA */
   --font-display: 'Playfair Display', 'Georgia', serif;
@@ -67,8 +65,8 @@
 html { scroll-behavior: auto; } /* Lenis toma conta do scroll */
 body {
   font-family: var(--font-body);
-  background: var(--coal);
-  color: var(--cream);
+  background: var(--cream);
+  color: var(--text-main);
   overflow-x: hidden;
   width: 100%;
   cursor: none; /* cursor personalizado substituirá */

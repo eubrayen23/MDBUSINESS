@@ -9,7 +9,7 @@
 
 .contacto {
     padding: var(--space-2xl) 0;
-    background: var(--ash);
+    background: var(--cream-dark);
 }
 
 .contacto__container {
@@ -33,7 +33,7 @@
     aspect-ratio: 16/9;
     border-radius: var(--border-radius);
     overflow: hidden;
-    filter: grayscale(1) invert(0.9);
+    filter: grayscale(0.5);
 }
 
 .contacto__details {
@@ -47,7 +47,7 @@
     font-family: var(--font-body);
     font-size: 14px;
     line-height: 1.6;
-    color: var(--cream-muted);
+    color: var(--text-main);
 }
 
 .contacto__details strong {

@@ -1,130 +1,84 @@
 /**
- * GRILLING MASTERY — TECHNICAL SPECIFICATIONS
+ * FEATURES SECTION — REVISION
  * -------------------------------------------------------------------------
- * This section provides a deep dive into the thermodynamics and
- * material science behind the Nandinhos grilling method.
+ * Clean, efficient layout based on professional industry standards.
  */
 
-.mastery {
-    padding: var(--space-2xl) 0;
-    background: var(--coal);
+.features {
+    background: var(--cream-dark);
 }
 
-.mastery__container {
-    max-width: var(--container-max);
-    margin: 0 auto;
-    padding: 0 var(--container-pad);
-}
-
-.mastery__header {
-    margin-bottom: 6rem;
-}
-
-.mastery__grid {
+.features__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
 }
 
-/**
- * Mastery Card
- * Focuses on a specific technical pillar of the process.
- */
-.mastery-card {
-    position: relative;
-    padding-top: 3rem;
-    border-top: 1px solid rgba(227, 18, 18, 0.2);
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3rem 2rem;
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
 }
 
-.mastery-card__number {
-    position: absolute;
-    top: -0.8rem;
-    left: 0;
-    font-family: var(--font-display);
-    font-size: 1.5rem;
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.feature-card__icon {
     color: var(--brasa);
-    background: var(--coal);
-    padding-right: 1rem;
+    margin-bottom: 2rem;
+    transition: transform 0.4s var(--ease-out-expo);
 }
 
-.mastery-card h4 {
-    font-family: var(--font-body);
-    font-size: var(--text-lg);
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 1.5rem;
+.feature-card:hover .feature-card__icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--cream-muted);
+    margin-bottom: 2rem;
+    max-width: 100%;
+}
+
+.feature-card__link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--brasa);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-}
-
-.mastery-card p {
-    font-size: 14px;
-    color: var(--cream-muted);
-    line-height: 1.7;
-    margin-bottom: 2rem;
-}
-
-.mastery-card__data {
-    background: rgba(227, 18, 18, 0.03);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    border-left: 2px solid var(--brasa);
-}
-
-.mastery-card__data h5 {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--brasa);
-    margin-bottom: 1rem;
-}
-
-.mastery-card__spec-list {
-    margin-top: 2rem;
-    list-style: none;
-    padding: 0;
-}
-
-.mastery-card__spec-list li {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--brasa);
-    margin-bottom: 0.8rem;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    margin-top: auto;
 }
 
-.mastery-card__spec-list li::before {
-    content: '';
-    width: 4px;
-    height: 4px;
-    background: var(--brasa);
-    border-radius: 50%;
+.feature-card__link::after {
+    content: '→';
+    transition: transform 0.3s ease;
 }
 
-@media (max-width: 1024px) {
-    .mastery__grid { grid-template-columns: 1fr; gap: 4rem; }
+.feature-card:hover .feature-card__link::after {
+    transform: translateX(5px);
 }
 
-/**
- * TECHNICAL SCHEMATIC OVERLAY
- * Subtle background elements that imply engineering and precision.
- */
-.mastery__schematic {
-    margin-top: 8rem;
-    padding: 4rem;
-    background: rgba(255,255,255,0.02);
-    border: 1px dashed rgba(255,255,255,0.1);
-    border-radius: var(--border-radius-lg);
-    text-align: center;
+@media (max-width: 1200px) {
+    .features__grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.schematic-content {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 10px;
-    color: rgba(255,255,255,0.2);
-    line-height: 2;
-    text-transform: uppercase;
+@media (max-width: 640px) {
+    .features__grid { grid-template-columns: 1fr; }
 }
