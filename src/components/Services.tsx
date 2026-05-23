@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import ServiceCard from './ServiceCard';
 import { useCart } from '../context/CartContext';
 import { motion } from 'framer-motion';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
 
 const landingPages = [
   {
@@ -67,6 +68,16 @@ const websites = [
 
 const Services: React.FC = () => {
   const { addToCart } = useCart();
+  const lpScrollRef = useRef<HTMLDivElement>(null);
+  const webScrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (ref: React.RefObject<HTMLDivElement>, direction: 'left' | 'right') => {
+    if (ref.current) {
+      const { scrollLeft, clientWidth } = ref.current;
+      const scrollTo = direction === 'left' ? scrollLeft - clientWidth / 2 : scrollLeft + clientWidth / 2;
+      ref.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+    }
+  };
 
   return (
     <div id="services">
@@ -77,13 +88,33 @@ const Services: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-20"
+            className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8"
           >
-            <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-6">Landing Pages</h2>
-            <div className="h-2 w-32 bg-[#D4AF37]"></div>
+            <div>
+              <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-6">Landing Pages</h2>
+              <div className="h-2 w-32 bg-[#D4AF37]"></div>
+            </div>
+
+            <div className="flex gap-4">
+              <button
+                onClick={() => scroll(lpScrollRef, 'left')}
+                className="p-4 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all"
+              >
+                <ArrowLeft size={24} />
+              </button>
+              <button
+                onClick={() => scroll(lpScrollRef, 'right')}
+                className="p-4 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all"
+              >
+                <ArrowRight size={24} />
+              </button>
+            </div>
           </motion.div>
 
-          <div className="flex overflow-x-auto pb-12 gap-8 no-scrollbar cursor-grab active:cursor-grabbing hide-scrollbar">
+          <div
+            ref={lpScrollRef}
+            className="flex overflow-x-auto pb-12 gap-8 no-scrollbar cursor-grab active:cursor-grabbing hide-scrollbar"
+          >
             {landingPages.map((s, i) => (
               <motion.div
                 key={s.id}
@@ -107,13 +138,33 @@ const Services: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-20"
+            className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8"
           >
-            <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-6">Sistemas & Web</h2>
-            <div className="h-2 w-32 bg-black"></div>
+            <div>
+              <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-6">Sistemas & Web</h2>
+              <div className="h-2 w-32 bg-black"></div>
+            </div>
+
+            <div className="flex gap-4">
+              <button
+                onClick={() => scroll(webScrollRef, 'left')}
+                className="p-4 border border-black/20 rounded-full hover:bg-black hover:text-white transition-all"
+              >
+                <ArrowLeft size={24} />
+              </button>
+              <button
+                onClick={() => scroll(webScrollRef, 'right')}
+                className="p-4 border border-black/20 rounded-full hover:bg-black hover:text-white transition-all"
+              >
+                <ArrowRight size={24} />
+              </button>
+            </div>
           </motion.div>
 
-          <div className="flex overflow-x-auto pb-12 gap-8 no-scrollbar cursor-grab active:cursor-grabbing hide-scrollbar">
+          <div
+            ref={webScrollRef}
+            className="flex overflow-x-auto pb-12 gap-8 no-scrollbar cursor-grab active:cursor-grabbing hide-scrollbar"
+          >
             {websites.map((s, i) => (
               <motion.div
                 key={s.id}

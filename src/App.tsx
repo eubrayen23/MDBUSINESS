@@ -88,8 +88,8 @@ const AppContent = () => {
       <main id="main-content">
         <Hero />
         <Strategy />
-        <About />
         <Services />
+        <About />
         <Team />
       </main>
       <footer className="py-20 border-t border-brand-black/5 bg-brand-gray">

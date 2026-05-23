@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { User } from 'lucide-react';
+import { User, ArrowLeft, ArrowRight } from 'lucide-react';
 
 const Team: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollTo = direction === 'left' ? scrollLeft - clientWidth / 2 : scrollLeft + clientWidth / 2;
+      scrollRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+    }
+  };
   const members = [
     {
       name: "Matias Domingos",
@@ -28,13 +37,33 @@ const Team: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-32"
+          className="mb-32 flex flex-col md:flex-row md:items-end justify-between gap-8"
         >
-          <span className="text-[10px] font-black uppercase tracking-[0.5em] text-brand-gold mb-4 block">Corpo Directivo</span>
-          <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-6">Liderança <br className="hidden md:block" /><span className="text-white/20">Executiva.</span></h2>
+          <div>
+            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-brand-gold mb-4 block">Corpo Directivo</span>
+            <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-6">Liderança <br className="hidden md:block" /><span className="text-white/20">Executiva.</span></h2>
+          </div>
+
+          <div className="flex gap-4">
+            <button
+              onClick={() => scroll('left')}
+              className="p-4 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all"
+            >
+              <ArrowLeft size={24} />
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              className="p-4 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all"
+            >
+              <ArrowRight size={24} />
+            </button>
+          </div>
         </motion.div>
 
-        <div className="flex overflow-x-auto pb-12 gap-12 no-scrollbar hide-scrollbar cursor-grab active:cursor-grabbing">
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-auto pb-12 gap-12 no-scrollbar hide-scrollbar cursor-grab active:cursor-grabbing"
+        >
           {members.map((m, i) => (
             <motion.div
               key={i}
