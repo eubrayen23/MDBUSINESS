@@ -101,6 +101,18 @@ const AppContent = () => {
             </p>
           </div>
 
+          <div className="mb-16">
+            <h4 className="text-brand-black text-2xl font-black uppercase tracking-tighter mb-8">Pronto para elevar os seus <br /> padrões tecnológicos?</h4>
+            <a
+              href="https://wa.me/244934859497"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-brand-black text-brand-white px-12 py-6 text-xs font-black uppercase tracking-[0.3em] hover:bg-brand-gold hover:text-brand-black transition-all duration-500"
+            >
+              Iniciar Consultoria
+            </a>
+          </div>
+
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 mb-16">
             <a href="https://instagram.com/md_business.ao" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-widest text-brand-black hover:text-brand-gold transition-colors">Instagram</a>
             <a href="https://linkedin.com/company/md-business-ao" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-widest text-brand-black hover:text-brand-gold transition-colors">LinkedIn</a>

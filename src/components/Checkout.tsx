@@ -42,7 +42,7 @@ const Checkout: React.FC<CheckoutModalProps> = ({ isOpen, onClose, orderTotal, i
                 Pedido Quase Concluído.
               </h2>
               <p className="text-brand-black/60 mb-8 leading-relaxed">
-                O seu pedido foi processado pelo nosso sistema premium. Para garantir a exclusividade e o rigor técnico, um especialista MD Business entrará em contacto brevemente.
+                O seu pedido foi processado pelos nossos sistemas especializados. Para garantir o máximo rigor técnico, um especialista MD Business entrará em contacto brevemente.
               </p>
 
               <div className="space-y-4 mb-10">

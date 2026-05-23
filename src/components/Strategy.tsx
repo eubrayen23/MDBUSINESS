@@ -19,7 +19,7 @@ const Strategy: React.FC = () => {
   ];
 
   return (
-    <section className="py-32 px-6 md:px-12 bg-white overflow-hidden">
+    <section id="strategy" className="py-32 px-6 md:px-12 bg-white overflow-hidden">
       <div className="max-w-[1800px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -30,7 +30,7 @@ const Strategy: React.FC = () => {
           <span className="text-[10px] font-black uppercase tracking-[0.5em] text-brand-gold mb-4 block">Estratégia & Resultados</span>
           <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9]">
             Desafios Complexos,<br />
-            <span className="text-brand-black/20">Soluções Elite.</span>
+            <span className="text-brand-black/20">Excelência Técnica.</span>
           </h2>
         </motion.div>
 

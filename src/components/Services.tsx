@@ -20,17 +20,17 @@ const landingPages = [
   },
   {
     id: 'lp-premium',
-    title: 'Landing Page Premium',
+    title: 'Landing Page Especializada',
     price: '35.000 Kz',
     description: 'Experiência visual superior com animações customizadas e storytelling estratégico.',
-    features: ['Animações Customizadas', 'Storytelling Digital', 'Copywriting Premium']
+    features: ['Animações Customizadas', 'Storytelling Digital', 'Copywriting de Alto Impacto']
   },
   {
     id: 'lp-cinematografica',
     title: 'Landing Page Cinematográfica',
     price: '50.000 Kz',
-    description: 'A elite do design digital. Efeitos visuais imersivos e experiência de luxo.',
-    features: ['Efeitos Visuais Elite', 'Smooth Scroll Pro', 'Interações Avançadas']
+    description: 'Rigor visual absoluto. Efeitos imersivos e experiência institucional de alto nível.',
+    features: ['Efeitos Visuais Avançados', 'Smooth Scroll Pro', 'Interações Complexas']
   }
 ];
 
@@ -58,10 +58,10 @@ const websites = [
   },
   {
     id: 'web-corp-premium',
-    title: 'Corporativo Premium',
+    title: 'Corporativo de Alto Nível',
     price: 'Personalizado',
-    description: 'O auge da tecnologia empresarial. Sistemas sob medida e design exclusivo.',
-    features: ['IA Integrada', 'Sistemas Customizados', 'Segurança Bancária']
+    description: 'Soluções de engenharia empresarial. Sistemas sob medida e arquitectura exclusiva.',
+    features: ['IA Integrada', 'Sistemas Customizados', 'Segurança Robusta']
   }
 ];
 
@@ -145,8 +145,8 @@ const Services: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-8xl font-black mb-12 tracking-tighter uppercase leading-none">
-              Projetos <br /> Personalizados
+            <h2 className="text-4xl md:text-7xl lg:text-8xl font-black mb-12 tracking-tighter uppercase leading-none">
+              Projectos <br /> Personalizados
             </h2>
             <p className="text-2xl md:text-3xl font-light leading-relaxed mb-16 text-black/60 italic">
               "Desenvolvemos soluções adaptadas às necessidades operacionais e estratégicas de cada cliente."

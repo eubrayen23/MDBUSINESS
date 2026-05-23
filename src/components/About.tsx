@@ -19,7 +19,7 @@ const About: React.FC = () => {
             className="lg:w-1/2"
           >
             <span className="text-[10px] font-black uppercase tracking-[0.5em] text-brand-gold mb-4 block">Sobre a MD Business</span>
-            <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9] mb-12">
+            <h2 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-[0.9] mb-12">
               Arquitectamos o <br /> <span className="text-black/20">Futuro Digital.</span>
             </h2>
             <p className="text-xl md:text-2xl font-light leading-relaxed text-black/60 italic mb-12">
