@@ -83,7 +83,7 @@ const Services: React.FC = () => {
             <div className="h-2 w-32 bg-[#D4AF37]"></div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex overflow-x-auto pb-12 gap-8 no-scrollbar cursor-grab active:cursor-grabbing hide-scrollbar">
             {landingPages.map((s, i) => (
               <motion.div
                 key={s.id}
@@ -91,6 +91,7 @@ const Services: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="min-w-[320px] md:min-w-[450px]"
               >
                 <ServiceCard {...s} onAddToCart={() => addToCart(s)} />
               </motion.div>
@@ -112,7 +113,7 @@ const Services: React.FC = () => {
             <div className="h-2 w-32 bg-black"></div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex overflow-x-auto pb-12 gap-8 no-scrollbar cursor-grab active:cursor-grabbing hide-scrollbar">
             {websites.map((s, i) => (
               <motion.div
                 key={s.id}
@@ -120,6 +121,7 @@ const Services: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="min-w-[320px] md:min-w-[450px]"
               >
                 <ServiceCard {...s} onAddToCart={() => addToCart(s)} dark={false} />
               </motion.div>

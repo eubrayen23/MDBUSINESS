@@ -119,7 +119,7 @@ const Hero: React.FC = () => {
           className="mt-12 flex flex-col md:flex-row md:items-end justify-between gap-12"
         >
           <p className="text-lg md:text-3xl max-w-2xl font-light leading-tight text-black/60 italic">
-            Transformamos a sua visão em realidade com engenharia digital de elite. MD Business: O seu parceiro estratégico no Patriota.
+            Engenharia digital de elite para marcas que dominam o mercado. O seu parceiro estratégico em toda Angola.
           </p>
 
           <button

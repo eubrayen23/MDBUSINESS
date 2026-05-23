@@ -1,11 +1,14 @@
 import { useEffect } from 'react';
 import Lenis from 'lenis';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
+import Preloader from './components/Preloader';
 import { CartProvider, useCart } from './context/CartContext';
 
 const CustomCursor = () => {
@@ -41,6 +44,7 @@ const CustomCursor = () => {
 
 const AppContent = () => {
   const { cart, total, clearCart, isCheckoutOpen, setIsCheckoutOpen } = useCart();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -72,6 +76,10 @@ const AppContent = () => {
 
   return (
     <div className="relative min-h-screen bg-brand-white selection:bg-brand-gold/30">
+      <AnimatePresence>
+        {loading && <Preloader onComplete={() => setLoading(false)} />}
+      </AnimatePresence>
+
       <CustomCursor />
       <Navbar />
       <main id="main-content">
@@ -80,22 +88,24 @@ const AppContent = () => {
       </main>
       <footer className="py-20 border-t border-brand-black/5 bg-brand-gray">
         <div className="container mx-auto px-6 text-center">
-          <div className="flex items-center justify-center space-x-2 mb-8">
-            <div className="w-8 h-8 bg-brand-black flex items-center justify-center rounded-lg">
-              <span className="text-brand-gold font-bold text-sm">MD</span>
-            </div>
-            <span className="text-xl font-bold tracking-tighter text-brand-black">BUSINESS</span>
+          <div className="flex flex-col items-center mb-12">
+            <img src="/logo.png" alt="MD Business" className="w-32 h-auto grayscale mb-6" />
+            <p className="text-brand-black/40 text-xs font-bold uppercase tracking-[0.4em]">
+              Sistemas Digitais de Alto Impacto
+            </p>
           </div>
-          <p className="text-brand-black/40 text-sm font-medium uppercase tracking-[0.2em] mb-12">
-            © 2025 MD Business. Todos os direitos reservados. <br />
-            Luanda, Angola.
+
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 mb-16">
+            <a href="https://instagram.com/md_business.ao" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-widest text-brand-black hover:text-brand-gold transition-colors">Instagram</a>
+            <a href="https://linkedin.com/company/md-business-ao" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-widest text-brand-black hover:text-brand-gold transition-colors">LinkedIn</a>
+            <a href="https://facebook.com/mdbusinessao" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-widest text-brand-black hover:text-brand-gold transition-colors">Facebook</a>
+            <a href="https://wa.me/244934859497" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-widest text-brand-black hover:text-brand-gold transition-colors">WhatsApp</a>
+          </div>
+
+          <p className="text-brand-black/20 text-[10px] font-bold uppercase tracking-[0.2em]">
+            © 2025 MD Business. Angola, África. <br />
+            Designed for the 1%.
           </p>
-          <div className="flex justify-center space-x-8">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-widest text-brand-black/60 hover:text-brand-gold transition-colors">Instagram</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-widest text-brand-black/60 hover:text-brand-gold transition-colors">LinkedIn</a>
-            <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-widest text-brand-black/60 hover:text-brand-gold transition-colors">Behance</a>
-            <a href="https://wa.me/244934859497" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-widest text-brand-black/60 hover:text-brand-gold transition-colors">WhatsApp</a>
-          </div>
         </div>
       </footer>
 

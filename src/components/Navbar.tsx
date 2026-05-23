@@ -34,12 +34,9 @@ const Navbar: React.FC = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex items-center space-x-2"
+          className="flex items-center"
         >
-          <div className="w-10 h-10 bg-brand-black flex items-center justify-center rounded-lg">
-            <span className="text-brand-gold font-bold text-xl">MD</span>
-          </div>
-          <span className="text-2xl font-bold tracking-tighter text-brand-black">BUSINESS</span>
+          <img src="/logo.png" alt="MD Business" className="h-8 md:h-12 w-auto grayscale contrast-125" />
         </motion.div>
 
         {/* Desktop Navigation */}
@@ -113,11 +110,8 @@ const Navbar: React.FC = () => {
             className="fixed inset-0 z-50 bg-white flex flex-col md:hidden"
           >
             <div className="flex justify-between items-center p-6 border-b">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-brand-black flex items-center justify-center rounded-lg">
-                  <span className="text-brand-gold font-bold text-sm">MD</span>
-                </div>
-                <span className="text-xl font-bold tracking-tighter text-brand-black">BUSINESS</span>
+              <div className="flex items-center">
+                 <img src="/logo.png" alt="MD Business" className="h-8 w-auto grayscale" />
               </div>
               <button onClick={() => setIsOpen(false)} className="p-2">
                 <X size={32} />
