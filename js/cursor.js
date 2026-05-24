@@ -4,7 +4,7 @@ class MagneticCursor {
     this.ring = document.querySelector('.cursor-ring');
     this.mouse = { x: 0, y: 0 };
     this.ringPos = { x: 0, y: 0 };
-    this.speed = 0.12; // lag do anel — quanto menor mais lag
+    this.speed = 0.12; // lag do anel - quanto menor mais lag
 
     if (!this.dot || !this.ring) return;
 
@@ -46,7 +46,7 @@ class MagneticCursor {
     });
   }
 
-  // Efeito magnético — botões atraem o cursor quando perto
+  // Efeito magntico - botes atraem o cursor quando perto
   initMagnetic() {
     const magneticBtns = document.querySelectorAll('.btn-magnetic');
     magneticBtns.forEach(btn => {
@@ -68,7 +68,7 @@ class MagneticCursor {
     });
   }
 
-  // RAF loop — anel segue com suavidade (lerp)
+  // RAF loop - anel segue com suavidade (lerp)
   loop() {
     this.ringPos.x += (this.mouse.x - this.ringPos.x) * this.speed;
     this.ringPos.y += (this.mouse.y - this.ringPos.y) * this.speed;

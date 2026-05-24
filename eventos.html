@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos & Grupos — Churrascaria Nandinhos</title>
+    <meta name="description" content="Celebre os seus momentos especiais na Churrascaria Nandinhos. Menus personalizados para grupos, aniversários e eventos corporativos.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <link rel="stylesheet" href="css/back-to-top.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/eventos.css">
+</head>
+<body class="page-eventos theme-cream">
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__logo">
+                <span class="preloader__logo-text">Nandinhos</span>
+                <span class="preloader__logo-sub">Eventos & Grupos</span>
+            </div>
+            <div class="preloader__progress">
+                <div class="preloader__progress-bar"></div>
+                <div class="preloader__progress-number">00</div>
+            </div>
+            <div class="preloader__quote">"Criando memórias à volta da mesa."</div>
+        </div>
+        <div class="preloader__curtain"></div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <nav class="navbar is-scrolled" id="navbar">
+        <div class="navbar__container">
+            <div class="navbar__branding">
+                <a href="index.html" class="navbar__logo">
+                    <span class="navbar__logo-name">Nandinhos</span>
+                    <span class="navbar__logo-sub">Churrascaria · Kinaxixi</span>
+                </a>
+            </div>
+            <div class="navbar__nav">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="historia.html" class="nav-link">História</a>
+                <a href="processo.html" class="nav-link">Processo</a>
+                <a href="menu.html" class="nav-link">Pratos</a>
+                <a href="equipa.html" class="nav-link">Equipa</a>
+                <a href="eventos.html" class="nav-link is-active">Eventos</a>
+            </div>
+            <div class="navbar__actions">
+                <button id="openCart" class="cart-trigger" aria-label="Minha Mesa">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+                <a href="index.html#reservas" class="btn btn-primary btn-magnetic">Reservar</a>
+            </div>
+            <button class="navbar__mobile-toggle" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="event-hero">
+            <div class="container">
+                <span class="section-badge" data-reveal="fade-up">Celebrações à Volta do Fogo</span>
+                <h1 class="hero-title" data-splitting>Eventos, Grupos <br>e <em>Memórias</em></h1>
+            </div>
+        </section>
+
+
+        <section class="event-quiz bg-white">
+            <div class="container py-2xl">
+                <div class="quiz-wrapper" style="max-width: 600px; margin: 0 auto;">
+                    <div class="section-header align-center">
+                        <span class="section-badge">Quiz de Planeamento</span>
+                        <h2 class="section-title">Organize o seu Evento</h2>
+                        <div class="section-divider"></div>
+                    </div>
+
+                    <form id="eventQuiz" class="checkin-form mt-xl">
+                        <div class="quiz-step is-active" data-step="1">
+                            <h3>Qual o tipo de evento?</h3>
+                            <div class="time-grid" style="grid-template-columns: 1fr 1fr;">
+                                <label class="time-opt"><input type="radio" name="event-type" value="Corporativo"> Corporativo</label>
+                                <label class="time-opt"><input type="radio" name="event-type" value="Aniversrio"> Aniversrio</label>
+                                <label class="time-opt"><input type="radio" name="event-type" value="Familiar"> Reunião Familiar</label>
+                                <label class="time-opt"><input type="radio" name="event-type" value="Outro"> Outro</label>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary quiz-next" data-next="2">Seguinte</button>
+                            </div>
+                        </div>
+
+                        <div class="quiz-step" data-step="2" style="display:none;">
+                            <h3>Para quantas pessoas?</h3>
+                            <div class="form-group">
+                                <select id="event-pax">
+                                    <option value="10-20">10 a 20 Pessoas</option>
+                                    <option value="20-30">20 a 30 Pessoas</option>
+                                    <option value="30-50">30 a 50 Pessoas</option>
+                                    <option value="50+">Mais de 50 Pessoas</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-ghost quiz-back" data-back="1">Voltar</button>
+                                <button type="button" class="btn btn-primary quiz-next" data-next="3">Seguinte</button>
+                            </div>
+                        </div>
+
+                        <div class="quiz-step" data-step="3" style="display:none;">
+                            <h3>Previso de data</h3>
+                            <div class="form-group">
+                                <input type="date" id="event-date">
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-ghost quiz-back" data-back="2">Voltar</button>
+                                <button type="submit" class="btn btn-primary">Pedir Oramento via WhatsApp</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="event-cta">
+            <div class="container" data-reveal="scale">
+                <div class="cta-box">
+                    <h2>Organize o seu Evento</h2>
+                    <p>Tem um grupo superior a 10 pessoas? Contacte-nos diretamente para menus personalizados e condições especiais.</p>
+                    <a href="https://wa.me/244934859497" class="btn btn-primary btn-magnetic">Falar via WhatsApp</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- MINHA MESA (CART OVERLAY) -->
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-drawer">
+            <div class="cart-header">
+                <h3>Minha Mesa</h3>
+                <button id="closeCart" aria-label="Fechar">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="cart-content" id="cartItems">
+                <div class="cart-empty">A sua mesa está vazia.</div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total Estimado:</span>
+                    <span id="cartTotalValue">0 Kz</span>
+                </div>
+                <button id="checkoutWhatsApp" class="btn btn-primary btn-block">
+                    Pedir via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <span class="footer__logo">Nandinhos</span>
+                    <p class="footer__tagline">O Melhor Churrasco de Luanda desde sempre.</p>
+                </div>
+                <div class="footer__nav">
+                    <a href="index.html">Início</a>
+                    <a href="historia.html">História</a>
+                    <a href="menu.html">Pratos</a>
+                    <a href="index.html#reservas">Reservas</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__credits">
+                    <p>© 2025 Churrascaria Nandinhos. Todos os direitos reservados. Luanda, Angola.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/lenis.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/reveals.js"></script>
+    <script src="js/cart.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('eventQuiz');
+        if(!form) return;
+
+        const nextBtns = form.querySelectorAll('.quiz-next');
+        const backBtns = form.querySelectorAll('.quiz-back');
+        const steps = form.querySelectorAll('.quiz-step');
+
+        nextBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const next = btn.dataset.next;
+                steps.forEach(s => s.style.display = 'none');
+                form.querySelector(`.quiz-step[data-step="${next}"]`).style.display = 'block';
+            });
+        });
+
+        backBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const back = btn.dataset.back;
+                steps.forEach(s => s.style.display = 'none');
+                form.querySelector(`.quiz-step[data-step="${back}"]`).style.display = 'block';
+            });
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const typeEl = form.querySelector('input[name="event-type"]:checked');
+            const type = typeEl ? typeEl.value : 'Não especificado';
+            const pax = document.getElementById('event-pax').value;
+            const date = document.getElementById('event-date').value;
+
+            const msg = `Olá! Gostaria de pedir um orçamento para um evento na Nandinhos:\n\n` +
+                        `- Tipo: ${type}\n` +
+                        `- Pessoas: ${pax}\n` +
+                        `- Data: ${date}\n\n` +
+                        `Aguardo contacto. Obrigado!`;
+
+            window.open(`https://wa.me/244934859497?text=${encodeURIComponent(msg)}`, '_blank');
+        });
+    });
+    </script>
+
+</body>
+</html>

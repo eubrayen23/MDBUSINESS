@@ -1,4 +1,4 @@
-// GRAIN CINEMATOGRÁFICO — canvas animado
+// GRAIN CINEMATOGRFICO - canvas animado
 class GrainEffect {
   constructor() {
     this.canvas = document.createElement('canvas');
@@ -15,7 +15,7 @@ class GrainEffect {
     this.canvas.height = window.innerHeight;
   }
 
-  // Gera frame de ruído aleatório a cada tick
+  // Gera frame de rudo aleatrio a cada tick
   generateNoise() {
     const { width, height } = this.canvas;
     const imageData = this.ctx.createImageData(width, height);
@@ -32,7 +32,7 @@ class GrainEffect {
 
   animate() {
     this.generateNoise();
-    // 12fps para grain — suficiente, não consome CPU
+    // 12fps para grain - suficiente, no consome CPU
     setTimeout(() => requestAnimationFrame(() => this.animate()), 1000 / 12);
   }
 }

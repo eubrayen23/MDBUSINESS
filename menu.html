@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ementa Digital — Churrascaria Nandinhos</title>
+    <meta name="description" content="Explore a ementa completa da Churrascaria Nandinhos. Dos famosos grelhados ao bacalhau tradicional e sobremesas artesanais.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <link rel="stylesheet" href="css/back-to-top.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body class="page-menu theme-cream">
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__logo">
+                <span class="preloader__logo-text">Nandinhos</span>
+                <span class="preloader__logo-sub">Os Nossos Pratos</span>
+            </div>
+            <div class="preloader__progress">
+                <div class="preloader__progress-bar"></div>
+                <div class="preloader__progress-number">00</div>
+            </div>
+            <div class="preloader__quote">"O sabor autêntico de Luanda."</div>
+        </div>
+        <div class="preloader__curtain"></div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <nav class="navbar is-scrolled" id="navbar">
+        <div class="navbar__container">
+            <div class="navbar__branding">
+                <a href="index.html" class="navbar__logo">
+                    <span class="navbar__logo-name">Nandinhos</span>
+                    <span class="navbar__logo-sub">Churrascaria · Kinaxixi</span>
+                </a>
+            </div>
+            <div class="navbar__nav">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="historia.html" class="nav-link">História</a>
+                <a href="processo.html" class="nav-link">Processo</a>
+                <a href="menu.html" class="nav-link is-active">Pratos</a>
+                <a href="equipa.html" class="nav-link">Equipa</a>
+                <a href="eventos.html" class="nav-link">Eventos</a>
+            </div>
+            <div class="navbar__actions">
+                <button id="openCart" class="cart-trigger" aria-label="Minha Mesa">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+                <a href="index.html#reservas" class="btn btn-primary btn-magnetic">Reservar</a>
+            </div>
+            <button class="navbar__mobile-toggle" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="menu-hero">
+            <div class="container">
+                <span class="section-badge" data-reveal="fade-up">Os Nossos Pratos</span>
+                <h1 class="hero-title" data-splitting>O Melhor <em>Churrasco</em></h1>
+            </div>
+        </section>
+        <section class="menu-search bg-cream">
+            <div class="container">
+                <div class="search-wrapper">
+                    <div class="search-input-group">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                        <input type="text" id="menuSearch" placeholder="Procure por pratos, ingredientes ou tcnicas...">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="menu-sections">
+            <div class="container">
+                <div class="menu__tabs-nav" role="tablist">
+                    <!-- Tabs will be rendered by JS -->
+                </div>
+                <div class="menu__tabs-content">
+                    <!-- Panels will be rendered by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- MINHA MESA (CART OVERLAY) -->
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-drawer">
+            <div class="cart-header">
+                <h3>Minha Mesa</h3>
+                <button id="closeCart" aria-label="Fechar">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="cart-content" id="cartItems">
+                <div class="cart-empty">A sua mesa está vazia.</div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total Estimado:</span>
+                    <span id="cartTotalValue">0 Kz</span>
+                </div>
+                <button id="checkoutWhatsApp" class="btn btn-primary btn-block">
+                    Pedir via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <span class="footer__logo">Nandinhos</span>
+                    <p class="footer__tagline">O Melhor Churrasco de Luanda desde sempre.</p>
+                </div>
+                <div class="footer__nav">
+                    <a href="index.html">Início</a>
+                    <a href="historia.html">História</a>
+                    <a href="menu.html">Pratos</a>
+                    <a href="index.html#reservas">Reservas</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__credits">
+                    <p>© 2025 Churrascaria Nandinhos. Todos os direitos reservados. Luanda, Angola.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/lenis.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/reveals.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

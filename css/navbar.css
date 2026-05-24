@@ -245,3 +245,21 @@
 .mobile-nav-link:active {
     color: var(--brasa);
 }
+
+@media (max-width: 1024px) {
+    .navbar { padding: 1rem var(--container-pad); }
+    .navbar__logo-name { font-size: 1.5rem; }
+    .navbar__logo-sub { font-size: 8px; }
+
+    .navbar__container { justify-content: space-between; }
+
+    .navbar__actions { display: flex !important; margin-right: 1rem; }
+    .btn-magnetic.btn-primary { display: none !important; } /* Hide text button on mobile header */
+
+    .navbar__mobile-toggle { margin-left: 0; }
+}
+
+@media (max-width: 480px) {
+    .navbar__actions { margin-right: 0.5rem; }
+    .cart-toggle { width: 40px; height: 40px; }
+}

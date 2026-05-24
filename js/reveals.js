@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /**
-   * REVEAL ANIMATIONS ENGINE — CHURRASCARIA NANDINHOS
+   * REVEAL ANIMATIONS ENGINE - CHURRASCARIA NANDINHOS
    * -------------------------------------------------------------------------
    * This module acts as the digital stage director, coordinating the entrance
    * and exit of every visual element on the page. By leveraging GSAP's
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. LINHA DECORATIVA — expande horizontalmente
+  // 4. LINHA DECORATIVA - expande horizontalmente
   gsap.utils.toArray('.section-divider').forEach(line => {
     gsap.from(line, {
       scaleX: 0,
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 5. TÍTULO com Splitting — caracteres entram em stagger (excepto hero que já tem animação própria)
+  // 5. TTULO com Splitting - caracteres entram em stagger (excepto hero que j tem animao prpria)
   gsap.utils.toArray('h2[data-splitting]').forEach(el => {
     const chars = el.querySelectorAll('.char');
     if (!chars.length) return;
@@ -133,11 +133,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /**
-   * 7. NAVBAR — SCROLL ADAPTATION ENGINE
+   * 7. NAVBAR - SCROLL ADAPTATION ENGINE
    * -------------------------------------------------------------------------
    * Implements two key behaviors:
    * A) Transition to opaque/blurred state after initial hero scroll.
-   * B) "Smart Hide" — hiding the navbar on scroll down and revealing on up.
+   * B) "Smart Hide" - hiding the navbar on scroll down and revealing on up.
    */
   let lastScroll = 0;
   const navbar = document.getElementById('navbar');
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 8. WHATSAPP FLOAT LINK
   const floatBtn = document.getElementById('whatsappFloat');
   if (floatBtn) {
-    const msg = encodeURIComponent('Olá! Vim pelo site da Churrascaria Nandinhos e gostaria de mais informações.');
+    const msg = encodeURIComponent('Ol! Vim pelo site da Churrascaria Nandinhos e gostaria de mais informaes.');
     floatBtn.href = `https://wa.me/244934859497?text=${msg}`;
   }
 

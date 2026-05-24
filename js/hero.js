@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Inicializar Splitting.js — divide título em caracteres
+  // Inicializar Splitting.js - divide ttulo em caracteres
   Splitting();
 
   // Listen for preloader completion
@@ -25,7 +25,7 @@ function initHero() {
     ease: 'power3.out'
   }, 0.5);
 
-  // 2. Badge de prémio — fade in
+  // 2. Badge de prmio - fade in
   tl.to('.hero__badge', {
     opacity: 1,
     y: 0,
@@ -33,7 +33,7 @@ function initHero() {
     ease: 'power3.out',
   }, 0.5);
 
-  // 3. Caracteres do título — entram de baixo, staggered
+  // 3. Caracteres do ttulo - entram de baixo, staggered
   tl.to('.hero__title .char', {
     y: 0,
     opacity: 1,
@@ -42,14 +42,14 @@ function initHero() {
     stagger: { amount: 0.6, from: 'start' },
   }, 0.7);
 
-  // 4. Linha decorativa — expande
+  // 4. Linha decorativa - expande
   tl.to('.hero__divider-line', {
     width: 80,
     duration: 0.8,
     ease: 'power2.inOut',
   }, 1.2);
 
-  // 5. Subtítulo
+  // 5. Subttulo
   tl.to('.hero__subtitle', {
     opacity: 1,
     y: 0,
@@ -72,7 +72,7 @@ function initHero() {
     ease: 'power2.out',
   }, 2.0);
 
-  // PARALLAX — imagem hero move a 0.5x velocidade do scroll
+  // PARALLAX - imagem hero move a 0.5x velocidade do scroll
   gsap.to('.hero__media-inner', {
     yPercent: 20,
     scale: 1.1,
@@ -100,7 +100,7 @@ function initHero() {
     });
   });
 
-  // Fade out do conteúdo hero ao fazer scroll
+  // Fade out do contedo hero ao fazer scroll
   gsap.to('.hero__content', {
     opacity: 0,
     y: -60,
@@ -112,4 +112,4 @@ function initHero() {
       scrub: true,
     },
   });
-});
+}

@@ -1,215 +1,104 @@
-/**
- * STORY & AWARDS SECTIONS — CHURRASCARIA NANDINHOS
- * -------------------------------------------------------------------------
- * These sections focus on the history, heritage, and recognition of
- * the brand in Luanda.
- */
+/* === STORY PAGE STYLES === */
 
-/* === STORY SECTION (HORIZONTAL SCROLL) === */
-
-.story {
-  background: var(--cream);
-  overflow: hidden;
+.story-hero {
+    padding: 180px 0 100px;
+    text-align: center;
+    background: var(--white);
+    color: var(--coal);
 }
 
-.story__container {
-  height: 100vh;
-  display: flex;
-  align-items: center;
+.story-hero .hero-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.9;
+    margin-top: 2rem;
 }
 
-/**
- * Horizontal Scroll Wrapper
- * Width calculated as 100vw * Number of Panels.
- * Transformation logic handled via js/story.js (GSAP).
- */
-.story__horizontal-scroll {
-  display: flex;
-  width: 300vw; /* 3 main narrative panels */
-  height: 100%;
-  will-change: transform;
+.story-timeline {
+    padding: 100px 0;
+    background: var(--white);
 }
 
-.story__panel {
-  width: 100vw;
-  height: 100%;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 var(--container-pad);
-  gap: var(--space-xl);
-  color: var(--text-main);
+.timeline-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
 }
 
-.story__content {
-  max-width: 600px;
+.timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-bottom: 120px;
 }
 
-.story__visual {
-  width: 400px;
-  height: 500px;
-  overflow: hidden;
-  border-radius: var(--border-radius-lg);
+.timeline-item--reverse {
+    direction: rtl;
 }
 
-.story__visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.timeline-item--reverse .timeline-content {
+    direction: ltr;
 }
 
-.story__pillars {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-md);
-  margin-top: var(--space-lg);
+.timeline-media {
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    border-radius: 4px;
 }
 
-.story__quote {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  color: var(--brasa);
-  line-height: 1.3;
-  margin-bottom: var(--space-md);
+.timeline-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.story__signature {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  font-family: var(--font-display);
-  font-style: italic;
-  color: var(--cream-muted);
+.timeline-year {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 1rem;
+    opacity: 0.3;
 }
 
-.signature-line {
-  width: 60px;
-  height: 1px;
-  background: var(--brasa);
+.timeline-content h3 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--coal);
 }
 
-.pillar {
-  display: flex;
-  gap: 1rem;
+.timeline-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--coal-light);
 }
 
-.pillar-content h4 {
-  font-family: var(--font-display);
-  font-size: var(--text-sm);
-  color: var(--text-main);
-  margin-bottom: 0.5rem;
+.story-quote {
+    padding: 150px 0;
+    background: var(--coal);
+    color: var(--white);
+    text-align: center;
 }
 
-.pillar-content p {
-  font-size: var(--text-xs);
-  color: var(--cream-muted);
-  line-height: 1.4;
+.cinematic-quote {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-style: italic;
+    max-width: 1000px;
+    margin: 0 auto;
+    line-height: 1.2;
 }
 
-/* === AWARDS TIMELINE SECTION === */
+@media (max-width: 991px) {
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 80px;
+    }
 
-.awards {
-  padding: var(--space-2xl) 0;
-  background: var(--coal);
-  position: relative;
-}
-
-.awards__container {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--container-pad);
-}
-
-.awards__timeline {
-  position: relative;
-  max-width: 800px;
-  margin: var(--space-xl) auto 0;
-  padding: 2rem 0;
-}
-
-/**
- * Central Vertical Line
- */
-.timeline-line {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: rgba(227, 18, 18, 0.1);
-  transform: translateX(-50%);
-}
-
-.award-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 4rem;
-  position: relative;
-}
-
-/* Alternating panels */
-.award-item:nth-child(odd) {
-  flex-direction: row-reverse;
-}
-
-.award-year {
-  width: 45%;
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  color: var(--brasa);
-  opacity: 0.2;
-  transition: opacity 0.5s ease;
-}
-
-.award-item:hover .award-year {
-  opacity: 1;
-}
-
-.award-dot {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 12px;
-  height: 12px;
-  background: var(--coal);
-  border: 2px solid var(--brasa);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.award-item:hover .award-dot {
-  background: var(--brasa);
-  transform: translate(-50%, -50%) scale(1.5);
-}
-
-.award-content {
-  width: 45%;
-  padding: 2rem;
-  background: var(--ash);
-  border-radius: var(--border-radius);
-  border: 1px solid rgba(227, 18, 18, 0.05);
-  transition: transform 0.4s var(--ease-out-expo), border-color 0.4s ease;
-}
-
-.award-item:hover .award-content {
-  border-color: var(--brasa);
-  transform: translateY(-5px);
-}
-
-.award-content h4 {
-  font-family: var(--font-body);
-  color: var(--white);
-  margin-bottom: 0.5rem;
-  font-size: var(--text-lg);
-}
-
-.award-content p {
-  font-size: var(--text-sm);
-  color: var(--cream-muted);
+    .timeline-item--reverse {
+        direction: ltr;
+    }
 }

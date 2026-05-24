@@ -1,247 +1,177 @@
-/* === RESPONSIVE FIXES === */
+/* === RESPONSIVE ADAPTATIONS — CHURRASCARIA NANDINHOS === */
 
-/**
- * =============================================================================
- * RESPONSIVE ADAPTATION ENGINE — CHURRASCARIA NANDINHOS
- * -------------------------------------------------------------------------
- * This module manages the layout transitions across the device spectrum.
- * It uses a combination of fluid typography (clamp) and targeted
- * media query overrides to ensure the "Portuguese Efficient" experience
- * is maintained from 320px to 4K displays.
- *
- * BREAKPOINT STRATEGY:
- * - Desktop (Large): > 1200px
- * - Tablet (Portrait): 769px - 1024px
- * - Mobile (Large/Tablet Mini): 481px - 768px
- * - Mobile (Small): < 480px
- * =============================================================================
- */
+/* BREAKPOINTS
+   Mobile: 320px - 767px
+   Tablet: 768px - 1023px
+   Desktop: 1024px+
+*/
 
-/* === 1. LARGE DESKTOP & WIDE SCREENS === */
-@media (min-width: 1441px) {
-    :root {
-        --container-pad: 8rem;
-    }
-}
-
-/* === 2. STANDARD LAPTOP & DESKTOP === */
-@media (max-width: 1200px) {
-  :root {
-    --container-pad: 3rem;
-  }
-
-  .section-title {
-    font-size: var(--text-2xl);
-  }
-
-  .hero__title {
-      font-size: 5.5rem;
-  }
-}
-
-/* === 3. TABLET & SMALL LAPTOPS === */
+/* 1. UNIVERSAL SCALING FIXES */
 @media (max-width: 1024px) {
-    /**
-     * Component Specific Overrides for Tablet
-     */
-    .navbar__branding { gap: 1rem; }
-
-    .story__container { height: auto; }
-    .story__horizontal-scroll {
-        width: 100%;
-        flex-direction: column;
-        height: auto;
-        transform: none !important;
-    }
-
-    .story__panel {
-        width: 100%;
-        height: auto;
-        padding: 6rem var(--container-pad);
-        flex-direction: column;
-    }
-
-    .story__visual { width: 100%; height: 350px; }
-
-    .art-grill__grid { grid-template-columns: 1fr; }
-    .art-grill__sticky { position: relative; top: 0; margin-bottom: 4rem; }
-
-    .contacto__grid { grid-template-columns: 1fr; gap: 4rem; }
-
-    .mastery__grid { grid-template-columns: 1fr; gap: 3rem; }
-}
-
-/* === 4. MOBILE LANDSCAPE & LARGE PHONES === */
-@media (max-width: 768px) {
-  /**
-   * Hero Compression
-   */
-  .hero__title {
-    font-size: 3.8rem;
-  }
-  :root {
-    --container-pad: 1.5rem;
-  }
-
-  .hero__title { font-size: 3.5rem; }
-  .hero__subtitle { font-size: 1rem; }
-
-  .section-title { font-size: 2.2rem; }
-
-  /* FIX MOBILE OVERFLOW AND VISIBILITY */
-  .mobile-menu {
-    width: 100vw;
-    max-width: 100%;
-  }
-
-  .navbar__logo-sub {
-    display: none;
-  }
-
-  .navbar {
-    padding: 1rem var(--container-pad);
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-
-  .hero__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1.0) !important;
-  }
-
-  .hero__media {
-      width: 100%;
-      overflow: hidden;
-  }
-
-  .menu__tabs-nav {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
-    box-sizing: border-box;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    display: flex;
-    flex-wrap: nowrap;
-    position: relative;
-  }
-
-  .art-visual {
-      width: 100% !important;
-      left: 0 !important;
-      right: 0 !important;
-      position: relative !important;
-      height: 300px !important;
-      opacity: 1 !important;
-      transform: none !important;
-      display: none;
-  }
-
-  .art-visual.is-active {
-      display: block;
-  }
-
-  .art-grill__visuals {
-      height: auto !important;
-  }
-
-  .sobre__experience-badge {
-      position: relative;
-      bottom: 0; left: 0;
-      margin-top: 2rem;
-      width: fit-content;
-  }
-
-  section {
-      overflow-x: hidden !important;
-  }
-
-  .form-row { grid-template-columns: 1fr; }
-
-  .stats__container { gap: 1.5rem; }
-  .stat-divider { display: none; }
-  .stat-item { min-width: 45%; }
-}
-
-@media (max-width: 480px) {
-  .hero__title { font-size: 2.8rem; }
-  .hero__ctas { flex-direction: column; width: 100%; }
-  .btn { width: 100%; justify-content: center; }
-
-  .stat-item { min-width: 100%; }
-
-  .footer__top {
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .footer__nav {
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  /**
-   * Mastery Schematic visibility on mobile
-   */
-  .mastery__schematic {
-      padding: 2rem;
-      font-size: 8px;
-  }
-
-  .faq__question {
-      padding: 1.2rem 1.5rem;
-      font-size: 14px;
-  }
-}
-
-/* === 6. ULTRA-SMALL DEVICES (320px) === */
-@media (max-width: 350px) {
     :root {
-        --container-pad: 1rem;
+        --container-pad: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    :root {
+        --container-pad: 1.5rem;
     }
 
     .hero__title {
+        font-size: clamp(2.5rem, 10vw, 3.5rem) !important;
+        line-height: 1;
+    }
+
+    .hero__subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .section-title {
+        font-size: 2.2rem !important;
+    }
+
+    .p-lg {
+        font-size: 1.1rem;
+    }
+
+    .py-2xl {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+/* 2. GRID & FLEX REFLOWS */
+
+/* Sobre Section Grid */
+@media (max-width: 991px) {
+    .sobre__grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+
+    .sobre__media {
+        order: -1;
+    }
+}
+
+/* Menu Grid Teaser */
+@media (max-width: 991px) {
+    .menu-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 20px !important;
+    }
+}
+
+@media (max-width: 580px) {
+    .menu-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Reviews Grid */
+@media (max-width: 767px) {
+    .reviews-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}
+
+/* Contact Grid */
+@media (max-width: 991px) {
+    .contacto .container > div {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+}
+
+/* Stats Container */
+@media (max-width: 767px) {
+    .stats__container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+}
+
+/* 3. COMPONENT FIXES */
+
+/* Navbar Mobile */
+@media (max-width: 1024px) {
+    .navbar__nav {
+        display: none;
+    }
+
+    .navbar__actions {
+        display: none;
+    }
+
+    .navbar__mobile-toggle {
+        display: flex !important;
+    }
+}
+
+/* Form Groups */
+@media (max-width: 600px) {
+    .form-panel div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Back to Top Position */
+@media (max-width: 767px) {
+    .back-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .whatsapp-float {
+        bottom: 1.5rem;
+        right: 5.5rem; /* Space for back to top */
+    }
+}
+
+/* 4. PRELOADER RESPONSIVE */
+@media (max-width: 480px) {
+    .preloader__logo-text {
         font-size: 2.2rem;
     }
 
-    .navbar__logo-name {
-        font-size: 1.2rem;
+    .preloader__quote {
+        font-size: 0.9rem;
+        padding: 0 1rem;
     }
 }
 
-/**
- * =============================================================================
- * ACCESSIBILITY & PERFORMANCE DEGRADATION
- * -------------------------------------------------------------------------
- * For users who have indicated a preference for reduced motion, we disable
- * all non-essential GSAP and CSS animations. This ensures the site remains
- * "Efficient" and inclusive for all visitors.
- * =============================================================================
- */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+/* 5. CURSOR DISABLING ON TOUCH */
+@media (hover: none) and (pointer: coarse) {
+    .cursor-dot, .cursor-ring {
+        display: none !important;
+    }
 
-  /* Disable Grain and Blur for maximum clarity */
-  #grain-canvas { display: none !important; }
-  .navbar.is-scrolled { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+    body {
+        cursor: auto !important;
+    }
 }
 
-/**
- * PRINT OPTIMIZATION
- * Ensure the menu and contact info are legible when printed.
- */
-@media print {
-    .navbar, .hero, .whatsapp-float, .back-to-top, .preloader { display: none !important; }
-    body { background: white !important; color: black !important; }
-    .menu__tabs-nav { display: none !important; }
-    .menu__panel { display: block !important; opacity: 1 !important; }
+/* FINAL SCALE AUDIT */
+@media (max-width: 375px) {
+    h1 { font-size: 2.8rem !important; }
+    h2 { font-size: 2rem !important; }
+    .p-lg { font-size: 1rem; }
+    .section-badge { font-size: 10px; }
+    .btn { padding: 12px 24px; font-size: 12px; }
+    .container { --container-pad: 1.2rem; }
+}
+
+/* Ensure no horizontal overflow */
+body, html {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+@media (max-width: 350px) {
+    .time-grid { grid-template-columns: 1fr 1fr !important; }
+    .form-row { grid-template-columns: 1fr !important; }
 }

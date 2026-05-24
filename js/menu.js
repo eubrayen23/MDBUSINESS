@@ -1,5 +1,5 @@
 // =====================================================
-// ARRAYS DE PRATOS — DADOS COMPLETOS DA EMENTA
+// ARRAYS DE PRATOS - DADOS COMPLETOS DA EMENTA
 // =====================================================
 
 /**
@@ -18,51 +18,51 @@ const MENU_DATA = {
   churrasco: {
     label: 'Grelhados & Brasas',
     icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M8 12h8m-8 4h8m-10-8h12M4 20h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"></path></svg>',
-    desc:  'Especialidades da casa. Carnes seleccionadas, temperadas com rigor e grelhadas em brasas de carvão vegetal de alta densidade.',
+    desc:  'Especialidades da casa. Carnes seleccionadas, temperadas com rigor e grelhadas em brasas de carvo vegetal de alta densidade.',
     items: [
       {
         id: 'frango-churrasco',
         name: 'Frango de Churrasco Inteiro',
-        desc: 'O frango mais famoso de Luanda. Aberto pelas costas, marinado em molho de limão e alho, grelhado até atingir a pele crocante perfeita e carne suculenta.',
+        desc: 'O frango mais famoso de Luanda. Aberto pelas costas, marinado em molho de limo e alho, grelhado at atingir a pele crocante perfeita e carne suculenta.',
         price: '12.000 Kz',
         tags: ['bestseller', 'assinatura'],
-        technical_notes: 'Frango de produção nacional (Kwanza Sul), peso médio 1.2kg. Grelhado a 350°C durante 25 minutos.',
+        technical_notes: 'Frango de produo nacional (Kwanza Sul), peso mdio 1.2kg. Grelhado a 350C durante 25 minutos.',
         allergens: ['nenhum']
       },
       {
         id: 'frango-churrasco-meio',
         name: 'Meio Frango de Churrasco',
-        desc: 'Metade do nosso frango lendário, acompanhado com o nosso molho piripiri caseiro (suave ou forte).',
+        desc: 'Metade do nosso frango lendrio, acompanhado com o nosso molho piripiri caseiro (suave ou forte).',
         price: '6.500 Kz',
         tags: ['popular'],
       },
       {
         id: 'picanha',
         name: 'Picanha Brasileira Premium',
-        desc: 'Corte seleccionado de picanha com a camada de gordura ideal, grelhada com flor de sal para realçar o sabor natural da carne.',
+        desc: 'Corte seleccionado de picanha com a camada de gordura ideal, grelhada com flor de sal para realar o sabor natural da carne.',
         price: '13.000 Kz',
         tags: ['premium'],
-        technical_notes: 'Corte de importação certificada. Grelhado exclusivamente com flor de sal de Benguela.',
+        technical_notes: 'Corte de importao certificada. Grelhado exclusivamente com flor de sal de Benguela.',
         allergens: ['nenhum']
       },
       {
         id: 'churrasco-misto',
-        name: 'Churrasco Misto à Nandinhos',
-        desc: 'A melhor forma de provar a nossa mestria: Picanha, entrecosto, salsicha toscana e frango. Ideal para partilhar em família.',
+        name: 'Churrasco Misto  Nandinhos',
+        desc: 'A melhor forma de provar a nossa mestria: Picanha, entrecosto, salsicha toscana e frango. Ideal para partilhar em famlia.',
         price: '14.500 Kz',
         tags: ['popular', 'completo'],
       },
       {
         id: 'entrecosto',
         name: 'Entrecosto de Porco Grelhado',
-        desc: 'Costelas de porco suculentas, marinadas em vinho branco, louro e ervas aromáticas, grelhadas lentamente nas brasas.',
+        desc: 'Costelas de porco suculentas, marinadas em vinho branco, louro e ervas aromticas, grelhadas lentamente nas brasas.',
         price: '11.000 Kz',
         tags: ['tradicional'],
       },
       {
         id: 'bife-vazia',
         name: 'Bife da Vazia na Grelha',
-        desc: 'Corte nobre de novilho, grelhado exactamente ao seu gosto (mal, médio ou bem passado). Macio e cheio de sabor.',
+        desc: 'Corte nobre de novilho, grelhado exactamente ao seu gosto (mal, mdio ou bem passado). Macio e cheio de sabor.',
         price: '12.500 Kz',
         tags: [],
       },
@@ -76,21 +76,21 @@ const MENU_DATA = {
       {
         id: 'maminha-grelhada',
         name: 'Maminha na Brasa',
-        desc: 'Um corte extremamente macio e saboroso, fatiado finamente após a grelha. Acompanha molho chimichurri caseiro.',
+        desc: 'Um corte extremamente macio e saboroso, fatiado finamente aps a grelha. Acompanha molho chimichurri caseiro.',
         price: '12.000 Kz',
         tags: ['novo'],
       },
       {
         id: 'salsicha-toscana',
         name: 'Salsicha Toscana Grelhada',
-        desc: 'Salsicha de porco de produção artesanal, grelhada até ao ponto de estalido. Ideal como entrada ou complemento.',
+        desc: 'Salsicha de porco de produo artesanal, grelhada at ao ponto de estalido. Ideal como entrada ou complemento.',
         price: '4.500 Kz',
         tags: ['petisco'],
       },
       {
         id: 'piano-porco',
         name: 'Piano de Porco',
-        desc: 'Entrecosto fino e crocante, temperado apenas com sal e limão. Uma delícia para comer com as mãos.',
+        desc: 'Entrecosto fino e crocante, temperado apenas com sal e limo. Uma delcia para comer com as mos.',
         price: '9.500 Kz',
         tags: ['tradicional'],
       }
@@ -100,44 +100,44 @@ const MENU_DATA = {
   peixe: {
     label: 'Mar & Marisco',
     icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M20 12c0 4.418-3.582 8-8 8s-8-3.582-8-8 3.582-8 8-8 8 3.582 8 8z"></path><path d="M12 8v8m-4-4h8"></path></svg>',
-    desc:  'Produtos capturados nas águas angolanas, servidos com foco na frescura e integridade da matéria-prima.',
+    desc:  'Produtos capturados nas guas angolanas, servidos com foco na frescura e integridade da matria-prima.',
     items: [
       {
         id: 'choco-grelhado',
-        name: 'Choco Grelhado à Portuguesa',
-        desc: 'Choco fresco grelhado inteiro, servido com a sua própria tinta (opcional) e regado com azeite virgem extra e alho.',
+        name: 'Choco Grelhado  Portuguesa',
+        desc: 'Choco fresco grelhado inteiro, servido com a sua prpria tinta (opcional) e regado com azeite virgem extra e alho.',
         price: '10.500 Kz',
-        tags: ['clássico', 'favorito'],
-        technical_notes: 'Limpeza artesanal, preservando a textura. Grelhado em fogo médio para evitar o endurecimento das fibras.',
+        tags: ['clssico', 'favorito'],
+        technical_notes: 'Limpeza artesanal, preservando a textura. Grelhado em fogo mdio para evitar o endurecimento das fibras.',
         allergens: ['moluscos']
       },
       {
         id: 'peixe-dia',
         name: 'Peixe Fresco do Dia (Grelhado)',
         desc: 'Pargo, Garoupa ou Corvina, dependendo da captura matinal. Grelhado com escamas para manter a humidade.',
-        price: 'Preço do Dia',
+        price: 'Preo do Dia',
         tags: ['fresco', 'recomendado'],
       },
       {
         id: 'camarao-tigre',
-        name: 'Camarão Tigre Grelhado (XL)',
-        desc: 'Dois camarões tigre de grande calibre, abertos em borboleta e grelhados com manteiga de alho e coentros.',
+        name: 'Camaro Tigre Grelhado (XL)',
+        desc: 'Dois camares tigre de grande calibre, abertos em borboleta e grelhados com manteiga de alho e coentros.',
         price: '18.000 Kz',
         tags: ['premium', 'exclusivo'],
       },
       {
         id: 'lulas-grelhadas',
         name: 'Lulas da Costa Grelhadas',
-        desc: 'Lulas tenras grelhadas com um toque de limão e salsa fresca. Servidas com batata cozida e legumes.',
+        desc: 'Lulas tenras grelhadas com um toque de limo e salsa fresca. Servidas com batata cozida e legumes.',
         price: '11.000 Kz',
         tags: [],
       },
       {
         id: 'salmao-grelhado',
-        name: 'Salmão na Brasa com Ervas',
-        desc: 'Lombo de salmão fresco, grelhado com pele para preservar a suculência, finalizado com manteiga de ervas finas.',
+        name: 'Salmo na Brasa com Ervas',
+        desc: 'Lombo de salmo fresco, grelhado com pele para preservar a suculncia, finalizado com manteiga de ervas finas.',
         price: '14.000 Kz',
-        tags: ['ómega-3'],
+        tags: ['mega-3'],
       },
       {
         id: 'bacalhau-assado-azeite',
@@ -152,35 +152,35 @@ const MENU_DATA = {
   bacalhau: {
     label: 'Bacalhau Tradicional',
     icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>',
-    desc:  'A herança gastronómica portuguesa. Bacalhau de cura tradicional, demolhado rigorosamente nas nossas instalações.',
+    desc:  'A herana gastronmica portuguesa. Bacalhau de cura tradicional, demolhado rigorosamente nas nossas instalaes.',
     items: [
       {
         id: 'bacalhau-cozido',
         name: 'Bacalhau Cozido com Todos',
-        desc: 'Posta alta de bacalhau cozida no ponto, acompanhada com grão-de-bico, batata, ovo, cenoura e couve portuguesa. Regado com azeite virgem.',
+        desc: 'Posta alta de bacalhau cozida no ponto, acompanhada com gro-de-bico, batata, ovo, cenoura e couve portuguesa. Regado com azeite virgem.',
         price: '13.500 Kz',
-        tags: ['tradicional', 'saudável'],
-        technical_notes: 'Bacalhau Gadus Morhua, cura de 12 meses. Demolhado em água controlada a 4°C durante 72 horas.',
+        tags: ['tradicional', 'saudvel'],
+        technical_notes: 'Bacalhau Gadus Morhua, cura de 12 meses. Demolhado em gua controlada a 4C durante 72 horas.',
         allergens: ['peixe', 'ovos']
       },
       {
         id: 'bacalhau-bras',
-        name: 'Bacalhau à Brás Tradicional',
+        name: 'Bacalhau  Brs Tradicional',
         desc: 'Bacalhau desfiado, envolvido em batata palha caseira, cebolada e ovos frescos. Finalizado com azeitonas pretas e salsa.',
         price: '11.500 Kz',
-        tags: ['popular', 'clássico'],
+        tags: ['popular', 'clssico'],
       },
       {
         id: 'bacalhau-lagareiro',
-        name: 'Bacalhau à Lagareiro',
-        desc: 'Lombo de bacalhau assado no forno com batatinhas a murro, muito alho e azeite em abundância.',
+        name: 'Bacalhau  Lagareiro',
+        desc: 'Lombo de bacalhau assado no forno com batatinhas a murro, muito alho e azeite em abundncia.',
         price: '14.500 Kz',
         tags: ['premium'],
       },
       {
         id: 'bacalhau-natas',
         name: 'Bacalhau com Natas Nandinhos',
-        desc: 'Versão cremosa gratinada no forno com um toque de queijo e noz-moscada. Receita da casa.',
+        desc: 'Verso cremosa gratinada no forno com um toque de queijo e noz-moscada. Receita da casa.',
         price: '12.000 Kz',
         tags: ['conforto'],
       }
@@ -192,9 +192,9 @@ const MENU_DATA = {
     icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>',
     desc:  'Complementos essenciais. Ingredientes frescos processados diariamente para acompanhar grelhados e peixes.',
     items: [
-      { id: 'batata-frita', name: 'Batata Frita à Rodela', desc: 'Batata nacional cortada à mão e frita em azeite/óleo de qualidade. Sempre crocante.', price: '2.500 Kz', tags: ['bestseller'] },
+      { id: 'batata-frita', name: 'Batata Frita  Rodela', desc: 'Batata nacional cortada  mo e frita em azeite/leo de qualidade. Sempre crocante.', price: '2.500 Kz', tags: ['bestseller'] },
       { id: 'arroz-branco', name: 'Arroz Branco Solto', desc: 'Arroz agulha de primeira qualidade, cozido com um dente de alho.', price: '1.500 Kz', tags: [] },
-      { id: 'feijao', name: 'Feijão à Moda de Angola', desc: 'Feijão temperado com refogado de cebola, alho e louro. Sabor caseiro autêntico.', price: '2.000 Kz', tags: ['angolano', 'favorito'] },
+      { id: 'feijao', name: 'Feijo  Moda de Angola', desc: 'Feijo temperado com refogado de cebola, alho e louro. Sabor caseiro autntico.', price: '2.000 Kz', tags: ['angolano', 'favorito'] },
       { id: 'funge', name: 'Funge de Mandioca / Milho', desc: 'O acompanhamento essencial da gastronomia angolana. Feito de forma tradicional.', price: '1.500 Kz', tags: ['angolano', 'tradicional'] },
       { id: 'salada-mista', name: 'Salada Mista Fresca', desc: 'Alface, tomate, cebola e pepino, temperada com azeite e vinagre.', price: '2.200 Kz', tags: ['fresco'] },
       { id: 'espargregatado', name: 'Esparregado de Espinafres', desc: 'Cremoso e saboroso, ideal para acompanhar grelhados.', price: '3.000 Kz', tags: ['vegetariano'] }
@@ -204,37 +204,37 @@ const MENU_DATA = {
   sobremesas: {
     label: 'Sobremesas',
     icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>',
-    desc:  'Receitas tradicionais. O encerramento da experiência gastronómica com foco na doçaria clássica.',
+    desc:  'Receitas tradicionais. O encerramento da experincia gastronmica com foco na doaria clssica.',
     items: [
       {
         id: 'mousse-maracuja',
-        name: 'Mousse de Maracujá Real',
-        desc: 'A sobremesa mais icónica da casa. Feita com polpa de maracujá fresco, cremosa e com o equilíbrio perfeito entre o doce e o ácido.',
+        name: 'Mousse de Maracuj Real',
+        desc: 'A sobremesa mais icnica da casa. Feita com polpa de maracuj fresco, cremosa e com o equilbrio perfeito entre o doce e o cido.',
         price: '3.500 Kz',
         tags: ['bestseller', 'assinatura'],
-        technical_notes: 'Fruta fresca seleccionada. Sem corantes ou conservantes artificiais. Batida em baixa rotação para textura aerada.',
-        allergens: ['lácteos']
+        technical_notes: 'Fruta fresca seleccionada. Sem corantes ou conservantes artificiais. Batida em baixa rotao para textura aerada.',
+        allergens: ['lcteos']
       },
       {
         id: 'bolo-chocolate',
-        name: 'Bolo de Chocolate Húmido',
+        name: 'Bolo de Chocolate Hmido',
         desc: 'Uma fatia generosa de bolo de chocolate artesanal, com cobertura de chocolate negro.',
         price: '4.000 Kz',
-        tags: ['chocólatras'],
+        tags: ['choclatras'],
       },
       {
         id: 'pudim-flan',
-        name: 'Pudim Flan à Portuguesa',
+        name: 'Pudim Flan  Portuguesa',
         desc: 'Receita tradicional de ovos e caramelo, com textura sedosa.',
         price: '3.000 Kz',
-        tags: ['clássico'],
+        tags: ['clssico'],
       },
       {
         id: 'fruta-epoca',
-        name: 'Fruta Tropical da Época',
+        name: 'Fruta Tropical da poca',
         desc: 'Manga, Papaia ou Abacaxi fresco e fatiado.',
         price: '2.500 Kz',
-        tags: ['saudável', 'fresco'],
+        tags: ['saudvel', 'fresco'],
       }
     ],
   },
@@ -242,38 +242,38 @@ const MENU_DATA = {
   bebidas: {
     label: 'Bebidas & Bar',
     icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>',
-    desc:  'Selecção de bebidas mantidas em temperatura controlada para harmonização.',
+    desc:  'Seleco de bebidas mantidas em temperatura controlada para harmonizao.',
     items: [
-      { id: 'fino-sb', name: 'Fino Super Bock (Pressão)', desc: 'Cerveja de pressão bem gelada, servida em copo refrescado.', price: '1.200 Kz', tags: ['popular'] },
+      { id: 'fino-sb', name: 'Fino Super Bock (Presso)', desc: 'Cerveja de presso bem gelada, servida em copo refrescado.', price: '1.200 Kz', tags: ['popular'] },
       { id: 'cuca-lata', name: 'Cerveja Cuca (Lata/Garrafa)', desc: 'A cerveja nacional de Angola, sempre gelada.', price: '1.000 Kz', tags: ['nacional'] },
       { id: 'vinho-copo', name: 'Copo de Vinho da Casa', desc: 'Tinto ou Branco de qualidade seleccionada.', price: '2.500 Kz', tags: [] },
       { id: 'refrigerantes', name: 'Refrigerantes Diversos', desc: 'Coca-Cola, Fanta, Sumol, Sprite (33cl).', price: '1.200 Kz', tags: [] },
-      { id: 'agua-mineral', name: 'Água Mineral (50cl)', desc: 'Com ou sem gás, natural ou fresca.', price: '800 Kz', tags: [] },
+      { id: 'agua-mineral', name: 'gua Mineral (50cl)', desc: 'Com ou sem gs, natural ou fresca.', price: '800 Kz', tags: [] },
       { id: 'sangria-tinta', name: 'Sangria de Vinho Tinto (1L)', desc: 'Preparada com fruta fresca e um toque de canela. Ideal para partilhar.', price: '12.000 Kz', tags: ['para partilhar'] },
       { id: 'sangria-branca', name: 'Sangria de Vinho Branco (1L)', desc: 'Fresca e leve, com frutos tropicais angolanos.', price: '12.000 Kz', tags: ['fresco'] },
-      { id: 'sumo-natural', name: 'Sumo Natural do Dia', desc: 'Manga, Múcua ou Papaia, feito na hora.', price: '1.500 Kz', tags: ['vitamina'] },
-      { id: 'caipirinha', name: 'Caipirinha Tradicional', desc: 'Cachaça de qualidade, lima e açúcar mascavado.', price: '3.500 Kz', tags: [] }
+      { id: 'sumo-natural', name: 'Sumo Natural do Dia', desc: 'Manga, Mcua ou Papaia, feito na hora.', price: '1.500 Kz', tags: ['vitamina'] },
+      { id: 'caipirinha', name: 'Caipirinha Tradicional', desc: 'Cachaa de qualidade, lima e acar mascavado.', price: '3.500 Kz', tags: [] }
     ],
   },
 
   sopas: {
     label: 'Entradas & Sopas',
     icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>',
-    desc:  'Início da experiência. Receitas equilibradas que preparam o paladar para a intensidade da brasa.',
+    desc:  'Incio da experincia. Receitas equilibradas que preparam o paladar para a intensidade da brasa.',
     items: [
       {
         id: 'caldo-verde',
-        name: 'Caldo Verde à Portuguesa',
-        desc: 'Sopa de batata e couve galega finamente cortada, com rodelas de chouriço de fumeiro. Um clássico incontornável.',
+        name: 'Caldo Verde  Portuguesa',
+        desc: 'Sopa de batata e couve galega finamente cortada, com rodelas de chourio de fumeiro. Um clssico incontornvel.',
         price: '3.500 Kz',
-        tags: ['clássico'],
-        technical_notes: 'Couve cortada em juliana milimétrica. Chouriço de porco preto para profundidade de sabor.',
+        tags: ['clssico'],
+        technical_notes: 'Couve cortada em juliana milimtrica. Chourio de porco preto para profundidade de sabor.',
         allergens: ['nenhum']
       },
       {
         id: 'sopa-legumes',
         name: 'Sementeira de Legumes',
-        desc: 'Creme aveludado de legumes da época, sem adição de natas. Saudável e rico em nutrientes.',
+        desc: 'Creme aveludado de legumes da poca, sem adio de natas. Saudvel e rico em nutrientes.',
         price: '2.500 Kz',
         tags: ['vegan'],
         technical_notes: 'Processado a baixa velocidade para manter as fibras vegetais intactas.',
@@ -282,41 +282,41 @@ const MENU_DATA = {
       {
         id: 'paio-portugues',
         name: 'Paio de Lombo do Alentejo',
-        desc: 'Fatias finas de paio de lombo de porco seleccionado, com cura natural. O início perfeito para partilhar.',
+        desc: 'Fatias finas de paio de lombo de porco seleccionado, com cura natural. O incio perfeito para partilhar.',
         price: '4.500 Kz',
         tags: ['petisco'],
-        technical_notes: 'Fatiado em lâminas de 0.5mm para maximizar a libertação de oleicos.',
+        technical_notes: 'Fatiado em lminas de 0.5mm para maximizar a libertao de oleicos.',
         allergens: ['nenhum']
       },
       {
         id: 'pao-couvert',
-        name: 'Cesto de Pão & Manteiga',
-        desc: 'Pão rústico acabado de sair do forno, manteiga de vaca e azeitonas marinadas em alho e louro.',
+        name: 'Cesto de Po & Manteiga',
+        desc: 'Po rstico acabado de sair do forno, manteiga de vaca e azeitonas marinadas em alho e louro.',
         price: '1.500 Kz',
         tags: [],
-        technical_notes: 'Trigo de moagem lenta, fermentação natural de 12 horas.',
-        allergens: ['glúten', 'lácteos']
+        technical_notes: 'Trigo de moagem lenta, fermentao natural de 12 horas.',
+        allergens: ['glten', 'lcteos']
       }
     ]
   },
 
   /**
-   * PREMIUM CUTS — THE NANDINHOS ELITE
+   * PREMIUM CUTS - THE NANDINHOS ELITE
    * -------------------------------------------------------------------------
    * These items represent the pinnacle of our grilling technology.
    */
   premium: {
     label: 'Cortes Especiais',
     icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>',
-    desc:  'Disponibilidade limitada. Cortes submetidos a protocolos térmicos de alta precisão.',
+    desc:  'Disponibilidade limitada. Cortes submetidos a protocolos trmicos de alta preciso.',
     items: [
       {
         id: 'tomahawk-reserva',
         name: 'Tomahawk Black Angus (1.2kg)',
-        desc: 'O rei dos cortes. Um rib-eye com osso longo, grelhado em três fases para uma textura inigualável. Ideal para 2 a 3 pessoas.',
+        desc: 'O rei dos cortes. Um rib-eye com osso longo, grelhado em trs fases para uma textura inigualvel. Ideal para 2 a 3 pessoas.',
         price: '45.000 Kz',
         tags: ['premium', 'exclusivo'],
-        technical_notes: 'Maturação Dry-Aged de 21 dias. Grelha calibrada para selagem de osso condutora.',
+        technical_notes: 'Maturao Dry-Aged de 21 dias. Grelha calibrada para selagem de osso condutora.',
         allergens: ['nenhum']
       },
       {
@@ -325,16 +325,16 @@ const MENU_DATA = {
         desc: 'O melhor de dois mundos: Lombo e Vazia unidos pelo osso. Corte de espessura generosa (4cm), servido ao ponto.',
         price: '28.000 Kz',
         tags: ['premium'],
-        technical_notes: 'Calibração de calor assimétrica para respeitar os diferentes tempos de cozedura do lombo.',
+        technical_notes: 'Calibrao de calor assimtrica para respeitar os diferentes tempos de cozedura do lombo.',
         allergens: ['nenhum']
       },
       {
         id: 'costelao-6-horas',
-        name: 'Costelão de Novilho (Slow-Cook)',
-        desc: 'Costela de novilho seleccionada, passada pela brasa e terminada em calor indirecto durante 6 horas até se soltar do osso.',
+        name: 'Costelo de Novilho (Slow-Cook)',
+        desc: 'Costela de novilho seleccionada, passada pela brasa e terminada em calor indirecto durante 6 horas at se soltar do osso.',
         price: '22.000 Kz',
         tags: ['assinatura', 'lento'],
-        technical_notes: 'Temperatura de câmara mantida a constantes 110°C.',
+        technical_notes: 'Temperatura de cmara mantida a constantes 110C.',
         allergens: ['nenhum']
       }
     ]
@@ -343,7 +343,7 @@ const MENU_DATA = {
   vinhos: {
     label: 'Garrafeira',
     icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>',
-    desc:  'Curadoria de vinhos portugueses seleccionados para harmonização com grelhados.',
+    desc:  'Curadoria de vinhos portugueses seleccionados para harmonizao com grelhados.',
     items: [
       {
         id: 'vinho-reserva-douro',
@@ -355,35 +355,35 @@ const MENU_DATA = {
       {
         id: 'alentejo-superior',
         name: 'Alentejo Superior (Tinto)',
-        desc: 'Um clássico alentejano, macio e estruturado. Harmoniza idealmente com o Entrecosto.',
+        desc: 'Um clssico alentejano, macio e estruturado. Harmoniza idealmente com o Entrecosto.',
         price: '13.500 Kz',
         tags: []
       },
       {
         id: 'vinho-verde-alvarinho',
         name: 'Alvarinho (Branco)',
-        desc: 'Fresco, mineral e vibrante. A escolha lógica para o nosso Choco Grelhado ou Peixe do Dia.',
+        desc: 'Fresco, mineral e vibrante. A escolha lgica para o nosso Choco Grelhado ou Peixe do Dia.',
         price: '12.000 Kz',
         tags: ['fresco']
       },
       {
         id: 'dao-branco',
-        name: 'Dão Encruzado (Branco)',
-        desc: 'Vinho com volume e elegância, excelente para pratos de Bacalhau.',
+        name: 'Do Encruzado (Branco)',
+        desc: 'Vinho com volume e elegncia, excelente para pratos de Bacalhau.',
         price: '11.000 Kz',
         tags: []
       },
       {
         id: 'espumante-bruto',
         name: 'Espumante Bruto Bairrada',
-        desc: 'Bolha fina e persistente. Para começar a refeição ou celebrar momentos especiais.',
+        desc: 'Bolha fina e persistente. Para comear a refeio ou celebrar momentos especiais.',
         price: '18.000 Kz',
-        tags: ['celebração']
+        tags: ['celebrao']
       },
       {
         id: 'vinho-porto',
         name: 'Copo de Vinho do Porto',
-        desc: 'O final clássico. Tawny ou Ruby para acompanhar as nossas sobremesas de chocolate.',
+        desc: 'O final clssico. Tawny ou Ruby para acompanhar as nossas sobremesas de chocolate.',
         price: '3.500 Kz',
         tags: ['digestivo']
       }
@@ -393,51 +393,51 @@ const MENU_DATA = {
   cafetaria: {
     label: 'Cafetaria & Digestivos',
     icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>',
-    desc:  'Encerramento do serviço. Protocolo de extração de café e selecção de digestivos.',
+    desc:  'Encerramento do servio. Protocolo de extrao de caf e seleco de digestivos.',
     items: [
-      { id: 'cafe-expresso', name: 'Café Expresso', desc: 'Lote seleccionado, tirado com pressão perfeita.', price: '500 Kz', tags: [] },
-      { id: 'cafe-duplo', name: 'Café Duplo', desc: 'Para quem precisa de energia extra.', price: '900 Kz', tags: [] },
-      { id: 'cafe-pingado', name: 'Café Pingado', desc: 'O clássico café com um pingo de leite quente.', price: '600 Kz', tags: [] },
-      { id: 'galao', name: 'Galão à Portuguesa', desc: 'Servido em copo alto, a harmonia perfeita entre café e leite.', price: '1.200 Kz', tags: [] },
-      { id: 'cha-infusoes', name: 'Chás & Infusões', desc: 'Diversas variedades: Cidreira, Hortelã, Chá Verde.', price: '800 Kz', tags: [] },
-      { id: 'bagaceira', name: 'Aguardente Bagaceira', desc: 'Digestivo tradicional português forte e aromático.', price: '2.500 Kz', tags: [] },
-      { id: 'licor-beirao', name: 'Licor Beirão', desc: 'O licor de Portugal, servido com gelo e limão.', price: '3.000 Kz', tags: [] },
-      { id: 'whisky-velho', name: 'Whisky Velho Reserva', desc: 'Selecção de maltes envelhecidos para um final sofisticado.', price: '5.500 Kz', tags: ['premium'] }
+      { id: 'cafe-expresso', name: 'Caf Expresso', desc: 'Lote seleccionado, tirado com presso perfeita.', price: '500 Kz', tags: [] },
+      { id: 'cafe-duplo', name: 'Caf Duplo', desc: 'Para quem precisa de energia extra.', price: '900 Kz', tags: [] },
+      { id: 'cafe-pingado', name: 'Caf Pingado', desc: 'O clssico caf com um pingo de leite quente.', price: '600 Kz', tags: [] },
+      { id: 'galao', name: 'Galo  Portuguesa', desc: 'Servido em copo alto, a harmonia perfeita entre caf e leite.', price: '1.200 Kz', tags: [] },
+      { id: 'cha-infusoes', name: 'Chs & Infuses', desc: 'Diversas variedades: Cidreira, Hortel, Ch Verde.', price: '800 Kz', tags: [] },
+      { id: 'bagaceira', name: 'Aguardente Bagaceira', desc: 'Digestivo tradicional portugus forte e aromtico.', price: '2.500 Kz', tags: [] },
+      { id: 'licor-beirao', name: 'Licor Beiro', desc: 'O licor de Portugal, servido com gelo e limo.', price: '3.000 Kz', tags: [] },
+      { id: 'whisky-velho', name: 'Whisky Velho Reserva', desc: 'Seleco de maltes envelhecidos para um final sofisticado.', price: '5.500 Kz', tags: ['premium'] }
     ]
   },
 
   /**
-   * SPECIAL COMBOS — LUNCH EFFICIENCY
+   * SPECIAL COMBOS - LUNCH EFFICIENCY
    * -------------------------------------------------------------------------
    * Designed for the Luanda professional who demands quality and speed.
    */
   combos: {
     label: 'Menus Executivos',
     icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>',
-    desc:  'Soluções optimizadas para o sector corporativo que exige qualidade e agilidade no serviço.',
+    desc:  'Solues optimizadas para o sector corporativo que exige qualidade e agilidade no servio.',
     items: [
       {
         id: 'menu-executivo-frango',
         name: 'Menu Executivo Frango',
-        desc: 'Meio frango grelhado nas brasas, acompanhado por arroz branco solto, batata frita à rodela, salada mista e uma bebida à escolha.',
+        desc: 'Meio frango grelhado nas brasas, acompanhado por arroz branco solto, batata frita  rodela, salada mista e uma bebida  escolha.',
         price: '8.500 Kz',
-        tags: ['eficiência', 'equilibrado'],
-        technical_notes: 'Preparação rápida em linha dedicada. Tempo de espera inferior a 15 min.',
+        tags: ['eficincia', 'equilibrado'],
+        technical_notes: 'Preparao rpida em linha dedicada. Tempo de espera inferior a 15 min.',
         allergens: ['nenhum']
       },
       {
         id: 'menu-executivo-picanha',
         name: 'Menu Executivo Picanha',
-        desc: 'Dose individual de picanha premium (aprox. 200g), feijão preto temperado, arroz, batata e bebida.',
+        desc: 'Dose individual de picanha premium (aprox. 200g), feijo preto temperado, arroz, batata e bebida.',
         price: '10.500 Kz',
-        tags: ['bestseller', 'proteína'],
-        technical_notes: 'Picanha fatiada para selagem rápida e máxima retenção de sucos.',
+        tags: ['bestseller', 'protena'],
+        technical_notes: 'Picanha fatiada para selagem rpida e mxima reteno de sucos.',
         allergens: ['nenhum']
       },
       {
         id: 'menu-bacalhau-rapido',
-        name: 'Menu Bacalhau à Brás',
-        desc: 'A nossa famosa receita de bacalhau à brás em dose individual, acompanhada por salada fresca e bebida.',
+        name: 'Menu Bacalhau  Brs',
+        desc: 'A nossa famosa receita de bacalhau  brs em dose individual, acompanhada por salada fresca e bebida.',
         price: '9.500 Kz',
         tags: ['tradicional'],
         technical_notes: 'Bacalhau demolhado na casa, batata palha artesanal.',
@@ -448,14 +448,14 @@ const MENU_DATA = {
         name: 'Menu Executivo Peixe do Dia',
         desc: 'Filete de peixe grelhado (conforme disponibilidade), batata cozida, legumes ao vapor e bebida.',
         price: '11.000 Kz',
-        tags: ['saudável'],
-        technical_notes: 'Peixe branco de baixo teor lipídico, grelhado ao vapor/brasa.',
+        tags: ['saudvel'],
+        technical_notes: 'Peixe branco de baixo teor lipdico, grelhado ao vapor/brasa.',
         allergens: ['peixe']
       },
       {
         id: 'menu-familia-4',
-        name: 'Combo Família (4 Pessoas)',
-        desc: 'Frango inteiro, dose de picanha, arroz, batata, feijão e 1.5L de refrigerante.',
+        name: 'Combo Famlia (4 Pessoas)',
+        desc: 'Frango inteiro, dose de picanha, arroz, batata, feijo e 1.5L de refrigerante.',
         price: '32.000 Kz',
         tags: ['partilhar'],
         technical_notes: 'Travessa completa optimizada para grupos de 4 adultos.',
@@ -465,62 +465,62 @@ const MENU_DATA = {
   },
 
   /**
-   * ACCOMPANIMENTS — THE PORTUGUESE SIDE
+   * ACCOMPANIMENTS - THE PORTUGUESE SIDE
    * -------------------------------------------------------------------------
    * Extra portions of our traditional sides to customize your experience.
    */
   extras: {
-    label: 'Guarnições Extra',
+    label: 'Guarnies Extra',
     icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>',
-    desc:  'Personalização da refeição através de porções adicionais de acompanhamentos.',
+    desc:  'Personalizao da refeio atravs de pores adicionais de acompanhamentos.',
     items: [
-      { id: 'extra-arroz', name: 'Dose Extra Arroz', desc: 'Uma taça generosa de arroz agulha solto.', price: '1.500 Kz', tags: [] },
+      { id: 'extra-arroz', name: 'Dose Extra Arroz', desc: 'Uma taa generosa de arroz agulha solto.', price: '1.500 Kz', tags: [] },
       { id: 'extra-batata', name: 'Dose Extra Batata', desc: 'Batata nacional frita no ponto ideal.', price: '2.500 Kz', tags: [] },
-      { id: 'extra-feijao', name: 'Dose Extra Feijão', desc: 'O nosso feijão temperado com refogado caseiro.', price: '2.000 Kz', tags: [] },
+      { id: 'extra-feijao', name: 'Dose Extra Feijo', desc: 'O nosso feijo temperado com refogado caseiro.', price: '2.000 Kz', tags: [] },
       { id: 'extra-salada', name: 'Dose Extra Salada', desc: 'Salada mista com vegetais seleccionados no dia.', price: '2.200 Kz', tags: [] },
       { id: 'extra-funge', name: 'Dose Extra Funge', desc: 'Funge de mandioca ou milho acabado de bater.', price: '1.500 Kz', tags: [] },
       { id: 'molho-piripiri', name: 'Pote de Piripiri Caseiro', desc: 'A nossa receita secreta de picante (100ml) para levar.', price: '3.000 Kz', tags: ['takeaway'] },
       { id: 'molho-alho', name: 'Molho de Alho Caseiro', desc: 'Base de maionese artesanal e alho fresco.', price: '1.500 Kz', tags: [] },
-      { id: 'pao-alho', name: 'Pão de Alho na Brasa', desc: 'Fatias de pão rústico com manteiga de alho e ervas.', price: '2.500 Kz', tags: ['popular'] }
+      { id: 'pao-alho', name: 'Po de Alho na Brasa', desc: 'Fatias de po rstico com manteiga de alho e ervas.', price: '2.500 Kz', tags: ['popular'] }
     ]
   },
 
   /**
-   * INFANTIL — LITTLE MASTERS
+   * INFANTIL - LITTLE MASTERS
    * -------------------------------------------------------------------------
    * Balanced portions and flavors for our younger guests.
    */
   kids: {
     label: 'Menu Infantil',
     icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>',
-    desc:  'Porções e temperos ajustados para o público infantil. Foco na nutrição e segurança alimentar.',
+    desc:  'Pores e temperos ajustados para o pblico infantil. Foco na nutrio e segurana alimentar.',
     items: [
       {
         id: 'bitoque-mini',
         name: 'Mini Bitoque da Casa',
-        desc: 'Bife de novilho macio (100g), ovo estrelado, arroz branco e batata frita à rodela.',
+        desc: 'Bife de novilho macio (100g), ovo estrelado, arroz branco e batata frita  rodela.',
         price: '6.500 Kz',
-        tags: ['clássico'],
-        technical_notes: 'Corte de lombo batido para máxima ternura.',
+        tags: ['clssico'],
+        technical_notes: 'Corte de lombo batido para mxima ternura.',
         allergens: ['ovos']
       },
       {
         id: 'frango-dedinhos',
         name: 'Dedinhos de Frango Grelhado',
-        desc: 'Peito de frango grelhado na brasa e cortado em tiras fáceis, servido com arroz ou puré.',
+        desc: 'Peito de frango grelhado na brasa e cortado em tiras fceis, servido com arroz ou pur.',
         price: '5.000 Kz',
         tags: ['suave'],
-        technical_notes: 'Grelhado sem adição de gorduras saturadas.',
+        technical_notes: 'Grelhado sem adio de gorduras saturadas.',
         allergens: ['nenhum']
       },
       {
           id: 'esparguete-bolonhesa',
-          name: 'Esparguete à Bolonhesa Kids',
+          name: 'Esparguete  Bolonhesa Kids',
           desc: 'Massa italiana com carne de novilho picada e molho de tomate natural.',
           price: '5.500 Kz',
           tags: ['favorito'],
           technical_notes: 'Carne picada na hora para garantir a frescura.',
-          allergens: ['glúten']
+          allergens: ['glten']
       }
     ]
   },
@@ -531,11 +531,11 @@ const MENU_DATA = {
    * Optimized packaging for maintaining thermal integrity.
    */
   takeaway: {
-    label: 'Serviço Take-away',
+    label: 'Servio Take-away',
     icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="21 8 21 21 3 21 3 8"></polyline><rect x="1" y="3" width="22" height="5"></rect><line x1="10" y1="12" x2="14" y2="12"></line></svg>',
-    desc:  'Logística de recolha local. Embalagem técnica para manutenção da integridade térmica.',
+    desc:  'Logstica de recolha local. Embalagem tcnica para manuteno da integridade trmica.',
     items: [
-      { id: 'frango-caixa', name: 'Frango Inteiro (Take-away)', desc: 'Inclui batata e arroz. Pronto a levar.', price: '12.500 Kz', tags: ['rápido'] },
+      { id: 'frango-caixa', name: 'Frango Inteiro (Take-away)', desc: 'Inclui batata e arroz. Pronto a levar.', price: '12.500 Kz', tags: ['rpido'] },
       { id: 'pote-piripiri-grande', name: 'Molho Piripiri Extra (250ml)', desc: 'Para os verdadeiros amantes do picante Nandinhos.', price: '5.500 Kz', tags: ['essencial'] }
     ]
   }
@@ -619,15 +619,15 @@ function renderMenu(filter = '') {
 
               <!-- Technical Specs (Visible on hover or mobile details) -->
               <div class="menu-card__specs">
-                  ${item.technical_notes ? `<span class="spec-tech"><strong>Técnica:</strong> ${item.technical_notes}</span>` : ''}
-                  ${item.allergens ? `<span class="spec-allergens"><strong>Alérgenos:</strong> ${item.allergens.join(', ')}</span>` : ''}
+                  ${item.technical_notes ? `<span class="spec-tech"><strong>Tcnica:</strong> ${item.technical_notes}</span>` : ''}
+                  ${item.allergens ? `<span class="spec-allergens"><strong>Alrgenos:</strong> ${item.allergens.join(', ')}</span>` : ''}
               </div>
 
               <div class="menu-card__footer">
                   <span class="menu-card__price">${item.price}</span>
-                  <button class="menu-card__action" aria-label="Pedir via WhatsApp" onclick="window.location.href='#reservas'">
+                  <button class="menu-card__action add-to-cart" aria-label="Adicionar à Mesa" data-id="${item.id}" data-name="${item.name}" data-price="${item.price}">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M5 12h14M12 5l7 7-7 7"/>
+                          <path d="M12 5v14M5 12h14"/>
                       </svg>
                   </button>
               </div>
@@ -644,6 +644,38 @@ function renderMenu(filter = '') {
 
   // Re-bind tab logic after render
   initTabLogic();
+  initDragToScroll();
+}
+
+function initDragToScroll() {
+  const slider = document.querySelector('.menu__tabs-nav');
+  if (!slider) return;
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+  slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2; //scroll-fast
+    slider.scrollLeft = scrollLeft - walk;
+  });
 }
 
 /**
@@ -667,140 +699,6 @@ function triggerMenuUpdate(filter = '') {
 
 /**
  * Global Initialization for Menu
- */
-function initMenuSearch() {
-    const searchInput = document.getElementById('menuSearch');
-    if (!searchInput) return;
-
-    searchInput.addEventListener('input', (e) => {
-        const val = e.target.value.trim();
-        renderMenu(val);
-
-        // If searching, show all panels that have results
-        if (val.length > 0) {
-            document.querySelectorAll('.menu__panel').forEach(p => p.classList.add('is-active'));
-            document.querySelector('.menu__tabs-nav').style.display = 'none';
-        } else {
-            document.querySelector('.menu__tabs-nav').style.display = 'flex';
-            // Reset to default active tab
-            const activeTab = document.querySelector('.menu-tab.is-active').dataset.category;
-            document.querySelectorAll('.menu__panel').forEach(p => {
-                p.classList.toggle('is-active', p.dataset.category === activeTab);
-            });
-        }
-    });
-}
-
-function initTabLogic() {
-  const tabs   = document.querySelectorAll('.menu-tab');
-  const panels = document.querySelectorAll('.menu__panel');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.category;
-      tabs.forEach(t => t.classList.remove('is-active'));
-      panels.forEach(p => p.classList.remove('is-active'));
-
-      tab.classList.add('is-active');
-      const activePanel = document.querySelector(`.menu__panel[data-category="${target}"]`);
-      if (activePanel) {
-        activePanel.classList.add('is-active');
-        gsap.from(activePanel.querySelectorAll('.menu-card'), {
-          opacity: 0,
-          y: 20,
-          stagger: 0.05,
-          duration: 0.4,
-          ease: 'power2.out'
-        });
-      }
-    });
-  });
-}
-
-/**
- * SEARCH & FILTERING ENGINE
- * -------------------------------------------------------------------------
- * Implements a high-performance filtering system that scans both names
- * and technical descriptions. Uses a re-render strategy with GSAP
- * entrance choreography to maintain the cinematic feel.
- */
-function initMenuSearch() {
-    const searchInput = document.getElementById('menuSearch');
-    if (!searchInput) return;
-
-    searchInput.addEventListener('input', Utils.debounce((e) => {
-        const val = e.target.value.trim();
-
-        /**
-         * TECHNICAL NOTE:
-         * We use the Utils.debounce helper to prevent heavy DOM
-         * manipulations on every keystroke, ensuring 60fps performance
-         * even on mid-range mobile devices common in Luanda.
-         */
-        renderMenu(val);
-
-        const tabsNav = document.querySelector('.menu__tabs-nav');
-
-        if (val.length > 0) {
-            // Reveal all relevant panels simultaneously during search
-            document.querySelectorAll('.menu__panel').forEach(p => p.classList.add('is-active'));
-            if (tabsNav) tabsNav.style.display = 'none';
-        } else {
-            // Restore tabbed interface when search is cleared
-            if (tabsNav) tabsNav.style.display = 'flex';
-            const activeTab = document.querySelector('.menu-tab.is-active').dataset.category;
-            document.querySelectorAll('.menu__panel').forEach(p => {
-                p.classList.toggle('is-active', p.dataset.category === activeTab);
-            });
-        }
-    }, 250));
-}
-
-/**
- * CATEGORY NAVIGATION ENGINE
- * -------------------------------------------------------------------------
- * Manages the "Portuguese Efficient" tab system. Ensures ARIA compliance
- * and triggers staggered entrance animations for menu cards.
- */
-function initTabLogic() {
-  const tabs   = document.querySelectorAll('.menu-tab');
-  const panels = document.querySelectorAll('.menu__panel');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.category;
-
-      // Update UI State
-      tabs.forEach(t => {
-          t.classList.remove('is-active');
-          t.setAttribute('aria-selected', 'false');
-      });
-      panels.forEach(p => p.classList.remove('is-active'));
-
-      tab.classList.add('is-active');
-      tab.setAttribute('aria-selected', 'true');
-
-      const activePanel = document.querySelector(`.menu__panel[data-category="${target}"]`);
-      if (activePanel) {
-        activePanel.classList.add('is-active');
-
-        /**
-         * CHOREOGRAPHY:
-         * We use a slight vertical offset (y: 20) and a short stagger
-         * to create a "cascading" effect as the menu opens.
-         */
-        gsap.from(activePanel.querySelectorAll('.menu-card'), {
-          opacity: 0,
-          y: 20,
-          stagger: 0.05,
-          duration: 0.4,
-          ease: 'power2.out',
-          clearProps: 'all' // Clean up inline styles after animation
-        });
-      }
-    });
-  });
-}
 
 /**
  * SCHEMA.ORG GENERATOR (SEO)
@@ -851,10 +749,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. SEO Injection
     injectMenuSchema();
-
-    /**
-     * PERFORMANCE NOTE:
-     * We initialize Schema.org injection last to ensure it doesn't
-     * block the critical rendering path (CRP) of the menu visuals.
-     */
 });
+
+// Reuse functions from higher scope or define once
+function initMenuSearch() {
+    const searchInput = document.getElementById('menuSearch');
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', Utils.debounce((e) => {
+        const val = e.target.value.trim();
+        renderMenu(val);
+
+        const tabsNav = document.querySelector('.menu__tabs-nav');
+        if (val.length > 0) {
+            document.querySelectorAll('.menu__panel').forEach(p => p.classList.add('is-active'));
+            if (tabsNav) tabsNav.style.display = 'none';
+        } else {
+            if (tabsNav) tabsNav.style.display = 'flex';
+            const activeTab = document.querySelector('.menu-tab.is-active').dataset.category;
+            document.querySelectorAll('.menu__panel').forEach(p => {
+                p.classList.toggle('is-active', p.dataset.category === activeTab);
+            });
+        }
+    }, 250));
+}
+
+function initTabLogic() {
+  const tabs   = document.querySelectorAll('.menu-tab');
+  const panels = document.querySelectorAll('.menu__panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.category;
+      tabs.forEach(t => {
+          t.classList.remove('is-active');
+          t.setAttribute('aria-selected', 'false');
+      });
+      panels.forEach(p => p.classList.remove('is-active'));
+
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+
+      const activePanel = document.querySelector(`.menu__panel[data-category="${target}"]`);
+      if (activePanel) {
+        activePanel.classList.add('is-active');
+        gsap.from(activePanel.querySelectorAll('.menu-card'), {
+          opacity: 0,
+          y: 20,
+          stagger: 0.05,
+          duration: 0.4,
+          ease: 'power2.out',
+          clearProps: 'all'
+        });
+      }
+    });
+  });
+}

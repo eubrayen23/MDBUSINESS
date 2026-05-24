@@ -1,7 +1,7 @@
-// INICIALIZAÇÃO DO LENIS — física de momentum premium
+// INICIALIZAO DO LENIS - fsica de momentum premium
 document.addEventListener('DOMContentLoaded', () => {
   const lenis = new Lenis({
-    duration: 1.4,         // duração do momentum
+    duration: 1.4,         // durao do momentum
     easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // expo ease
     direction: 'vertical',
     gestureDirection: 'vertical',
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     touchMultiplier: 2,
   });
 
-  // Sincronizar Lenis com o ticker do GSAP — obrigatório para ScrollTrigger funcionar
+  // Sincronizar Lenis com o ticker do GSAP - obrigatrio para ScrollTrigger funcionar
   gsap.registerPlugin(ScrollTrigger);
 
   lenis.on('scroll', ScrollTrigger.update);
@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
   gsap.ticker.add(time => lenis.raf(time * 1000));
   gsap.ticker.lagSmoothing(0);
 
-  // Tornar lenis acessível globalmente
+  // Tornar lenis acessvel globalmente
   window.lenis = lenis;
 
-  // Links de navegação com scroll suave
+  // Links de navegao com scroll suave
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
       e.preventDefault();

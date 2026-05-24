@@ -1,5 +1,5 @@
 /**
- * CHECKIN & RESERVATIONS ENGINE — CHURRASCARIA NANDINHOS
+ * CHECKIN & RESERVATIONS ENGINE - CHURRASCARIA NANDINHOS
  * -------------------------------------------------------------------------
  * This module manages the multi-step reservation process. It ensures
  * data integrity through step-by-step validation and handles the
@@ -47,7 +47,7 @@ class CheckinSystem {
    * Binds click events to navigation buttons.
    */
   initNavigation() {
-    // "Next" buttons — navigate forward if validation passes
+    // "Next" buttons - navigate forward if validation passes
     document.querySelectorAll('.form-next').forEach(btn => {
       btn.addEventListener('click', () => {
         const nextStep = parseInt(btn.dataset.next);
@@ -59,7 +59,7 @@ class CheckinSystem {
       });
     });
 
-    // "Back" buttons — navigate to the previous logical state
+    // "Back" buttons - navigate to the previous logical state
     document.querySelectorAll('.form-back').forEach(btn => {
       btn.addEventListener('click', () => {
         const prevStep = parseInt(btn.dataset.back);
@@ -86,7 +86,7 @@ class CheckinSystem {
       const data    = document.getElementById('res-data').value;
       const hora    = document.querySelector('input[name="hora"]:checked');
 
-      if (!pessoas) errors.push('Indique o número de pessoas.');
+      if (!pessoas) errors.push('Indique o nmero de pessoas.');
       if (!data)    errors.push('Escolha uma data.');
       if (!hora)    errors.push('Seleccione uma hora.');
     }
@@ -140,7 +140,7 @@ class CheckinSystem {
     const dataFormatada = this.formData.data
       ? new Date(this.formData.data + 'T12:00:00')
           .toLocaleDateString('pt-PT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
-      : '—';
+      : '-';
 
     grid.innerHTML = '';
 
@@ -194,16 +194,16 @@ class CheckinSystem {
        * Using emojis for visual structure and clear field identification.
        */
       const msg = [
-        `Solicitação de Reserva - Churrascaria Nandinhos`,
+        `Solicitao de Reserva - Churrascaria Nandinhos`,
         ``,
         `Nome: ${nome}`,
-        `Número de Pessoas: ${pessoas}`,
+        `Nmero de Pessoas: ${pessoas}`,
         `Data: ${dataFormatada}`,
         `Hora: ${hora}`,
         tel ? `Contacto: ${tel}` : '',
-        obs ? `Observações: ${obs}` : '',
+        obs ? `Observaes: ${obs}` : '',
         ``,
-        `Aguardamos confirmação.`,
+        `Aguardamos confirmao.`,
       ].filter(Boolean).join('\n');
 
       // URI encode the message to ensure safe transmission through the URL

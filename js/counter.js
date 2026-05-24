@@ -1,4 +1,4 @@
-// counter.js — contadores animados com ScrollTrigger
+// counter.js - contadores animados com ScrollTrigger
 class AnimatedCounter {
   constructor() {
     this.counters = document.querySelectorAll('.stat-number');

@@ -1,5 +1,5 @@
 /**
- * ART OF THE GRILL — TECHNICAL COORDINATION ENGINE
+ * ART OF THE GRILL - TECHNICAL COORDINATION ENGINE
  * -------------------------------------------------------------------------
  * This module manages the synchronization between the instructional steps
  * of the grilling process and their corresponding visual representations.

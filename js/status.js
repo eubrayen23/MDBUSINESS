@@ -1,5 +1,5 @@
 /**
- * OPERATIONAL STATUS ENGINE — CHURRASCARIA NANDINHOS
+ * OPERATIONAL STATUS ENGINE - CHURRASCARIA NANDINHOS
  * -------------------------------------------------------------------------
  * This module calculates the restaurant's current status (Open/Closed)
  * based on Luanda's timezone and the specific operational windows.
@@ -59,9 +59,9 @@ class StatusEngine {
             if (upcoming) {
                 const h = Math.floor(upcoming.s / 100);
                 const m = upcoming.s % 100;
-                nextOpening = `Abre às ${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
+                nextOpening = `Abre s ${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
             } else {
-                nextOpening = 'Abre amanhã às 12:00';
+                nextOpening = 'Abre amanh s 12:00';
             }
         }
 

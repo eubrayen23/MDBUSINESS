@@ -1,16 +1,16 @@
-// gallery.js — Galeria masonry com lightbox cinematográfico
+// gallery.js - Galeria masonry com lightbox cinematogrfico
 
 /**
- * GALLERY DATA — CHURRASCARIA NANDINHOS
+ * GALLERY DATA - CHURRASCARIA NANDINHOS
  * Includes category tags for filtering functionality.
  */
 const GALLERY_IMAGES = [
-  { src: 'images/galeria/unnamedjjj.webp', alt: 'Brasas vivas da churrasqueira Nandinhos', caption: 'As brasas que fazem a diferença', category: 'process' },
+  { src: 'images/galeria/unnamedjjj.webp', alt: 'Brasas vivas da churrasqueira Nandinhos', caption: 'As brasas que fazem a diferena', category: 'process' },
   { src: 'images/galeria/unnamedh.webp', alt: 'Churrasco misto premium da Nandinhos', caption: 'O churrasco que fez a fama', category: 'food' },
-  { src: 'images/galeria/unnamed.jpg', alt: 'Interior do restaurante Nandinhos no Kinaxixi', caption: 'Sempre cheio ao almoço', category: 'ambience' },
-  { src: 'images/galeria/unnamed (1).jpg', alt: 'Prato tradicional', caption: 'Tradição portuguesa em Luanda', category: 'food' },
+  { src: 'images/galeria/unnamed.jpg', alt: 'Interior do restaurante Nandinhos no Kinaxixi', caption: 'Sempre cheio ao almoo', category: 'ambience' },
+  { src: 'images/galeria/unnamed (1).jpg', alt: 'Prato tradicional', caption: 'Tradio portuguesa em Luanda', category: 'food' },
   { src: 'images/galeria/unnamed (2).jpg', alt: 'Detalhe da carne', caption: 'Temperatura exacta, tempo ideal', category: 'food' },
-  { src: 'images/galeria/WhatsApp Image 2026-05-22 at 17.38.27.jpeg', alt: 'Ambiente restaurante', caption: 'Kinaxixi — o coração de Luanda', category: 'ambience' },
+  { src: 'images/galeria/WhatsApp Image 2026-05-22 at 17.38.27.jpeg', alt: 'Ambiente restaurante', caption: 'Kinaxixi - o corao de Luanda', category: 'ambience' },
 ];
 
 class Gallery {
@@ -58,7 +58,7 @@ class Gallery {
           <button class="filter-btn is-active" data-category="all" role="tab" aria-selected="true">Todos</button>
           <button class="filter-btn" data-category="food" role="tab" aria-selected="false">Os Pratos</button>
           <button class="filter-btn" data-category="ambience" role="tab" aria-selected="false">A Sala</button>
-          <button class="filter-btn" data-category="process" role="tab" aria-selected="false">A Técnica</button>
+          <button class="filter-btn" data-category="process" role="tab" aria-selected="false">A Tcnica</button>
       `;
 
       container.insertBefore(filterNav, grid);

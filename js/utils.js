@@ -1,13 +1,5 @@
 /**
- * CORE UTILITIES — CHURRASCARIA NANDINHOS
- * -------------------------------------------------------------------------
- * This module provides shared helper functions and low-level tools used
- * across the site's logical ecosystem. It focus on performance and
- * "Efficient" execution.
- */
-
-/**
- * CORE UTILITIES — CHURRASCARIA NANDINHOS
+ * CORE UTILITIES - CHURRASCARIA NANDINHOS
  * -------------------------------------------------------------------------
  * This module provides shared helper functions and low-level tools used
  * across the site's logical ecosystem. It focuses on performance,
