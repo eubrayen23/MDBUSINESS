@@ -1,136 +1,164 @@
 /**
- * MINHA MESA (CART) ENGINE
+ * CART SYSTEM - CHURRASCARIA NANDINHOS
  * -------------------------------------------------------------------------
- * Manages the selection of dishes across the cinematic experience.
+ * Manages the "Minha Mesa" shopping cart functionality.
  */
+
 class CartSystem {
     constructor() {
         this.items = JSON.parse(localStorage.getItem('nandinhos_cart')) || [];
-        this.overlay = document.getElementById('cartOverlay');
-        this.container = document.getElementById('cartItems');
-        this.totalEl = document.getElementById('cartTotalValue');
-        this.countEls = document.querySelectorAll('.cart-count');
+        this.sidebar = document.getElementById('cartSidebar');
+        this.trigger = document.getElementById('cartTrigger');
+        this.countLabel = document.querySelector('.cart-trigger__count');
+        this.itemsContainer = document.querySelector('.cart-sidebar__items');
+        this.totalLabel = document.getElementById('cartTotal');
 
         this.init();
-        this.update();
     }
 
     init() {
-        // Toggle cart
-        document.querySelectorAll('#openCart').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.open();
-            });
-        });
+        if (!this.sidebar) return;
 
-        const closeBtn = document.getElementById('closeCart');
-        if (closeBtn) closeBtn.addEventListener('click', () => this.close());
+        // Open cart
+        this.trigger.addEventListener('click', () => this.open());
 
-        if (this.overlay) {
-            this.overlay.addEventListener('click', (e) => {
-                if (e.target === this.overlay) this.close();
-            });
+        // Close cart
+        const closeBtn = this.sidebar.querySelector('.cart-sidebar__close');
+        const overlay = this.sidebar.querySelector('.cart-sidebar__overlay');
+
+        closeBtn.addEventListener('click', () => this.close());
+        overlay.addEventListener('click', () => this.close());
+
+        // Order button
+        const orderBtn = document.getElementById('btnFinalizarPedido');
+        if (orderBtn) {
+            orderBtn.addEventListener('click', () => this.checkout());
         }
 
-        // Add to cart delegation (works for dynamically rendered cards)
-        document.body.addEventListener('click', (e) => {
-            const btn = e.target.closest('.add-to-cart');
-            if (btn) {
-                const id = btn.dataset.id;
-                const name = btn.dataset.name;
-                const price = btn.dataset.price;
-                this.addItem(id, name, price);
-            }
-        });
-
-        // Checkout
-        const checkoutBtn = document.getElementById('checkoutWhatsApp');
-        if (checkoutBtn) {
-            checkoutBtn.addEventListener('click', () => this.checkout());
-        }
+        this.render();
     }
 
-    addItem(id, name, price) {
-        this.items.push({ id, name, price });
+    open() {
+        this.sidebar.classList.add('is-active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    close() {
+        this.sidebar.classList.remove('is-active');
+        document.body.style.overflow = '';
+    }
+
+    addItem(product) {
+        const existing = this.items.find(i => i.id === product.id);
+
+        if (existing) {
+            existing.qty += 1;
+        } else {
+            this.items.push({
+                ...product,
+                qty: 1
+            });
+        }
+
         this.save();
-        this.update();
+        this.render();
         this.open();
+
+        // Success animation on trigger
+        gsap.fromTo(this.trigger, { scale: 1 }, { scale: 1.2, duration: 0.2, yoyo: true, repeat: 1 });
     }
 
-    removeItem(index) {
-        this.items.splice(index, 1);
+    removeItem(id) {
+        this.items = this.items.filter(i => i.id !== id);
         this.save();
-        this.update();
+        this.render();
+    }
+
+    updateQty(id, delta) {
+        const item = this.items.find(i => i.id === id);
+        if (!item) return;
+
+        item.qty += delta;
+        if (item.qty <= 0) {
+            this.removeItem(id);
+        } else {
+            this.save();
+            this.render();
+        }
     }
 
     save() {
         localStorage.setItem('nandinhos_cart', JSON.stringify(this.items));
     }
 
-    update() {
-        // Update counts
-        this.countEls.forEach(el => el.textContent = this.items.length);
-
-        // Render items
-        if (!this.container) return;
+    render() {
+        if (!this.itemsContainer) return;
 
         if (this.items.length === 0) {
-            this.container.innerHTML = '<div class="cart-empty">A sua mesa está vazia. Adicione pratos da ementa.</div>';
-            if (this.totalEl) this.totalEl.textContent = '0 Kz';
+            this.itemsContainer.innerHTML = '<div class="cart-empty-message">A sua mesa está vazia. Comece a adicionar pratos!</div>';
+            this.countLabel.textContent = '0';
+            this.totalLabel.textContent = '0 Kz';
             return;
         }
 
-        this.container.innerHTML = this.items.map((item, index) => `
-            <div class="cart-item">
-                <div class="cart-item-info">
-                    <div class="cart-item-title">${item.name}</div>
-                    <div class="cart-item-price">${item.price}</div>
-                    <button class="cart-item-remove" onclick="window.cartSystem.removeItem(${index})">Remover</button>
-                </div>
-            </div>
-        `).join('');
-
-        // Calculate total
+        this.itemsContainer.innerHTML = '';
         let total = 0;
+        let count = 0;
+
         this.items.forEach(item => {
-            const p = parseInt(item.price.replace(/[^0-9]/g, '')) || 0;
-            total += p;
+            const priceValue = parseInt(item.price.replace(/[^\d]/g, '')) || 0;
+            total += priceValue * item.qty;
+            count += item.qty;
+
+            const el = document.createElement('div');
+            el.className = 'cart-item';
+            el.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" class="cart-item__image">
+                <div class="cart-item__details">
+                    <h4 class="cart-item__title">${item.name}</h4>
+                    <div class="cart-item__price">${item.price}</div>
+                    <div class="cart-item__controls">
+                        <div class="cart-item__qty">
+                            <button class="qty-btn" onclick="window.cartSystem.updateQty('${item.id}', -1)">-</button>
+                            <span>${item.qty}</span>
+                            <button class="qty-btn" onclick="window.cartSystem.updateQty('${item.id}', 1)">+</button>
+                        </div>
+                        <button class="cart-item__remove" onclick="window.cartSystem.removeItem('${item.id}')">Remover</button>
+                    </div>
+                </div>
+            `;
+            this.itemsContainer.appendChild(el);
         });
 
-        if (this.totalEl) {
-            this.totalEl.textContent = total.toLocaleString('pt-AO') + ' Kz';
-        }
-    }
-
-    open() {
-        if (this.overlay) this.overlay.classList.add('is-open');
-        if (window.lenis) window.lenis.stop();
-    }
-
-    close() {
-        if (this.overlay) this.overlay.classList.remove('is-open');
-        if (window.lenis) window.lenis.start();
+        this.countLabel.textContent = count;
+        this.totalLabel.textContent = total.toLocaleString('pt-PT') + ' Kz';
     }
 
     checkout() {
         if (this.items.length === 0) return;
 
         const WHATSAPP_NUMBER = '244934859497';
-        let msg = 'Olá! Gostaria de fazer um pedido para a minha mesa:\n\n';
 
-        this.items.forEach((item, i) => {
-            msg += `${i+1}. ${item.name} (${item.price})\n`;
+        let message = `*Novo Pedido - Churrascaria Nandinhos*\n\n`;
+        let total = 0;
+
+        this.items.forEach(item => {
+            const priceValue = parseInt(item.price.replace(/[^\d]/g, '')) || 0;
+            const subtotal = priceValue * item.qty;
+            total += subtotal;
+
+            message += `• ${item.qty}x ${item.name} (${item.price})\n`;
         });
 
-        msg += `\nTotal Estimado: ${this.totalEl.textContent}`;
-        msg += '\n\nAguardo confirmação. Obrigado!';
+        message += `\n*Total Estimado:* ${total.toLocaleString('pt-PT')} Kz\n\n`;
+        message += `Gostaria de confirmar a disponibilidade e o tempo de espera.`;
 
-        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
     }
 }
 
+// Make globally accessible
 document.addEventListener('DOMContentLoaded', () => {
     window.cartSystem = new CartSystem();
 });

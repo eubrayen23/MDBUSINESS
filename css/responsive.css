@@ -154,24 +154,3 @@
         cursor: auto !important;
     }
 }
-
-/* FINAL SCALE AUDIT */
-@media (max-width: 375px) {
-    h1 { font-size: 2.8rem !important; }
-    h2 { font-size: 2rem !important; }
-    .p-lg { font-size: 1rem; }
-    .section-badge { font-size: 10px; }
-    .btn { padding: 12px 24px; font-size: 12px; }
-    .container { --container-pad: 1.2rem; }
-}
-
-/* Ensure no horizontal overflow */
-body, html {
-    max-width: 100vw;
-    overflow-x: hidden;
-}
-
-@media (max-width: 350px) {
-    .time-grid { grid-template-columns: 1fr 1fr !important; }
-    .form-row { grid-template-columns: 1fr !important; }
-}

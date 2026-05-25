@@ -8,18 +8,14 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. INITIALIZE CINEMATIC EFFECTS
-    if (typeof GrainEffect !== 'undefined') new GrainEffect();
-    if (typeof MagneticCursor !== 'undefined') new MagneticCursor();
-
-    // 2. MOBILE MENU ORCHESTRATION
+    // 1. MOBILE MENU ORCHESTRATION
     const toggle = document.querySelector('.navbar__mobile-toggle');
     const menu   = document.querySelector('.mobile-menu');
     const links  = document.querySelectorAll('.mobile-nav-link');
 
     if (toggle && menu) {
         toggle.addEventListener('click', () => {
-            const isOpen = menu.classList.contains('is-open');
+            const isOpen = menu.classList.contains('is-active');
 
             if (isOpen) {
                 closeMenu();
@@ -34,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function openMenu() {
-        menu.classList.add('is-open');
+        menu.classList.add('is-active');
         toggle.classList.add('is-active');
         document.body.style.overflow = 'hidden';
 
@@ -46,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function closeMenu() {
-        menu.classList.remove('is-open');
+        menu.classList.remove('is-active');
         toggle.classList.remove('is-active');
         document.body.style.overflow = '';
     }

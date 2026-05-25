@@ -112,4 +112,4 @@ function initHero() {
       scrub: true,
     },
   });
-}
+});

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body class="theme-coal">
@@ -63,12 +64,6 @@
             </div>
 
             <div class="navbar__actions">
-                <button id="openCart" class="cart-trigger" aria-label="Minha Mesa">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                    </svg>
-                    <span class="cart-count">0</span>
-                </button>
                 <a href="#reservas" class="btn btn-primary btn-magnetic">Reservar</a>
             </div>
 
@@ -139,7 +134,7 @@
                     <h2 class="section-title" data-splitting>Uma Lenda no Coração do Kinaxixi</h2>
                     <div class="section-divider"></div>
                 </div>
-                <div class="sobre__grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div class="sobre__grid">
                     <div class="sobre__text" data-reveal="fade-right">
                         <p class="p-lg">No coração histórico do Kinaxixi, a Churrascaria Nandinhos abriu as suas portas com uma missão simples: servir o melhor churrasco da cidade.</p>
                         <p>Hoje, essa missão continua a ser cumprida todos os dias — com carnes das melhores proveniências, ricamente temperadas e confeccionadas em brasas vivas.</p>
@@ -156,11 +151,11 @@
         <section class="menu-teaser bg-ash">
             <div class="container py-2xl">
                 <div class="section-header align-center">
-                    <span class="section-badge" data-reveal="fade-up">Ementa</span>
+                    <span class="section-badge" data-reveal="fade-up">Pratos</span>
                     <h2 class="section-title text-white" data-splitting>Especialidades da Casa</h2>
                     <div class="section-divider"></div>
                 </div>
-                <div class="menu-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px;">
+                <div class="menu-grid">
                     <div class="menu-card" data-reveal="fade-up">
                         <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=400" alt="Churrasco Misto">
                         <h3>Churrasco Misto</h3>
@@ -177,7 +172,7 @@
                         <p>A sobremesa que encerra a refeição com perfeição.</p>
                     </div>
                 </div>
-                <div style="text-align: center; margin-top: 60px;">
+                <div class="align-center mt-xl">
                     <a href="menu.html" class="btn btn-primary">Ver Pratos Completa</a>
                 </div>
             </div>
@@ -191,7 +186,7 @@
                     <h2 class="section-title" data-splitting>O Ambiente</h2>
                     <div class="section-divider"></div>
                 </div>
-                <div class="gallery__grid" style="margin-top: 50px;"></div>
+                <div class="gallery__grid mt-lg"></div>
             </div>
         </section>
 
@@ -203,12 +198,12 @@
                     <h2 class="section-title" data-splitting>O Que Dizem os Nossos Clientes</h2>
                     <div class="section-divider"></div>
                 </div>
-                <div class="reviews-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 50px;">
-                    <div class="review-card" data-reveal="fade-up" style="background: white; padding: 40px; border-radius: 4px;">
+                <div class="reviews-grid">
+                    <div class="review-card" data-reveal="fade-up">
                         <p>"O melhor churrasco da cidade. Sem discussão. A fila vale cada minuto."</p>
                         <span class="review-author">— Google Reviews</span>
                     </div>
-                    <div class="review-card" data-reveal="fade-up" data-reveal-delay="0.1" style="background: white; padding: 40px; border-radius: 4px;">
+                    <div class="review-card" data-reveal="fade-up" data-reveal-delay="0.1">
                         <p>"Simples, autêntico e delicioso. O frango grelhado é imbatível."</p>
                         <span class="review-author">— TripAdvisor</span>
                     </div>
@@ -216,113 +211,74 @@
             </div>
         </section>
 
-
-        <!-- 7. RESERVAS (FOCO PRINCIPAL) -->
-        <section class="reservas bg-cream" id="reservas">
+        <!-- 7. RESERVAS -->
+        <section class="reservas bg-coal" id="reservas">
             <div class="container py-2xl">
-                <div class="reservas__grid">
-                    <div class="reservas__info" data-reveal="fade-right">
-                        <span class="section-badge">Reservas</span>
-                        <h2 class="section-title" data-splitting>Garanta a Sua Mesa no <br><em>Melhor Churrasco</em></h2>
-                        <p class="p-lg mt-md">Recomendamos reserva antecipada, especialmente ao almoo, onde o espao esgota rapidamente. Garanta o seu lugar e evite a fila.</p>
+                <div class="reservas__wrapper">
+                    <span class="section-badge" data-reveal="fade-up">Reservas</span>
+                    <h2 class="section-title text-white" data-splitting>Garanta o seu Lugar</h2>
+                    <p class="p-lg text-muted mt-sm">Recomendamos reserva antecipada, especialmente ao almoço.</p>
 
-                        <div class="info-list">
-                            <div class="info-item">
-                                <div class="icon">📍</div>
-                                <div>
-                                    <h5>Localizao Prime</h5>
-                                    <p>Av. Comandante Valdia, 13, no corao do Kinaxixi, Luanda.</p>
-                                </div>
+                    <form id="checkinForm" class="checkin-form">
+                        <div class="form-panel is-active" data-panel="1">
+                            <div class="form-group">
+                                <label for="res-nome">Nome Completo *</label>
+                                <input type="text" id="res-nome" placeholder="Seu nome">
                             </div>
-                            <div class="info-item">
-                                <div class="icon">🕐</div>
-                                <div>
-                                    <h5>Horrio de Grelha</h5>
-                                    <p>Seg-Sb: 12h-15h30 | 19h-22h30. Dom: 12h-16h.</p>
-                                </div>
+                            <div class="form-group">
+                                <label for="res-tel">Telemóvel (Opcional)</label>
+                                <input type="text" id="res-tel" placeholder="Seu contacto">
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="reservas__form-wrapper" data-reveal="scale">
-                        <div class="form-stepper">
-                            <div class="form-step is-active" data-step="1">1</div>
-                            <div class="form-step" data-step="2">2</div>
-                            <div class="form-step" data-step="3">3</div>
+                            <button type="button" class="btn btn-primary form-next" data-next="2">Próximo Passo →</button>
                         </div>
 
-                        <form id="checkinForm" class="checkin-form">
-                            <!-- Panel 1: Dados -->
-                            <div class="form-panel is-active" data-panel="1">
-                                <h3>Seus Dados</h3>
+                        <div class="form-panel" data-panel="2">
+                            <div class="form-grid-2">
                                 <div class="form-group">
-                                    <label for="res-nome">Nome Completo *</label>
-                                    <input type="text" id="res-nome" placeholder="Como o devemos tratar?">
+                                    <label for="res-pessoas">Pessoas *</label>
+                                    <select id="res-pessoas">
+                                        <option value="2">2 Pessoas</option>
+                                        <option value="4">3-4 Pessoas</option>
+                                        <option value="6">5-6 Pessoas</option>
+                                        <option value="8">8+ Pessoas</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="res-tel">Telemvel (Opcional)</label>
-                                    <input type="text" id="res-tel" placeholder="Para contacto directo">
-                                </div>
-                                <div class="form-actions">
-                                    <button type="button" class="btn btn-primary form-next" data-next="2">Prximo Passo →</button>
+                                    <label for="res-data">Data *</label>
+                                    <input type="date" id="res-data">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label>Hora *</label>
+                                <div class="hour-grid">
+                                    <label><input type="radio" name="hora" value="12:30"> 12:30</label>
+                                    <label><input type="radio" name="hora" value="13:30"> 13:30</label>
+                                    <label><input type="radio" name="hora" value="19:30"> 19:30</label>
+                                    <label><input type="radio" name="hora" value="20:30"> 20:30</label>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary form-next" data-next="3">Rever Reserva →</button>
+                            <button type="button" class="btn btn-ghost form-back" data-back="1" style="margin-left: 10px;">Voltar</button>
+                        </div>
 
-                            <!-- Panel 2: Detalhes -->
-                            <div class="form-panel" data-panel="2">
-                                <h3>Mesa & Horrio</h3>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="res-pessoas">Pessoas *</label>
-                                        <select id="res-pessoas">
-                                            <option value="1-2">1-2 Pessoas</option>
-                                            <option value="3-4">3-4 Pessoas</option>
-                                            <option value="5-8">5-8 Pessoas</option>
-                                            <option value="9+">9 ou mais</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="res-data">Data *</label>
-                                        <input type="date" id="res-data">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Hora Pretendida *</label>
-                                    <div class="time-grid">
-                                        <label class="time-opt"><input type="radio" name="hora" value="12:30"> 12:30</label>
-                                        <label class="time-opt"><input type="radio" name="hora" value="13:30"> 13:30</label>
-                                        <label class="time-opt"><input type="radio" name="hora" value="19:30"> 19:30</label>
-                                        <label class="time-opt"><input type="radio" name="hora" value="20:30"> 20:30</label>
-                                    </div>
-                                </div>
-                                <div class="form-actions">
-                                    <button type="button" class="btn btn-ghost form-back" data-back="1">Voltar</button>
-                                    <button type="button" class="btn btn-primary form-next" data-next="3">Rever Reserva →</button>
-                                </div>
-                            </div>
-
-                            <!-- Panel 3: Resumo -->
-                            <div class="form-panel" data-panel="3">
-                                <h3>Resumo da Reserva</h3>
-                                <div id="summaryGrid" class="summary-grid"></div>
-                                <div class="form-actions">
-                                    <button type="button" class="btn btn-ghost form-back" data-back="2">Editar</button>
-                                    <button type="button" id="btnWhatsApp" class="btn btn-primary">Confirmar via WhatsApp</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                        <div class="form-panel" data-panel="3">
+                            <div id="summaryGrid" class="summary-container"></div>
+                            <button type="button" id="btnWhatsApp" class="btn btn-primary">Confirmar via WhatsApp</button>
+                            <button type="button" class="btn btn-ghost form-back" data-back="2" style="margin-left: 10px;">Editar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
+
         <!-- 8. CONTACTO -->
         <section class="contacto" id="contacto">
             <div class="container py-2xl">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px;">
+                <div class="contacto-grid">
                     <div class="contacto__info" data-reveal="fade-right">
                         <span class="section-badge">Onde Estamos</span>
                         <h2>Visite-nos</h2>
-                        <div style="margin-top: 40px; display: grid; gap: 30px;">
+                        <div class="mt-lg grid gap-md">
                             <div>
                                 <strong>Endereço</strong>
                                 <p>Av. Comandante Valódia, 13, Kinaxixi, Luanda</p>
@@ -345,31 +301,6 @@
         </section>
     </main>
 
-    <!-- MINHA MESA (CART OVERLAY) -->
-    <div class="cart-overlay" id="cartOverlay">
-        <div class="cart-drawer">
-            <div class="cart-header">
-                <h3>Minha Mesa</h3>
-                <button id="closeCart" aria-label="Fechar">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 6L6 18M6 6l12 12"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="cart-content" id="cartItems">
-                <div class="cart-empty">A sua mesa está vazia.</div>
-            </div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span>Total Estimado:</span>
-                    <span id="cartTotalValue">0 Kz</span>
-                </div>
-                <button id="checkoutWhatsApp" class="btn btn-primary btn-block">
-                    Pedir via WhatsApp
-                </button>
-            </div>
-        </div>
-    </div>
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__top">
@@ -428,6 +359,5 @@
     <script src="js/gallery.js"></script>
     <script src="js/checkin.js"></script>
     <script src="js/reveals.js"></script>
-    <script src="js/cart.js"></script>
 </body>
 </html>

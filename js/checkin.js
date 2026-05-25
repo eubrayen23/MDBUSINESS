@@ -86,7 +86,7 @@ class CheckinSystem {
       const data    = document.getElementById('res-data').value;
       const hora    = document.querySelector('input[name="hora"]:checked');
 
-      if (!pessoas) errors.push('Indique o nmero de pessoas.');
+      if (!pessoas) errors.push('Indique o número de pessoas.');
       if (!data)    errors.push('Escolha uma data.');
       if (!hora)    errors.push('Seleccione uma hora.');
     }
@@ -194,16 +194,16 @@ class CheckinSystem {
        * Using emojis for visual structure and clear field identification.
        */
       const msg = [
-        `Solicitao de Reserva - Churrascaria Nandinhos`,
+        `Solicitação de Reserva - Churrascaria Nandinhos`,
         ``,
         `Nome: ${nome}`,
-        `Nmero de Pessoas: ${pessoas}`,
+        `Número de Pessoas: ${pessoas}`,
         `Data: ${dataFormatada}`,
         `Hora: ${hora}`,
         tel ? `Contacto: ${tel}` : '',
-        obs ? `Observaes: ${obs}` : '',
+        obs ? `Observações: ${obs}` : '',
         ``,
-        `Aguardamos confirmao.`,
+        `Aguardamos confirmação.`,
       ].filter(Boolean).join('\n');
 
       // URI encode the message to ensure safe transmission through the URL

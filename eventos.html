@@ -57,12 +57,6 @@
                 <a href="eventos.html" class="nav-link is-active">Eventos</a>
             </div>
             <div class="navbar__actions">
-                <button id="openCart" class="cart-trigger" aria-label="Minha Mesa">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                    </svg>
-                    <span class="cart-count">0</span>
-                </button>
                 <a href="index.html#reservas" class="btn btn-primary btn-magnetic">Reservar</a>
             </div>
             <button class="navbar__mobile-toggle" aria-label="Menu">
@@ -81,57 +75,120 @@
             </div>
         </section>
 
-
-        <section class="event-quiz bg-white">
-            <div class="container py-2xl">
-                <div class="quiz-wrapper" style="max-width: 600px; margin: 0 auto;">
-                    <div class="section-header align-center">
-                        <span class="section-badge">Quiz de Planeamento</span>
-                        <h2 class="section-title">Organize o seu Evento</h2>
-                        <div class="section-divider"></div>
+        <section class="event-types">
+            <div class="container">
+                <div class="events-grid">
+                    <div class="event-card" data-reveal="fade-up">
+                        <div class="event-image">
+                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800" alt="Almoços de Empresa" class="parallax-img">
+                        </div>
+                        <div class="event-details">
+                            <h3>Almoços de Empresa</h3>
+                            <p>O ambiente ideal para fechar negócios ou celebrar conquistas com a equipa. Oferecemos menus executivos e reserva de mesas grandes com confirmação prioritária.</p>
+                        </div>
                     </div>
 
-                    <form id="eventQuiz" class="checkin-form mt-xl">
-                        <div class="quiz-step is-active" data-step="1">
-                            <h3>Qual o tipo de evento?</h3>
-                            <div class="time-grid" style="grid-template-columns: 1fr 1fr;">
-                                <label class="time-opt"><input type="radio" name="event-type" value="Corporativo"> Corporativo</label>
-                                <label class="time-opt"><input type="radio" name="event-type" value="Aniversrio"> Aniversrio</label>
-                                <label class="time-opt"><input type="radio" name="event-type" value="Familiar"> Reunião Familiar</label>
-                                <label class="time-opt"><input type="radio" name="event-type" value="Outro"> Outro</label>
-                            </div>
-                            <div class="form-actions">
-                                <button type="button" class="btn btn-primary quiz-next" data-next="2">Seguinte</button>
-                            </div>
+                    <div class="event-card" data-reveal="fade-up" data-reveal-delay="0.1">
+                        <div class="event-image">
+                            <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&q=80&w=800" alt="Aniversários" class="parallax-img">
                         </div>
+                        <div class="event-details">
+                            <h3>Aniversários</h3>
+                            <p>Torne o seu dia especial inesquecível. Com capacidade para grupos até 30 pessoas, garantimos que a festa seja acompanhada pelo melhor churrasco da cidade.</p>
+                        </div>
+                    </div>
 
-                        <div class="quiz-step" data-step="2" style="display:none;">
-                            <h3>Para quantas pessoas?</h3>
-                            <div class="form-group">
-                                <select id="event-pax">
-                                    <option value="10-20">10 a 20 Pessoas</option>
-                                    <option value="20-30">20 a 30 Pessoas</option>
-                                    <option value="30-50">30 a 50 Pessoas</option>
-                                    <option value="50+">Mais de 50 Pessoas</option>
-                                </select>
-                            </div>
-                            <div class="form-actions">
-                                <button type="button" class="btn btn-ghost quiz-back" data-back="1">Voltar</button>
-                                <button type="button" class="btn btn-primary quiz-next" data-next="3">Seguinte</button>
-                            </div>
+                    <div class="event-card" data-reveal="fade-up" data-reveal-delay="0.2">
+                        <div class="event-image">
+                            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80&w=800" alt="Reuniões de Família" class="parallax-img">
                         </div>
+                        <div class="event-details">
+                            <h3>Reuniões de Família</h3>
+                            <p>Na Nandinhos, a família está no centro de tudo. Grandes travessas de churrasco misto e um ambiente acolhedor para as suas tardes de domingo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <div class="quiz-step" data-step="3" style="display:none;">
-                            <h3>Previso de data</h3>
-                            <div class="form-group">
-                                <input type="date" id="event-date">
-                            </div>
-                            <div class="form-actions">
-                                <button type="button" class="btn btn-ghost quiz-back" data-back="2">Voltar</button>
-                                <button type="submit" class="btn btn-primary">Pedir Oramento via WhatsApp</button>
-                            </div>
+        <section class="event-quiz" id="eventQuiz">
+            <div class="container">
+                <div class="section-header align-center">
+                    <span class="section-badge" data-reveal="fade-up">Simulador</span>
+                    <h2 class="section-title" data-splitting>Planeie o seu Evento</h2>
+                    <p class="section-desc">Responda a 3 perguntas rápidas para recebermos a sua proposta ideal.</p>
+                </div>
+
+                <div class="quiz-container" data-reveal="scale">
+                    <div class="quiz-progress">
+                        <div class="quiz-progress-bar" id="quizProgress"></div>
+                    </div>
+
+                    <!-- Step 1: Type -->
+                    <div class="quiz-step is-active" data-step="1">
+                        <h3 class="quiz-question">Que tipo de evento está a planear?</h3>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-value="Corporativo">
+                                <span class="quiz-option-icon">🏢</span>
+                                <span class="quiz-option-label">Corporativo</span>
+                            </button>
+                            <button class="quiz-option" data-value="Aniversário">
+                                <span class="quiz-option-icon">🎂</span>
+                                <span class="quiz-option-label">Aniversário</span>
+                            </button>
+                            <button class="quiz-option" data-value="Familiar">
+                                <span class="quiz-option-icon">👨‍👩‍👧‍👦</span>
+                                <span class="quiz-option-label">Familiar</span>
+                            </button>
+                            <button class="quiz-option" data-value="Outro">
+                                <span class="quiz-option-icon">✨</span>
+                                <span class="quiz-option-label">Outro</span>
+                            </button>
                         </div>
-                    </form>
+                    </div>
+
+                    <!-- Step 2: Size -->
+                    <div class="quiz-step" data-step="2">
+                        <h3 class="quiz-question">Qual o número estimado de pessoas?</h3>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-value="10-15 pessoas">
+                                <span class="quiz-option-label">10-15</span>
+                            </button>
+                            <button class="quiz-option" data-value="16-25 pessoas">
+                                <span class="quiz-option-label">16-25</span>
+                            </button>
+                            <button class="quiz-option" data-value="26-40 pessoas">
+                                <span class="quiz-option-label">26-40</span>
+                            </button>
+                            <button class="quiz-option" data-value="Mais de 40 pessoas">
+                                <span class="quiz-option-label">40+</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Menu Preference -->
+                    <div class="quiz-step" data-step="3">
+                        <h3 class="quiz-question">Qual a preferência gastronómica principal?</h3>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-value="Churrasco Tradicional">
+                                <span class="quiz-option-icon">🔥</span>
+                                <span class="quiz-option-label">Churrasco</span>
+                            </button>
+                            <button class="quiz-option" data-value="Peixe e Bacalhau">
+                                <span class="quiz-option-icon">🐟</span>
+                                <span class="quiz-option-label">Peixe / Bacalhau</span>
+                            </button>
+                            <button class="quiz-option" data-value="Menu Misto Especial">
+                                <span class="quiz-option-icon">🍽️</span>
+                                <span class="quiz-option-label">Menu Misto</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-nav">
+                        <button id="quizPrev" class="btn btn-ghost" style="visibility: hidden;">Anterior</button>
+                        <button id="quizNext" class="btn btn-primary" disabled>Próximo</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -147,31 +204,6 @@
         </section>
     </main>
 
-    <!-- MINHA MESA (CART OVERLAY) -->
-    <div class="cart-overlay" id="cartOverlay">
-        <div class="cart-drawer">
-            <div class="cart-header">
-                <h3>Minha Mesa</h3>
-                <button id="closeCart" aria-label="Fechar">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 6L6 18M6 6l12 12"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="cart-content" id="cartItems">
-                <div class="cart-empty">A sua mesa está vazia.</div>
-            </div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span>Total Estimado:</span>
-                    <span id="cartTotalValue">0 Kz</span>
-                </div>
-                <button id="checkoutWhatsApp" class="btn btn-primary btn-block">
-                    Pedir via WhatsApp
-                </button>
-            </div>
-        </div>
-    </div>
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__top">
@@ -203,51 +235,7 @@
     <script src="js/preloader.js"></script>
     <script src="js/lenis.js"></script>
     <script src="js/cursor.js"></script>
+    <script src="js/event-quiz.js"></script>
     <script src="js/reveals.js"></script>
-    <script src="js/cart.js"></script>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const form = document.getElementById('eventQuiz');
-        if(!form) return;
-
-        const nextBtns = form.querySelectorAll('.quiz-next');
-        const backBtns = form.querySelectorAll('.quiz-back');
-        const steps = form.querySelectorAll('.quiz-step');
-
-        nextBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const next = btn.dataset.next;
-                steps.forEach(s => s.style.display = 'none');
-                form.querySelector(`.quiz-step[data-step="${next}"]`).style.display = 'block';
-            });
-        });
-
-        backBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const back = btn.dataset.back;
-                steps.forEach(s => s.style.display = 'none');
-                form.querySelector(`.quiz-step[data-step="${back}"]`).style.display = 'block';
-            });
-        });
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const typeEl = form.querySelector('input[name="event-type"]:checked');
-            const type = typeEl ? typeEl.value : 'Não especificado';
-            const pax = document.getElementById('event-pax').value;
-            const date = document.getElementById('event-date').value;
-
-            const msg = `Olá! Gostaria de pedir um orçamento para um evento na Nandinhos:\n\n` +
-                        `- Tipo: ${type}\n` +
-                        `- Pessoas: ${pax}\n` +
-                        `- Data: ${date}\n\n` +
-                        `Aguardo contacto. Obrigado!`;
-
-            window.open(`https://wa.me/244934859497?text=${encodeURIComponent(msg)}`, '_blank');
-        });
-    });
-    </script>
-
 </body>
 </html>
