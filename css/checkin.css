@@ -1,0 +1,298 @@
+/**
+ * =============================================================================
+ * RESERVATIONS & CHECK-IN UI SYSTEM — CHURRASCARIA NANDINHOS
+ * -------------------------------------------------------------------------
+ * This module manages the visual states of the multi-step reservation form.
+ * It is designed for maximum clarity and technical precision, ensuring that
+ * users can secure their table with minimal cognitive load.
+ *
+ * DESIGN PATTERNS:
+ * - Sequential Reveal: Only one panel is visible at a time.
+ * - Progress Tracking: Visual stepper indicates current location in process.
+ * - Loading States: Feedback provided during WhatsApp handoff.
+ * =============================================================================
+ */
+
+/* === CORE SECTION LAYOUT === */
+
+.reservas {
+  padding: var(--space-2xl) 0;
+  background: var(--white);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  color: var(--text-main);
+}
+
+.reservas__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.reservas__grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.reservas__lead {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--cream-muted);
+  margin-top: 1.5rem;
+  line-height: 1.6;
+}
+
+.info-list {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-item {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.info-item .icon {
+  font-size: 1.5rem;
+  color: var(--brasa);
+}
+
+.info-item h5 {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: var(--text-main);
+  margin-bottom: 0.3rem;
+}
+
+.info-item p {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--cream-muted);
+  line-height: 1.5;
+}
+
+/**
+ * FORM CONTAINER
+ * The wrapper provides a "dark card" aesthetic, separating the interactive
+ * logic from the surrounding informational content.
+ */
+.reservas__form-wrapper {
+  background: var(--cream-dark);
+  padding: 3rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.08);
+}
+
+/**
+ * STEP INDICATOR (STEPPER)
+ * Guides the user through the 1-2-3 process.
+ */
+.form-stepper {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+/**
+ * Connecting Line
+ * Technical note: Centered vertically relative to the step circles.
+ */
+
+.form-stepper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: rgba(227, 18, 18, 0.1);
+  z-index: 1;
+}
+
+.form-step {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--cream-muted);
+  position: relative;
+  z-index: 2;
+  transition: all 0.6s var(--ease-out-expo);
+  box-shadow: 0 0 0 4px var(--cream-dark);
+}
+
+.form-step.is-active {
+  background: var(--brasa);
+  color: var(--white);
+  border-color: var(--brasa);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(227, 18, 18, 0.3), 0 0 0 4px var(--cream-dark);
+}
+
+.form-step.is-completed {
+  background: rgba(227, 18, 18, 0.1);
+  color: var(--brasa);
+  border-color: var(--brasa);
+}
+
+.form-panel {
+  display: none;
+}
+.form-panel.is-active {
+  display: block;
+}
+
+.form-panel h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  margin-bottom: 2rem;
+  color: var(--text-main);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cream-muted);
+}
+
+input, select, textarea {
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  border-radius: var(--border-radius);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--brasa);
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 0.5rem;
+}
+
+.time-opt {
+  position: relative;
+  cursor: pointer;
+  padding: 0.8rem;
+  border: 1px solid rgba(245, 240, 232, 0.1);
+  text-align: center;
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+  font-size: 12px;
+}
+
+.time-opt input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.time-opt:has(input:checked) {
+  background: var(--brasa);
+  color: var(--white);
+  border-color: var(--brasa);
+}
+
+.form-actions {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.summary-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(0,0,0,0.2);
+    border-radius: var(--border-radius);
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+.summary-item span:first-child { color: var(--cream-muted); }
+.summary-item span:last-child { color: var(--brasa); font-weight: 700; }
+
+.form-errors {
+    color: #ff4444;
+    font-size: 12px;
+    margin-bottom: 1rem;
+}
+
+/* CONTACTO */
+.contacto {
+    padding: var(--space-2xl) 0;
+    background: var(--ash);
+}
+.contacto__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+}
+.contacto__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-xl);
+    align-items: center;
+}
+.contacto__map-wrapper {
+    aspect-ratio: 16/9;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    filter: grayscale(1) invert(0.9);
+}
+.contacto__details {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.contacto__details p {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--cream-muted);
+}
+.contacto__details strong {
+    color: var(--brasa);
+}
+
+@media (max-width: 1024px) {
+    .reservas__grid, .contacto__grid { grid-template-columns: 1fr; gap: 4rem; }
+}

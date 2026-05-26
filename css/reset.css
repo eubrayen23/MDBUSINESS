@@ -1,0 +1,80 @@
+:root {
+  /* PALETA PRINCIPAL — REVISÃO PROFISSIONAL CLARA */
+  --coal:        #0A0A0A;   /* fundos escuros ocasionais */
+  --ash:         #121212;
+
+  --brasa:       #E31212;   /* vermelho acento principal */
+  --brasa-dark:  #8B0000;
+  --brasa-light: #FF3232;
+
+  --cream:       #FBF8F3;   /* fundo principal claro (referência imagem) */
+  --cream-dark:  #F5F0E8;   /* fundo secundário claro */
+  --cream-muted: #9E9485;   /* subtextos em fundos claros */
+  --text-main:   #1A1A1A;   /* texto principal em fundos claros */
+  --white:       #FFFFFF;
+
+  /* TIPOGRAFIA */
+  --font-display: 'Playfair Display', 'Georgia', serif;
+  --font-serif:   'Cormorant Garamond', 'Palatino', serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', sans-serif;
+
+  /* ESCALAS TIPOGRÁFICAS (fluid — clamp) */
+  --text-xs:   clamp(0.65rem, 1vw, 0.75rem);
+  --text-sm:   clamp(0.8rem, 1.2vw, 0.9rem);
+  --text-base: clamp(0.95rem, 1.5vw, 1.05rem);
+  --text-lg:   clamp(1.1rem, 2vw, 1.25rem);
+  --text-xl:   clamp(1.3rem, 2.5vw, 1.6rem);
+  --text-2xl:  clamp(1.8rem, 4vw, 2.4rem);
+  --text-3xl:  clamp(2.5rem, 6vw, 4rem);
+  --text-4xl:  clamp(3.5rem, 8vw, 6rem);
+  --text-hero: clamp(4rem, 10vw, 8.5rem);
+
+  /* ESPAÇAMENTO */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  7rem;
+  --space-2xl: 12rem;
+
+  /* TRANSIÇÕES */
+  --ease-smooth:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-expo:  cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-in-out:    cubic-bezier(0.76, 0, 0.24, 1);
+  --duration-fast:  0.25s;
+  --duration-mid:   0.5s;
+  --duration-slow:  0.9s;
+  --duration-xslow: 1.4s;
+
+  /* LAYOUT */
+  --container-max: 1440px;
+  --container-pad: clamp(1.5rem, 5vw, 5rem);
+  --border-radius: 4px;
+  --border-radius-lg: 8px;
+
+  /* Z-INDEX */
+  --z-grain:   1;
+  --z-content: 10;
+  --z-nav:     100;
+  --z-cursor:  9999;
+  --z-modal:   10000;
+}
+
+/* RESET MODERNO */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: auto; } /* Lenis toma conta do scroll */
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--text-main);
+  overflow-x: hidden;
+  width: 100%;
+  cursor: none; /* cursor personalizado substituirá */
+}
+
+@media (max-width: 1024px) {
+    body { cursor: auto; }
+}
+img, video { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+button { cursor: none; background: none; border: none; font-family: inherit; }

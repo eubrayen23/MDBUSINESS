@@ -1,0 +1,216 @@
+/**
+ * EVENTS & GROUPS SECTION — CHURRASCARIA NANDINHOS
+ * -------------------------------------------------------------------------
+ * This section targets corporate events and large family gatherings.
+ * It uses a split-screen layout with an interactive hover grid.
+ */
+
+/* QUIZ */
+.quiz-container {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 4rem auto;
+    position: relative;
+    color: var(--coal);
+}
+
+.quiz-progress {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: #f0f0f0;
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
+}
+
+.quiz-progress-bar {
+    height: 100%;
+    background: var(--brasa);
+    width: 0%;
+    transition: width 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.quiz-step {
+    display: none;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.quiz-step.is-active {
+    display: block;
+}
+
+.quiz-question {
+    font-family: var(--font-display);
+    font-size: 24px;
+    color: var(--coal);
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.quiz-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: #fcfcfc;
+    border: 2px solid #f0f0f0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.quiz-option:hover {
+    border-color: var(--brasa);
+    background: var(--white);
+    transform: translateY(-5px);
+}
+
+.quiz-option.is-selected {
+    border-color: var(--brasa);
+    background: rgba(227, 18, 18, 0.05);
+}
+
+.quiz-option-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.quiz-option-label {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--coal);
+}
+
+.quiz-nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+ * -------------------------------------------------------------------------
+ * This section targets corporate events and large family gatherings.
+ * It uses a split-screen layout with an interactive hover grid.
+ */
+
+.events {
+    padding: var(--space-2xl) 0;
+    background: var(--ash);
+    border-bottom: 1px solid rgba(227, 18, 18, 0.05);
+}
+
+.events__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+}
+
+.events__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-xl);
+    align-items: center;
+}
+
+.events__content {
+    max-width: 500px;
+}
+
+.events__options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/**
+ * Event Card
+ * High-contrast cards for different event types.
+ */
+.event-card {
+    background: var(--coal);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.5s var(--ease-out-expo);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.event-card:hover {
+    border-color: var(--brasa);
+    transform: translateY(-8px);
+    background: rgba(227, 18, 18, 0.02);
+}
+
+.event-card__icon {
+    font-size: 2rem;
+    color: var(--brasa);
+    margin-bottom: 0.5rem;
+}
+
+.event-card h4 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    color: var(--white);
+}
+
+.event-card p {
+    font-size: 13px;
+    color: var(--cream-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.event-card__cta {
+    margin-top: 1rem;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--brasa);
+    font-weight: 700;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.event-card:hover .event-card__cta {
+    opacity: 1;
+}
+
+/**
+ * Events Decorative Media
+ */
+.events__visual {
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+.events__visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+    .events__grid { grid-template-columns: 1fr; gap: 4rem; }
+    .events__options { grid-template-columns: 1fr; }
+}

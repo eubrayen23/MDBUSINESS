@@ -1,0 +1,138 @@
+/* === EFFECTS === */
+
+/* Canvas de grain que cobre TUDO o tempo todo */
+#grain-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: var(--z-grain);
+  opacity: 0.035; /* subtil — não distrai */
+  mix-blend-mode: overlay;
+}
+
+@media (max-width: 768px) {
+  #grain-canvas { opacity: 0.02; } /* Even more subtle on mobile to save battery/perf */
+}
+
+/* Cursor principal — círculo dourado */
+.cursor-dot {
+  position: fixed;
+  width: 8px; height: 8px;
+  background: var(--brasa);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s var(--ease-smooth),
+              opacity   0.3s var(--ease-smooth);
+  display: none;
+}
+
+/* Cursor anel externo — segue com lag */
+.cursor-ring {
+  position: fixed;
+  width: 40px; height: 40px;
+  border: 1px solid rgba(227, 18, 18, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-out-expo),
+              height 0.3s var(--ease-out-expo),
+              opacity 0.3s ease,
+              border-color 0.3s ease;
+  display: none;
+}
+
+@media (min-width: 1025px) {
+    .cursor-dot, .cursor-ring { display: block; }
+}
+
+/* === SCROLL PROGRESS === */
+.scroll-progress {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 3px;
+    z-index: calc(var(--z-nav) + 5);
+    pointer-events: none;
+}
+
+.scroll-progress__bar {
+    width: 100%;
+    height: 100%;
+    background: var(--brasa);
+    transform: scaleX(0);
+    transform-origin: left center;
+    will-change: transform;
+}
+
+/* === DYNAMIC BACKGROUND TRANSITIONS === */
+/* Classes applied via reveals.js to shift background luminosity */
+body.bg-shift-active {
+    transition: background-color 1.2s var(--ease-in-out);
+}
+
+.theme-ash { background-color: var(--ash) !important; }
+.theme-coal { background-color: var(--coal) !important; }
+.theme-cream { background-color: var(--cream) !important; }
+
+/* === HEAT HAZE EFFECT === */
+/* Applied to grill-related sections for atmospheric realism */
+.heat-haze {
+    position: relative;
+    overflow: hidden;
+}
+
+.heat-haze::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)"/></svg>');
+    opacity: 0.05;
+    pointer-events: none;
+    animation: hazeShift 8s linear infinite;
+    mix-blend-mode: overlay;
+    z-index: 2;
+}
+
+@keyframes hazeShift {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.05); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+/* Estado hover — cursor expande e muda de cor */
+.cursor-ring.is-hovering {
+  width: 70px; height: 70px;
+  border-color: rgba(227, 18, 18, 0.9);
+  background: rgba(227, 18, 18, 0.05);
+}
+
+/* Estado hover em texto de link — efeito "ver mais" */
+.cursor-ring.is-link {
+  width: 80px; height: 80px;
+  background: var(--brasa);
+  opacity: 0.15;
+}
+
+/* Estado magnético em botões */
+.cursor-ring.is-magnetic {
+  width: 60px; height: 60px;
+  border-color: var(--brasa);
+  mix-blend-mode: difference;
+}
+
+@media (max-width: 1024px) {
+  body { cursor: auto; }
+  .cursor-dot, .cursor-ring { display: none; }
+  #grain-canvas { opacity: 0.02; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

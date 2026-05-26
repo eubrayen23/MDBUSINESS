@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos & Grupos — Churrascaria Nandinhos</title>
+    <meta name="description" content="Celebre os seus momentos especiais na Churrascaria Nandinhos. Menus personalizados para grupos, aniversários e eventos corporativos.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <link rel="stylesheet" href="css/back-to-top.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/eventos.css">
+</head>
+<body class="page-eventos theme-cream">
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__logo">
+                <span class="preloader__logo-text">Nandinhos</span>
+                <span class="preloader__logo-sub">Eventos & Grupos</span>
+            </div>
+            <div class="preloader__progress">
+                <div class="preloader__progress-bar"></div>
+                <div class="preloader__progress-number">00</div>
+            </div>
+            <div class="preloader__quote">"Criando memórias à volta da mesa."</div>
+        </div>
+        <div class="preloader__curtain"></div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <nav class="navbar is-scrolled" id="navbar">
+        <div class="navbar__container">
+            <div class="navbar__branding">
+                <a href="index.html" class="navbar__logo">
+                    <span class="navbar__logo-name">Nandinhos</span>
+                    <span class="navbar__logo-sub">Churrascaria · Kinaxixi</span>
+                </a>
+            </div>
+            <div class="navbar__nav">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="historia.html" class="nav-link">História</a>
+                <a href="processo.html" class="nav-link">Processo</a>
+                <a href="menu.html" class="nav-link">Pratos</a>
+                <a href="equipa.html" class="nav-link">Equipa</a>
+                <a href="eventos.html" class="nav-link is-active">Eventos</a>
+            </div>
+            <div class="navbar__actions">
+                <a href="index.html#reservas" class="btn btn-primary btn-magnetic">Reservar</a>
+            </div>
+            <button class="navbar__mobile-toggle" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="event-hero">
+            <div class="container">
+                <span class="section-badge" data-reveal="fade-up">Celebrações à Volta do Fogo</span>
+                <h1 class="hero-title" data-splitting>Eventos, Grupos <br>e <em>Memórias</em></h1>
+            </div>
+        </section>
+
+        <section class="event-types">
+            <div class="container">
+                <div class="events-grid">
+                    <div class="event-card" data-reveal="fade-up">
+                        <div class="event-image">
+                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800" alt="Almoços de Empresa" class="parallax-img">
+                        </div>
+                        <div class="event-details">
+                            <h3>Almoços de Empresa</h3>
+                            <p>O ambiente ideal para fechar negócios ou celebrar conquistas com a equipa. Oferecemos menus executivos e reserva de mesas grandes com confirmação prioritária.</p>
+                        </div>
+                    </div>
+
+                    <div class="event-card" data-reveal="fade-up" data-reveal-delay="0.1">
+                        <div class="event-image">
+                            <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&q=80&w=800" alt="Aniversários" class="parallax-img">
+                        </div>
+                        <div class="event-details">
+                            <h3>Aniversários</h3>
+                            <p>Torne o seu dia especial inesquecível. Com capacidade para grupos até 30 pessoas, garantimos que a festa seja acompanhada pelo melhor churrasco da cidade.</p>
+                        </div>
+                    </div>
+
+                    <div class="event-card" data-reveal="fade-up" data-reveal-delay="0.2">
+                        <div class="event-image">
+                            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80&w=800" alt="Reuniões de Família" class="parallax-img">
+                        </div>
+                        <div class="event-details">
+                            <h3>Reuniões de Família</h3>
+                            <p>Na Nandinhos, a família está no centro de tudo. Grandes travessas de churrasco misto e um ambiente acolhedor para as suas tardes de domingo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="event-quiz" id="eventQuiz">
+            <div class="container">
+                <div class="section-header align-center">
+                    <span class="section-badge" data-reveal="fade-up">Simulador</span>
+                    <h2 class="section-title" data-splitting>Planeie o seu Evento</h2>
+                    <p class="section-desc">Responda a 3 perguntas rápidas para recebermos a sua proposta ideal.</p>
+                </div>
+
+                <div class="quiz-container" data-reveal="scale">
+                    <div class="quiz-progress">
+                        <div class="quiz-progress-bar" id="quizProgress"></div>
+                    </div>
+
+                    <!-- Step 1: Type -->
+                    <div class="quiz-step is-active" data-step="1">
+                        <h3 class="quiz-question">Que tipo de evento está a planear?</h3>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-value="Corporativo">
+                                <span class="quiz-option-icon">🏢</span>
+                                <span class="quiz-option-label">Corporativo</span>
+                            </button>
+                            <button class="quiz-option" data-value="Aniversário">
+                                <span class="quiz-option-icon">🎂</span>
+                                <span class="quiz-option-label">Aniversário</span>
+                            </button>
+                            <button class="quiz-option" data-value="Familiar">
+                                <span class="quiz-option-icon">👨‍👩‍👧‍👦</span>
+                                <span class="quiz-option-label">Familiar</span>
+                            </button>
+                            <button class="quiz-option" data-value="Outro">
+                                <span class="quiz-option-icon">✨</span>
+                                <span class="quiz-option-label">Outro</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Size -->
+                    <div class="quiz-step" data-step="2">
+                        <h3 class="quiz-question">Qual o número estimado de pessoas?</h3>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-value="10-15 pessoas">
+                                <span class="quiz-option-label">10-15</span>
+                            </button>
+                            <button class="quiz-option" data-value="16-25 pessoas">
+                                <span class="quiz-option-label">16-25</span>
+                            </button>
+                            <button class="quiz-option" data-value="26-40 pessoas">
+                                <span class="quiz-option-label">26-40</span>
+                            </button>
+                            <button class="quiz-option" data-value="Mais de 40 pessoas">
+                                <span class="quiz-option-label">40+</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Menu Preference -->
+                    <div class="quiz-step" data-step="3">
+                        <h3 class="quiz-question">Qual a preferência gastronómica principal?</h3>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-value="Churrasco Tradicional">
+                                <span class="quiz-option-icon">🔥</span>
+                                <span class="quiz-option-label">Churrasco</span>
+                            </button>
+                            <button class="quiz-option" data-value="Peixe e Bacalhau">
+                                <span class="quiz-option-icon">🐟</span>
+                                <span class="quiz-option-label">Peixe / Bacalhau</span>
+                            </button>
+                            <button class="quiz-option" data-value="Menu Misto Especial">
+                                <span class="quiz-option-icon">🍽️</span>
+                                <span class="quiz-option-label">Menu Misto</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-nav">
+                        <button id="quizPrev" class="btn btn-ghost" style="visibility: hidden;">Anterior</button>
+                        <button id="quizNext" class="btn btn-primary" disabled>Próximo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="event-cta">
+            <div class="container" data-reveal="scale">
+                <div class="cta-box">
+                    <h2>Organize o seu Evento</h2>
+                    <p>Tem um grupo superior a 10 pessoas? Contacte-nos diretamente para menus personalizados e condições especiais.</p>
+                    <a href="https://wa.me/244934859497" class="btn btn-primary btn-magnetic">Falar via WhatsApp</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <span class="footer__logo">Nandinhos</span>
+                    <p class="footer__tagline">O Melhor Churrasco de Luanda desde sempre.</p>
+                </div>
+                <div class="footer__nav">
+                    <a href="index.html">Início</a>
+                    <a href="historia.html">História</a>
+                    <a href="menu.html">Pratos</a>
+                    <a href="index.html#reservas">Reservas</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__credits">
+                    <p>© 2025 Churrascaria Nandinhos. Todos os direitos reservados. Luanda, Angola.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/lenis.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/event-quiz.js"></script>
+    <script src="js/reveals.js"></script>
+</body>
+</html>

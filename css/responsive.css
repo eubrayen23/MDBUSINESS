@@ -1,0 +1,156 @@
+/* === RESPONSIVE ADAPTATIONS — CHURRASCARIA NANDINHOS === */
+
+/* BREAKPOINTS
+   Mobile: 320px - 767px
+   Tablet: 768px - 1023px
+   Desktop: 1024px+
+*/
+
+/* 1. UNIVERSAL SCALING FIXES */
+@media (max-width: 1024px) {
+    :root {
+        --container-pad: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    :root {
+        --container-pad: 1.5rem;
+    }
+
+    .hero__title {
+        font-size: clamp(2.5rem, 10vw, 3.5rem) !important;
+        line-height: 1;
+    }
+
+    .hero__subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .section-title {
+        font-size: 2.2rem !important;
+    }
+
+    .p-lg {
+        font-size: 1.1rem;
+    }
+
+    .py-2xl {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+/* 2. GRID & FLEX REFLOWS */
+
+/* Sobre Section Grid */
+@media (max-width: 991px) {
+    .sobre__grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+
+    .sobre__media {
+        order: -1;
+    }
+}
+
+/* Menu Grid Teaser */
+@media (max-width: 991px) {
+    .menu-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 20px !important;
+    }
+}
+
+@media (max-width: 580px) {
+    .menu-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Reviews Grid */
+@media (max-width: 767px) {
+    .reviews-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}
+
+/* Contact Grid */
+@media (max-width: 991px) {
+    .contacto .container > div {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+}
+
+/* Stats Container */
+@media (max-width: 767px) {
+    .stats__container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+}
+
+/* 3. COMPONENT FIXES */
+
+/* Navbar Mobile */
+@media (max-width: 1024px) {
+    .navbar__nav {
+        display: none;
+    }
+
+    .navbar__actions {
+        display: none;
+    }
+
+    .navbar__mobile-toggle {
+        display: flex !important;
+    }
+}
+
+/* Form Groups */
+@media (max-width: 600px) {
+    .form-panel div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Back to Top Position */
+@media (max-width: 767px) {
+    .back-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .whatsapp-float {
+        bottom: 1.5rem;
+        right: 5.5rem; /* Space for back to top */
+    }
+}
+
+/* 4. PRELOADER RESPONSIVE */
+@media (max-width: 480px) {
+    .preloader__logo-text {
+        font-size: 2.2rem;
+    }
+
+    .preloader__quote {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+}
+
+/* 5. CURSOR DISABLING ON TOUCH */
+@media (hover: none) and (pointer: coarse) {
+    .cursor-dot, .cursor-ring {
+        display: none !important;
+    }
+
+    body {
+        cursor: auto !important;
+    }
+}
