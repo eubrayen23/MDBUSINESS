@@ -25,22 +25,29 @@ export function RegisterForm() {
 
   const onSubmit = async (data: RegisterFormValues) => {
     setIsLoading(true);
-    const { error } = await supabase.auth.signUp({
-      email: data.email,
-      password: data.password,
-      options: {
-        data: {
-          full_name: data.fullName,
+    try {
+      const { error } = await supabase.auth.signUp({
+        email: data.email,
+        password: data.password,
+        options: {
+          data: {
+            full_name: data.fullName,
+          },
         },
-      },
-    });
+      });
 
-    if (error) {
-      toast.error(error.message);
+      if (error) {
+        console.error('Signup Error:', error);
+        toast.error(error.message || 'Erro ao criar conta. Verifica a ligação.');
+      } else {
+        toast.success('Conta criada! Verifica o teu email ou entra agora.');
+        navigate('/entrar');
+      }
+    } catch (err: any) {
+      console.error('Network Error:', err);
+      toast.error('Erro de rede: Falha ao contactar o servidor.');
+    } finally {
       setIsLoading(false);
-    } else {
-      toast.success('Conta criada com sucesso! Podes agora entrar.');
-      navigate('/entrar');
     }
   };
 
