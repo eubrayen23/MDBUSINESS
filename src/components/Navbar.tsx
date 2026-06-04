@@ -26,52 +26,63 @@ export default function Navbar() {
     { name: t('nav.about'), path: '/about' },
   ];
 
+  const AdinkraStar = () => (
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-ochre-gold/40">
+      <path d="M12 0l3.09 8.26L24 9.27l-6 5.84L19.47 24 12 19.77 4.53 24 6 15.11 0 9.27l8.91-1.01L12 0z" />
+    </svg>
+  );
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${
-      scrolled ? 'bg-white/90 backdrop-blur-xl py-4 shadow-sm' : 'bg-transparent py-6'
+    <nav className={`fixed w-full z-50 transition-all duration-700 ${
+      scrolled
+        ? 'bg-ebony-black/90 backdrop-blur-2xl py-4 border-b border-white/5 shadow-2xl'
+        : 'bg-transparent py-8'
     }`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Left: Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <span className="font-display text-2xl font-semibold tracking-widest text-studio-dark group-hover:text-terracotta transition-colors uppercase">
+          <span className="font-display text-2xl md:text-3xl font-bold tracking-[0.2em] text-white group-hover:text-ochre-gold transition-colors uppercase">
             Ekton Afrik Arts
           </span>
         </Link>
 
         {/* Center: Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link, i) => (
-            <div key={link.path} className="flex items-center">
+            <React.Fragment key={link.path}>
               <Link
                 to={link.path}
-                className={`text-[13px] font-mono uppercase tracking-[0.2em] transition-all hover:text-terracotta ${
-                  location.pathname === link.path ? 'text-terracotta' : 'text-studio-dark'
+                className={`text-[13px] font-sans font-bold uppercase tracking-[0.3em] transition-all relative py-2 group ${
+                  location.pathname === link.path ? 'text-ochre-gold' : 'text-white/70 hover:text-white'
                 }`}
               >
                 {link.name}
+                <motion.div
+                  className="absolute bottom-0 left-0 h-0.5 bg-terracotta transition-all group-hover:w-full"
+                  initial={false}
+                  animate={{ width: location.pathname === link.path ? '100%' : '0%' }}
+                />
               </Link>
-              {i < navLinks.length - 1 && (
-                <span className="ml-8 text-[10px] text-studio-accent/20">✦</span>
-              )}
-            </div>
+              {i < navLinks.length - 1 && <AdinkraStar />}
+            </React.Fragment>
           ))}
         </div>
 
         {/* Right: Lang + Cart */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-8">
           <div className="hidden md:block">
             <LanguageSwitcher />
           </div>
 
-          <Link to="/cart" className="relative p-2 text-studio-dark hover:text-terracotta transition-colors">
-            <ShoppingBag className="w-6 h-6 stroke-[1.5]" />
+          <Link to="/cart" className="relative p-2 text-white hover:text-ochre-gold transition-colors group">
+            <ShoppingBag className="w-6 h-6 stroke-[1.5] group-hover:scale-110 transition-transform" />
             <AnimatePresence>
               {itemCount > 0 && (
                 <motion.span
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   exit={{ scale: 0 }}
-                  className="absolute top-1 right-1 bg-terracotta text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold"
+                  className="absolute -top-1 -right-1 bg-terracotta text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold shadow-lg"
                 >
                   {itemCount}
                 </motion.span>
@@ -80,10 +91,10 @@ export default function Navbar() {
           </Link>
 
           <button
-            className="md:hidden p-2 text-studio-dark"
+            className="lg:hidden p-2 text-white"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
           </button>
         </div>
       </div>
@@ -92,25 +103,30 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: '100vh' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="fixed inset-0 top-0 bg-white z-40 md:hidden pt-24 px-6"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 top-0 bg-ebony-black z-40 lg:hidden flex flex-col justify-center px-12"
           >
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-10">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="text-4xl font-display uppercase tracking-tight text-studio-dark"
+                  className="text-5xl md:text-6xl font-display font-bold uppercase tracking-tight text-white hover:text-ochre-gold transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
                 </Link>
               ))}
-              <div className="pt-8 border-t border-studio-accent/10">
+              <div className="pt-12 border-t border-white/10">
                 <LanguageSwitcher />
               </div>
+            </div>
+
+            <div className="absolute bottom-12 left-12">
+               <p className="text-white/20 font-mono text-xs uppercase tracking-widest">Ekton Afrik Arts — Luanda, Angola</p>
             </div>
           </motion.div>
         )}
@@ -118,3 +134,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+import React from 'react';

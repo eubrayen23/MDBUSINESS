@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -26,41 +26,27 @@
 }
 
 @layer base {
-  @font-face {
-    font-family: 'PP Neue Montreal';
-    src: url('https://assets.website-files.com/6009ec8cda7f305645c9d91b/60176f9bb43e36419997ecfe_PPNeueMontreal-Book.otf') format('opentype');
-    font-weight: 400;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'PP Neue Montreal';
-    src: url('https://assets.website-files.com/6009ec8cda7f305645c9d91b/60176f9b39c5673e51a86f5a_PPNeueMontreal-Medium.otf') format('opentype');
-    font-weight: 500;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'PP Mondwest';
-    src: local('Cormorant Garamond');
-    font-weight: 400;
-    font-display: swap;
-  }
-
   body {
-    @apply bg-white text-ebony-black font-sans antialiased;
+    @apply bg-cream-white text-ebony-black font-sans antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
   }
+
+  /* Selection colors */
+  ::selection {
+    @apply bg-terracotta text-white;
+  }
 }
 
 @layer components {
-  .btn-studio-primary {
-    @apply bg-studio-dark text-white rounded-full px-7 py-3 shadow-primary transition-all hover:scale-[1.02] active:scale-[0.98];
+  .btn-primary {
+    @apply bg-ebony-black text-white rounded-full px-10 py-4 font-sans text-xs uppercase tracking-widest font-bold hover:bg-terracotta transition-all shadow-xl active:scale-95;
   }
 
-  .btn-studio-secondary {
-    @apply bg-white text-studio-dark rounded-full px-7 py-3 shadow-secondary transition-all hover:scale-[1.02] active:scale-[0.98];
+  .btn-secondary {
+    @apply bg-white border border-ebony-black/10 text-ebony-black rounded-full px-10 py-4 font-sans text-xs uppercase tracking-widest font-bold hover:bg-ebony-black hover:text-white transition-all shadow-sm active:scale-95;
   }
 
   .kuba-pattern {
@@ -113,10 +99,19 @@
   animation-play-state: paused;
 }
 
-.font-mondwest {
-  font-family: var(--font-serif-accent);
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.font-neue {
-  font-family: var(--font-body-accent);
+::-webkit-scrollbar-track {
+  @apply bg-ebony-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-terracotta rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-ochre-gold;
 }

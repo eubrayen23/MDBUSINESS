@@ -26,15 +26,15 @@ const About: React.FC = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="font-mono text-studio-dark text-xs tracking-[0.4em] uppercase mb-6"
+              className="font-mono text-ochre-gold text-[10px] tracking-[0.4em] uppercase mb-6"
             >
-              Ekton Afrik Arts Studio
+              Ekton Afrik Arts Gallery
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-mondwest text-studio-dark mb-10 leading-tight"
+              className="text-5xl md:text-7xl font-display text-ebony-black mb-10 leading-tight tracking-tight"
             >
               Conectando o Mundo à <span className="italic text-terracotta">Alma Africana</span>.
             </motion.h1>
@@ -42,13 +42,13 @@ const About: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-studio-muted text-lg font-neue leading-relaxed mb-10"
+              className="text-ebony-black/70 text-lg font-sans leading-relaxed mb-10"
             >
               {t('about.story_text')}
             </motion.p>
             <div className="flex gap-4">
                <div className="w-12 h-0.5 bg-terracotta mt-4" />
-               <p className="font-mondwest text-xl italic text-studio-dark">Sourced ethically from local communities and master artisans.</p>
+               <p className="font-display text-xl italic text-ebony-black">Sourced ethically from local communities and master artisans.</p>
             </div>
           </div>
 
@@ -58,11 +58,11 @@ const About: React.FC = () => {
             transition={{ duration: 1 }}
             className="relative"
           >
-            <div className="aspect-square rounded-[60px] overflow-hidden bg-studio-dark p-12 flex items-center justify-center shadow-primary">
-               <SonaSpiral className="w-full h-full opacity-50" />
+            <div className="aspect-square rounded-[60px] overflow-hidden bg-ebony-black p-12 flex items-center justify-center shadow-2xl">
+               <SonaSpiral className="w-full h-full opacity-40" />
             </div>
-            <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-white rounded-full flex items-center justify-center p-8 text-center shadow-float rotate-12 border border-studio-accent/5">
-               <span className="font-mondwest text-studio-dark text-lg leading-tight uppercase font-bold tracking-tighter">Est. 2018 Luanda</span>
+            <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-white rounded-full flex items-center justify-center p-8 text-center shadow-xl rotate-12 border border-ebony-black/5">
+               <span className="font-display text-ebony-black text-lg leading-tight uppercase font-bold tracking-tight">Est. 2018 Luanda</span>
             </div>
           </motion.div>
         </div>
@@ -78,7 +78,7 @@ const About: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-float"
+              className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-lg"
             >
               <img src={img} alt="Ekton Afrik Arts" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
             </motion.div>
@@ -87,12 +87,12 @@ const About: React.FC = () => {
       </section>
 
       {/* Mission & Values */}
-      <section className="py-32 px-6 md:px-12 bg-studio-light">
+      <section className="py-32 px-6 md:px-12 bg-cream-white/30 border-y border-ebony-black/5">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-20">
             <div className="lg:col-span-1">
-              <h2 className="text-4xl md:text-5xl font-mondwest text-studio-dark mb-6">{t('about.mission')}</h2>
-              <p className="text-studio-muted font-neue leading-relaxed">
+              <h2 className="text-4xl md:text-5xl font-display text-ebony-black mb-6">{t('about.mission')}</h2>
+              <p className="text-ebony-black/70 font-sans leading-relaxed">
                 Nossa missão é elevar a arte africana ao patamar de luxo global, celebrando a herança cultural de Angola e apoiando o desenvolvimento sustentável das nossas comunidades artísticas.
               </p>
             </div>
@@ -100,8 +100,8 @@ const About: React.FC = () => {
             <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-12">
               {values.map((v, i) => (
                 <div key={i}>
-                  <h3 className="font-mondwest text-2xl text-terracotta mb-4 italic">{v.title}</h3>
-                  <p className="text-studio-muted font-neue leading-relaxed">{v.text}</p>
+                  <h3 className="font-display text-2xl text-terracotta mb-4 italic">{v.title}</h3>
+                  <p className="text-ebony-black/70 font-sans leading-relaxed">{v.text}</p>
                 </div>
               ))}
             </div>
