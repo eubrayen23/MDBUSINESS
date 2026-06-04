@@ -17,7 +17,7 @@ export const initialProducts: Product[] = [
     name: { pt: 'Pensamento Profundo', en: 'Deep Thought', fr: 'Pensée Profonde' },
     artist: 'Matias Domingos',
     category: 'pinturas',
-    price: 1200,
+    price: 8500,
     currency: 'USD',
     images: [p1],
     description: {
@@ -36,7 +36,7 @@ export const initialProducts: Product[] = [
     name: { pt: 'Guerreira Mumuila', en: 'Mumuila Warrior', fr: 'Guerrière Mumuila' },
     artist: 'Ana Silva',
     category: 'esculturas',
-    price: 850,
+    price: 4200,
     currency: 'USD',
     images: [p2],
     description: {
@@ -55,7 +55,7 @@ export const initialProducts: Product[] = [
     name: { pt: 'Pôr do Sol no Mussulo', en: 'Sunset at Mussulo', fr: 'Coucher de soleil au Mussulo' },
     artist: 'José Gaspar',
     category: 'paisagens',
-    price: 600,
+    price: 5200,
     currency: 'USD',
     images: [p3],
     description: {
@@ -74,7 +74,7 @@ export const initialProducts: Product[] = [
     name: { pt: 'Máscara Mwana Pwo', en: 'Mwana Pwo Mask', fr: 'Masque Mwana Pwo' },
     artist: 'Mestre Kapela',
     category: 'artefactos',
-    price: 2500,
+    price: 12500,
     currency: 'USD',
     images: [p4],
     description: {
@@ -93,7 +93,7 @@ export const initialProducts: Product[] = [
     name: { pt: 'Ritmo Urbano', en: 'Urban Rhythm', fr: 'Rythme Urbain' },
     artist: 'Matias Domingos',
     category: 'pinturas',
-    price: 950,
+    price: 7800,
     currency: 'USD',
     images: [p5],
     description: {
@@ -112,7 +112,7 @@ export const initialProducts: Product[] = [
     name: { pt: 'Ancestralidade', en: 'Ancestry', fr: 'Ancestralité' },
     artist: 'Manuel Agostinho',
     category: 'esculturas',
-    price: 1800,
+    price: 9800,
     currency: 'USD',
     images: [p6],
     description: {
@@ -131,7 +131,7 @@ export const initialProducts: Product[] = [
     name: { pt: 'Kalandula em Tons Azuis', en: 'Kalandula in Blue Tones', fr: 'Kalandula en tons bleus' },
     artist: 'Ana Silva',
     category: 'paisagens',
-    price: 1100,
+    price: 6400,
     currency: 'USD',
     images: [p7],
     description: {
@@ -150,7 +150,7 @@ export const initialProducts: Product[] = [
     name: { pt: 'Cesto de Benguela', en: 'Benguela Basket', fr: 'Panier de Benguela' },
     artist: 'Artesãos de Omaka',
     category: 'artesanato',
-    price: 150,
+    price: 850,
     currency: 'USD',
     images: [p8],
     description: {
@@ -169,7 +169,7 @@ export const initialProducts: Product[] = [
     name: { pt: 'O Pescador', en: 'The Fisherman', fr: 'Le Pêcheur' },
     artist: 'José Gaspar',
     category: 'pinturas',
-    price: 750,
+    price: 5900,
     currency: 'USD',
     images: [p9],
     description: {
@@ -188,7 +188,7 @@ export const initialProducts: Product[] = [
     name: { pt: 'Tecidos Africanos', en: 'African Textiles', fr: 'Textiles Africains' },
     artist: 'Mestre Kapela',
     category: 'artesanato',
-    price: 450,
+    price: 1200,
     currency: 'USD',
     images: [p10],
     description: {
@@ -207,7 +207,7 @@ export const initialProducts: Product[] = [
     name: { pt: 'Mercado do Roque Santeiro', en: 'Roque Santeiro Market', fr: 'Marché Roque Santeiro' },
     artist: 'Manuel Agostinho',
     category: 'pinturas',
-    price: 1400,
+    price: 9200,
     currency: 'USD',
     images: [p1],
     description: {
@@ -226,7 +226,7 @@ export const initialProducts: Product[] = [
     name: { pt: 'Estatueta Tchokwe', en: 'Tchokwe Statuette', fr: 'Statuette Tchokwe' },
     artist: 'Artesãos da Lunda',
     category: 'artesanato',
-    price: 300,
+    price: 2400,
     currency: 'USD',
     images: [p2],
     description: {

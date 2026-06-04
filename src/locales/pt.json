@@ -6,6 +6,27 @@
     "contact": "Contacto",
     "cart": "Carrinho"
   },
+  "studio": {
+    "tagline": "A galeria criativa da Ekton Afrik",
+    "heading1": "Curando a próxima vaga,",
+    "heading2": "à maneira Africana.",
+    "p1": "Sete anos a selecionar os melhores artefactos em todo o continente. Fundámos a Ekton para trazer a alma de Luanda para o palco global.",
+    "p2": "A nossa curadoria é deliberadamente exclusiva. Cada peça é selecionada à mão pelos nossos especialistas, garantindo uma proveniência autêntica e qualidade inigualável.",
+    "p3": "Consultas privadas começam em $5.000 por aquisição.",
+    "cta_chat": "Iniciar conversa",
+    "cta_projects": "Ver coleção",
+    "quote": "Fundei a Ekton para construir a galeria da qual sempre quis ser colecionador.",
+    "founder": "Ekton Oddy, Fundador",
+    "pricing_partnership_title": "Gestão Anual de Coleções",
+    "pricing_partnership_desc": "Uma equipa de curadoria dedicada ao seu espólio privado. / Acesso direto à nossa rede.",
+    "pricing_project_title": "Aquisição Específica",
+    "pricing_project_desc": "Âmbito fixo para obras-primas individuais. / Mesmo rigor, mesma excelência.",
+    "builders_say_1": "O que dizem os",
+    "builders_say_2": "colecionadores",
+    "clutch": "Património 5/5",
+    "partner_heading": "Seja nosso parceiro",
+    "start_chat_with": "Falar com o Curador"
+  },
   "hero": {
     "eyebrow": "GALERIA DE ARTE ANGOLANA",
     "headline": "A Alma de Angola,\nMoldurada em Arte.",

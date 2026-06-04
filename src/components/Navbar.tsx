@@ -1,140 +1,115 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ShoppingBag, Menu as MenuIcon, X } from 'lucide-react';
-import { useCartStore } from '@/store/cartStore';
-import { LanguageSwitcher } from './LanguageSwitcher';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ShoppingBag, Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useCartStore } from '../store/cartStore';
 
-export const Navbar: React.FC = () => {
+export default function Navbar() {
   const { t } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const cartItems = useCartStore(state => state.items);
+  const itemCount = cartItems.reduce((acc, item) => acc + item.qty, 0);
   const location = useLocation();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const cartItemsCount = useCartStore((state) => state.items.reduce((acc, item) => acc + item.qty, 0));
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 80);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [location]);
 
   const navLinks = [
     { name: t('nav.home'), path: '/' },
     { name: t('nav.shop'), path: '/shop' },
     { name: t('nav.about'), path: '/about' },
-    { name: t('nav.contact'), path: '/contact' },
   ];
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-ebony-black/95 backdrop-blur-xl border-b border-ochre-gold/20 py-3'
-          : 'bg-ebony-black/85 backdrop-blur-md border-b border-ochre-gold/10 py-5'
-      }`}
-    >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between">
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${
+      scrolled ? 'bg-white/90 backdrop-blur-xl py-4 shadow-sm' : 'bg-transparent py-6'
+    }`}>
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Left: Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-ochre-gold rounded-full flex items-center justify-center text-ebony-black text-xl">
-            ✦
-          </div>
-          <span className="font-display text-white text-xl md:text-2xl tracking-[0.2em] uppercase font-bold group-hover:text-ochre-gold transition-colors">
+        <Link to="/" className="flex items-center gap-2 group">
+          <span className="font-display text-2xl font-semibold tracking-widest text-studio-dark group-hover:text-terracotta transition-colors uppercase">
             Ekton Afrik Arts
           </span>
         </Link>
 
         {/* Center: Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link, i) => (
-            <React.Fragment key={link.path}>
+            <div key={link.path} className="flex items-center">
               <Link
                 to={link.path}
-                className={`font-sans text-[11px] uppercase tracking-[0.3em] transition-all hover:text-ochre-gold ${
-                  location.pathname === link.path ? 'text-ochre-gold' : 'text-white/70'
+                className={`text-[13px] font-mono uppercase tracking-[0.2em] transition-all hover:text-terracotta ${
+                  location.pathname === link.path ? 'text-terracotta' : 'text-studio-dark'
                 }`}
               >
                 {link.name}
               </Link>
-              {i < navLinks.length - 1 && <span className="text-ochre-gold/40 text-[8px]">✦</span>}
-            </React.Fragment>
+              {i < navLinks.length - 1 && (
+                <span className="ml-8 text-[10px] text-studio-accent/20">✦</span>
+              )}
+            </div>
           ))}
         </div>
 
-        {/* Right: Lang + Cart + Mobile Toggle */}
+        {/* Right: Lang + Cart */}
         <div className="flex items-center gap-6">
           <div className="hidden md:block">
             <LanguageSwitcher />
           </div>
 
-          <Link to="/cart" className="relative group p-2">
-            <ShoppingBag className="w-5 h-5 text-white group-hover:text-ochre-gold transition-colors" />
+          <Link to="/cart" className="relative p-2 text-studio-dark hover:text-terracotta transition-colors">
+            <ShoppingBag className="w-6 h-6 stroke-[1.5]" />
             <AnimatePresence>
-              {cartItemsCount > 0 && (
+              {itemCount > 0 && (
                 <motion.span
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   exit={{ scale: 0 }}
-                  key={cartItemsCount}
-                  className="absolute -top-1 -right-1 bg-terracotta text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-mono"
+                  className="absolute top-1 right-1 bg-terracotta text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold"
                 >
-                  {cartItemsCount}
+                  {itemCount}
                 </motion.span>
               )}
             </AnimatePresence>
           </Link>
 
           <button
-            className="lg:hidden p-2 text-white"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 text-studio-dark"
+            onClick={() => setIsOpen(!isOpen)}
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu */}
       <AnimatePresence>
-        {isMobileMenuOpen && (
+        {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ type: 'tween', duration: 0.4 }}
-            className="fixed inset-0 bg-ebony-black z-[60] flex flex-col p-8 pt-24"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: '100vh' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="fixed inset-0 top-0 bg-white z-40 md:hidden pt-24 px-6"
           >
-            <button
-              className="absolute top-8 right-8 p-2 text-white"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              <X className="w-8 h-8" />
-            </button>
-
-            <div className="flex flex-col gap-8 mb-12">
+            <div className="flex flex-col gap-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`font-display text-4xl uppercase tracking-wider ${
-                    location.pathname === link.path ? 'text-ochre-gold' : 'text-white'
-                  }`}
+                  className="text-4xl font-display uppercase tracking-tight text-studio-dark"
+                  onClick={() => setIsOpen(false)}
                 >
                   {link.name}
                 </Link>
               ))}
-            </div>
-
-            <div className="mt-auto border-t border-white/10 pt-8 flex justify-between items-center">
-              <LanguageSwitcher />
-              <div className="text-white/40 font-mono text-[10px] tracking-widest uppercase">
-                Luanda, Angola
+              <div className="pt-8 border-t border-studio-accent/10">
+                <LanguageSwitcher />
               </div>
             </div>
           </motion.div>
@@ -142,4 +117,4 @@ export const Navbar: React.FC = () => {
       </AnimatePresence>
     </nav>
   );
-};
+}

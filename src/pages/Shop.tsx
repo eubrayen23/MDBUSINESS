@@ -13,7 +13,7 @@ const Shop: React.FC = () => {
 
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [categoryFilter, setCategoryFilter] = useState<string>(searchParams.get('category') || 'all');
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 5000]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 20000]);
   const [sortBy, setSortBy] = useState<string>('recent');
   const [visibleCount, setVisibleCount] = useState(9);
 
@@ -122,7 +122,7 @@ const Shop: React.FC = () => {
                  <input
                    type="range"
                    min="0"
-                   max="5000"
+                   max="20000"
                    step="100"
                    value={priceRange[1]}
                    onChange={(e) => setPriceRange([0, parseInt(e.target.value)])}
@@ -159,7 +159,7 @@ const Shop: React.FC = () => {
               <div className="py-32 text-center bg-white rounded-[40px] border border-ebony-black/5">
                 <p className="text-ebony-black/40 font-display text-2xl italic">Nenhuma obra encontrada para estes critérios.</p>
                 <button
-                  onClick={() => { handleCategoryChange('all'); setPriceRange([0, 5000]); }}
+                  onClick={() => { handleCategoryChange('all'); setPriceRange([0, 20000]); }}
                   className="mt-6 text-terracotta font-sans text-[10px] uppercase tracking-widest font-bold underline underline-offset-4"
                 >
                   Limpar Filtros

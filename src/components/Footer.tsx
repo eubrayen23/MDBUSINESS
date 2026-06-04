@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook, MessageCircle } from 'lucide-react';
 
-export const Footer: React.FC = () => {
+const Footer: React.FC = () => {
   const { t } = useTranslation();
 
   return (
@@ -43,7 +43,6 @@ export const Footer: React.FC = () => {
               <li><Link to="/" className="text-white/60 hover:text-white transition-colors font-sans text-sm uppercase tracking-widest">{t('nav.home')}</Link></li>
               <li><Link to="/shop" className="text-white/60 hover:text-white transition-colors font-sans text-sm uppercase tracking-widest">{t('nav.shop')}</Link></li>
               <li><Link to="/about" className="text-white/60 hover:text-white transition-colors font-sans text-sm uppercase tracking-widest">{t('nav.about')}</Link></li>
-              <li><Link to="/contact" className="text-white/60 hover:text-white transition-colors font-sans text-sm uppercase tracking-widest">{t('nav.contact')}</Link></li>
             </ul>
           </div>
 
@@ -83,3 +82,5 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+
+export default Footer;

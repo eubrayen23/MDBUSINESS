@@ -8,14 +8,45 @@
   --color-cream-white: #F5EFE0;
   --color-dusty-sand: #D4B896;
 
+  --color-studio-dark: #051A24;
+  --color-studio-accent: #0D212C;
+  --color-studio-muted: #273C46;
+  --color-studio-light: #F6FCFF;
+  --color-studio-ice: #E0EBF0;
+
   --font-display: "Cormorant Garamond", serif;
   --font-sans: "DM Sans", sans-serif;
   --font-mono: "Space Mono", monospace;
+  --font-serif-accent: "PP Mondwest", serif;
+  --font-body-accent: "PP Neue Montreal", sans-serif;
+
+  --shadow-primary: 0 1px 2px 0 rgba(5,26,36,0.1), 0 4px 4px 0 rgba(5,26,36,0.09), 0 9px 6px 0 rgba(5,26,36,0.05), 0 17px 7px 0 rgba(5,26,36,0.01), 0 26px 7px 0 rgba(5,26,36,0), inset 0 2px 8px 0 rgba(255,255,255,0.5);
+  --shadow-secondary: 0 0 0 0.5px rgba(0,0,0,0.05), 0 4px 30px rgba(0,0,0,0.08);
+  --shadow-float: 0 4px 16px rgba(0,0,0,0.08);
 }
 
 @layer base {
+  @font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://assets.website-files.com/6009ec8cda7f305645c9d91b/60176f9bb43e36419997ecfe_PPNeueMontreal-Book.otf') format('opentype');
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://assets.website-files.com/6009ec8cda7f305645c9d91b/60176f9b39c5673e51a86f5a_PPNeueMontreal-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'PP Mondwest';
+    src: local('Cormorant Garamond');
+    font-weight: 400;
+    font-display: swap;
+  }
+
   body {
-    @apply bg-cream-white text-ebony-black font-sans antialiased;
+    @apply bg-white text-ebony-black font-sans antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -24,6 +55,14 @@
 }
 
 @layer components {
+  .btn-studio-primary {
+    @apply bg-studio-dark text-white rounded-full px-7 py-3 shadow-primary transition-all hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-studio-secondary {
+    @apply bg-white text-studio-dark rounded-full px-7 py-3 shadow-secondary transition-all hover:scale-[1.02] active:scale-[0.98];
+  }
+
   .kuba-pattern {
     background-color: var(--color-terracotta);
     background-image: repeating-linear-gradient(
@@ -41,14 +80,16 @@
       rgba(139, 58, 30, 0.2) 40px
     );
   }
+}
 
-  .btn-primary {
-    @apply bg-terracotta text-white rounded-full px-8 py-3 transition-transform hover:scale-105 inline-block text-center font-medium;
-  }
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
 
-  .btn-secondary {
-    @apply border border-white/30 text-white/90 rounded-full px-8 py-3 backdrop-blur hover:bg-white/10 transition-colors inline-block text-center font-medium;
-  }
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
 }
 
 @keyframes marquee {
@@ -62,6 +103,20 @@
   animation: marquee 30s linear infinite;
 }
 
+@media (max-width: 768px) {
+  .animate-marquee {
+    animation-duration: 10s;
+  }
+}
+
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+.font-mondwest {
+  font-family: var(--font-serif-accent);
+}
+
+.font-neue {
+  font-family: var(--font-body-accent);
 }

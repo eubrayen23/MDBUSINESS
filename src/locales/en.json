@@ -6,10 +6,32 @@
     "contact": "Contact",
     "cart": "Cart"
   },
+  "studio": {
+    "tagline": "The creative gallery of Ekton Afrik",
+    "heading1": "Curating the next wave,",
+    "heading2": "the African way.",
+    "p1": "Seven years selecting the finest artifacts across the continent. We founded Ekton to bring the soul of Luanda to the global stage.",
+    "p2": "Our curation is deliberately exclusive. Every piece is hand-selected by our experts, ensuring authentic provenance and unmatched quality.",
+    "p3": "Private consultations start at $5,000 per acquisition.",
+    "cta_chat": "Start a chat",
+    "cta_projects": "View collection",
+    "quote": "I founded Ekton to build the gallery I always wanted to collect from.",
+    "founder": "Ekton Oddy, Founder",
+    "pricing_partnership_title": "Annual Collection Management",
+    "pricing_partnership_desc": "A dedicated curation team for your private estate. / Direct access to our network.",
+    "pricing_project_title": "Specific Acquisition",
+    "pricing_project_desc": "Fixed scope for single masterpieces. / Same rigor, same excellence.",
+    "builders_say_1": "What",
+    "builders_say_2": "collectors",
+    "builders_say_3": "say",
+    "clutch": "Heritage 5/5",
+    "partner_heading": "Partner with us",
+    "start_chat_with": "Talk to the Curator"
+  },
   "hero": {
-    "eyebrow": "ANGOLAN ART GALLERY",
+    "eyebrow": "ANGOLAN FINE ART GALLERY",
     "headline": "The Soul of Angola,\nFramed in Art.",
-    "subtext": "Unique pieces by Angolan artists — paintings, sculptures, artifacts and much more.",
+    "subtext": "Unique pieces from Angolan artists — paintings, sculptures, artifacts and more.",
     "cta_primary": "Explore Gallery",
     "cta_secondary": "Our Story",
     "partner": "Official Partner"
@@ -24,7 +46,7 @@
     "esculturas": "Sculptures",
     "paisagens": "Landscapes",
     "artefactos": "Artifacts",
-    "artesanato": "Handicrafts"
+    "artesanato": "Handicraft"
   },
   "shop": {
     "filters": "Filters",
@@ -59,7 +81,7 @@
     "free": "Free",
     "total": "Total",
     "checkout": "Complete Purchase",
-    "whatsapp_msg": "Hello! I would like to finalize my purchase at Ekton Afrik Arts:"
+    "whatsapp_msg": "Hello! I'd like to finalize my purchase at Ekton Afrik Arts:"
   },
   "about": {
     "story_title": "Our Story",
