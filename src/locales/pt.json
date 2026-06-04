@@ -69,7 +69,8 @@
     "year": "Ano",
     "authenticity": "Certificado de Autenticidade",
     "shipping": "Informações de Envio",
-    "added": "Adicionado ao carrinho ✓"
+    "added_success": "Adicionado ao carrinho ✓",
+    "view_details": "Ver Detalhes"
   },
   "cart": {
     "title": "O seu Carrinho",
@@ -86,11 +87,16 @@
     "story_title": "A Nossa História",
     "story_text": "A Ekton Afrik Arts foi fundada para conectar colecionadores globais com o rico património artístico de Angola e da África Central. As nossas peças são obtidas de forma ética junto de comunidades locais e mestres artesãos.",
     "mission": "Missão",
-    "values": "Valores"
+    "values": "Valores",
+    "roots_desc": "Desde os planaltos da Huíla às margens do Mussulo, Ekton Afrik Arts celebra a continuidade da alma angolana através da matéria e da forma."
   },
   "footer": {
     "tagline": "Arte Africana para o Mundo.",
     "rights": "© 2025 Ekton Afrik Arts. Todos os direitos reservados.",
     "made_in": "Feito em Luanda, Angola 🇦🇴"
+  },
+  "common": {
+    "view_all": "Ver Galeria Completa",
+    "start_collecting": "Começar Colecção"
   }
 }

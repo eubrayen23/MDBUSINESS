@@ -1,67 +1,95 @@
+import React from 'react';
 import HeroSection from '../components/HeroSection';
+import ExecutiveImpactCarousel from '../components/ui/ExecutiveImpactCarousel';
+import ScrollMorphHero from '../components/ui/ScrollMorphHero';
+import CardStack from '../components/ui/CardStack';
 import ArtMarquee from '../components/ArtMarquee';
-import FeaturedProducts from '../components/FeaturedProducts';
-import CategoriesSection from '../components/CategoriesSection';
-import InteractiveArtPartner from '../components/InteractiveArtPartner';
-import BottomPillNav from '../components/BottomPillNav';
+import FounderQuote from '../components/FounderQuote';
+import CollectionShowcase from '../components/CollectionShowcase';
+import { useProductStore } from '../store/productStore';
+import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
-import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-export default function Home() {
+const Home: React.FC = () => {
+  const products = useProductStore((state) => state.products);
+  const featuredProducts = products.filter((p) => p.featured);
   const { t } = useTranslation();
 
   return (
-    <div className="bg-ebony-black">
+    <main className="bg-cream-white min-h-screen">
+      {/* 1. Hero Section - Cinematic Entrance */}
       <HeroSection />
 
-      <div className="bg-white">
-        <ArtMarquee />
-        <FeaturedProducts />
-        <CategoriesSection />
-        <InteractiveArtPartner />
-      </div>
+      {/* 2. Cultural Partners Marquee */}
+      <ArtMarquee />
 
-      {/* Custom Footer for Home */}
-      <footer className="bg-ebony-black px-6 py-24">
-        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12 border-t border-white/10 pt-12">
-          <div className="space-y-4">
-            <h3 className="font-display text-2xl text-white tracking-widest uppercase">Ekton Afrik Arts</h3>
-            <p className="text-white/40 font-sans text-sm">{t('footer.tagline')}</p>
-            <a
-              href="https://wa.me/244934859497"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-terracotta text-white rounded-full px-7 py-3 transition-all hover:bg-ochre-gold mt-4"
-            >
-              {t('studio.cta_chat')}
-            </a>
-          </div>
-
-          <div className="flex gap-16">
-            <div className="flex flex-col gap-4">
-              <h4 className="text-xs font-mono uppercase text-white/30 mb-2">Explore</h4>
-              <a href="/shop" className="text-base text-white/70 hover:text-white transition-all">{t('nav.shop')}</a>
-              <a href="/about" className="text-base text-white/70 hover:text-white transition-all">{t('nav.about')}</a>
-            </div>
-            <div className="flex flex-col gap-4">
-              <h4 className="text-xs font-mono uppercase text-white/30 mb-2">Social</h4>
-              <a href="#" className="flex items-center gap-1 text-base text-white/70 hover:text-white transition-all">
-                Instagram <ArrowUpRight className="w-4 h-4" />
-              </a>
-              <a href="#" className="flex items-center gap-1 text-base text-white/70 hover:text-white transition-all">
-                LinkedIn <ArrowUpRight className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
+      {/* 3. Featured Collection - Executive Impact Carousel */}
+      <section className="py-12 bg-ebony-black">
+        <div className="container mx-auto px-6 mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="font-mono text-ochre-gold text-[10px] uppercase tracking-[0.5em] mb-4">Curadoria Selecta</p>
+            <h2 className="text-white text-4xl md:text-5xl font-display">Obras em Destaque</h2>
+          </motion.div>
         </div>
+        <ExecutiveImpactCarousel products={featuredProducts} />
+      </section>
 
-        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 mt-24 text-[10px] text-white/20 uppercase tracking-widest font-mono">
-          <p>{t('footer.rights')}</p>
-          <p>{t('footer.made_in')}</p>
+      {/* 4. Narrative Bridge - Scroll Morph Hero */}
+      <ScrollMorphHero />
+
+      {/* 5. Collection Showcase - Grid with context */}
+      <CollectionShowcase />
+
+      {/* 6. Categories Exploration - Card Stack */}
+      <CardStack />
+
+      {/* 7. Founder Vision / Quote */}
+      <FounderQuote />
+
+      {/* 8. Call to Action - Final Section */}
+      <section className="py-32 bg-ebony-black text-center relative overflow-hidden">
+        <div className="absolute inset-0 kuba-pattern opacity-5" />
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
+          >
+            <h2 className="text-white text-5xl md:text-8xl font-display mb-12 leading-tight">
+              Leve a Alma de<br />
+              <span className="italic font-normal text-ochre-gold">Angola</span> para o Mundo.
+            </h2>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <Link to="/shop">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-terracotta text-white px-12 py-5 rounded-full font-sans text-xs uppercase tracking-widest font-bold shadow-2xl"
+                >
+                  {t('common.start_collecting', 'Começar Colecção')}
+                </motion.button>
+              </Link>
+              <Link to="/about">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border border-white/20 text-white px-12 py-5 rounded-full font-sans text-xs uppercase tracking-widest font-bold backdrop-blur-sm"
+                >
+                  {t('nav.about')}
+                </motion.button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
-      </footer>
-
-      <BottomPillNav />
-    </div>
+      </section>
+    </main>
   );
-}
+};
+
+export default Home;

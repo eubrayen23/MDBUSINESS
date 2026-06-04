@@ -6,6 +6,8 @@ import { Link, useLocation } from 'react-router-dom';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useCartStore } from '../store/cartStore';
 
+import React from 'react';
+
 export default function Navbar() {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
@@ -134,5 +136,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-import React from 'react';

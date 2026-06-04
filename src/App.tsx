@@ -13,9 +13,6 @@ const About = React.lazy(() => import('./pages/About'));
 const Admin = React.lazy(() => import('./pages/Admin'));
 
 const AppContent: React.FC = () => {
-  const location = useLocation();
-  const isHome = location.pathname === '/';
-
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -35,7 +32,7 @@ const AppContent: React.FC = () => {
           </Routes>
         </Suspense>
       </div>
-      {!isHome && <Footer />}
+      <Footer />
       <Toaster position="bottom-right" toastOptions={{
         style: {
           background: '#0E0E0E',
