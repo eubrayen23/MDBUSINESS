@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "shop": "Boutique",
+    "about": "À Propos",
+    "contact": "Contact",
+    "cart": "Panier"
+  },
+  "hero": {
+    "eyebrow": "GALERIE D'ART ANGOLAISE",
+    "headline": "L'Âme de l'Angola,\nEncadrée dans l'Art.",
+    "subtext": "Pièces uniques d'artistes angolais — peintures, sculptures, artefacts et bien plus encore.",
+    "cta_primary": "Explorer la Galerie",
+    "cta_secondary": "Notre Histoire",
+    "partner": "Partenaire Officiel"
+  },
+  "sections": {
+    "partners": "Nos Partenaires Culturels",
+    "featured": "Œuvres en Vedette",
+    "categories": "Catégories d'Art"
+  },
+  "categories": {
+    "pinturas": "Peintures",
+    "esculturas": "Sculptures",
+    "paisagens": "Paysages",
+    "artefactos": "Artefacts",
+    "artesanato": "Artisanat"
+  },
+  "shop": {
+    "filters": "Filtres",
+    "category": "Catégorie",
+    "price_range": "Tranche de Prix",
+    "artist": "Artiste",
+    "availability": "Disponibilité",
+    "in_stock": "En Stock",
+    "all": "Tous",
+    "sort": "Trier",
+    "recent": "Plus Récent",
+    "price_asc": "Prix: Croissant",
+    "price_desc": "Prix: Décroissant",
+    "load_more": "Charger Plus"
+  },
+  "product": {
+    "add_to_cart": "Ajouter au Panier",
+    "buy_now": "Acheter Maintenant",
+    "dimensions": "Dimensions",
+    "medium": "Technique",
+    "year": "Année",
+    "authenticity": "Certificat d'Authenticité",
+    "shipping": "Infos de Livraison",
+    "added": "Ajouté au panier ✓"
+  },
+  "cart": {
+    "title": "Votre Panier",
+    "empty": "Votre panier est vide",
+    "summary": "Résumé de la Commande",
+    "subtotal": "Sous-total",
+    "shipping": "Livraison",
+    "free": "Gratuit",
+    "total": "Total",
+    "checkout": "Finaliser l'Achat",
+    "whatsapp_msg": "Bonjour ! Je souhaite finaliser mon achat chez Ekton Afrik Arts :"
+  },
+  "about": {
+    "story_title": "Notre Histoire",
+    "story_text": "Ekton Afrik Arts a été fondée para connecter les collectionneurs mondiaux avec le riche patrimoine artistique de l'Angola et de l'Afrique Centrale. Nos pièces sont sourcées de manière éthique auprès des communautés locales et des maîtres artisans.",
+    "mission": "Mission",
+    "values": "Valeurs"
+  },
+  "footer": {
+    "tagline": "L'Art Africain pour le Monde.",
+    "rights": "© 2025 Ekton Afrik Arts. Tous droits réservés.",
+    "made_in": "Fait à Luanda, Angola 🇦🇴"
+  }
+}

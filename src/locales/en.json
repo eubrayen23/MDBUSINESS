@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "home": "Home",
+    "shop": "Shop",
+    "about": "About",
+    "contact": "Contact",
+    "cart": "Cart"
+  },
+  "hero": {
+    "eyebrow": "ANGOLAN ART GALLERY",
+    "headline": "The Soul of Angola,\nFramed in Art.",
+    "subtext": "Unique pieces by Angolan artists — paintings, sculptures, artifacts and much more.",
+    "cta_primary": "Explore Gallery",
+    "cta_secondary": "Our Story",
+    "partner": "Official Partner"
+  },
+  "sections": {
+    "partners": "Our Cultural Partners",
+    "featured": "Featured Works",
+    "categories": "Art Categories"
+  },
+  "categories": {
+    "pinturas": "Paintings",
+    "esculturas": "Sculptures",
+    "paisagens": "Landscapes",
+    "artefactos": "Artifacts",
+    "artesanato": "Handicrafts"
+  },
+  "shop": {
+    "filters": "Filters",
+    "category": "Category",
+    "price_range": "Price Range",
+    "artist": "Artist",
+    "availability": "Availability",
+    "in_stock": "In Stock",
+    "all": "All",
+    "sort": "Sort",
+    "recent": "Most Recent",
+    "price_asc": "Price: Low to High",
+    "price_desc": "Price: High to Low",
+    "load_more": "Load More"
+  },
+  "product": {
+    "add_to_cart": "Add to Cart",
+    "buy_now": "Buy Now",
+    "dimensions": "Dimensions",
+    "medium": "Medium",
+    "year": "Year",
+    "authenticity": "Certificate of Authenticity",
+    "shipping": "Shipping Info",
+    "added": "Added to cart ✓"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "summary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "free": "Free",
+    "total": "Total",
+    "checkout": "Complete Purchase",
+    "whatsapp_msg": "Hello! I would like to finalize my purchase at Ekton Afrik Arts:"
+  },
+  "about": {
+    "story_title": "Our Story",
+    "story_text": "Ekton Afrik Arts was founded to connect global collectors with the rich artistic heritage of Angola and Central Africa. Our pieces are ethically sourced from local communities and master artisans.",
+    "mission": "Mission",
+    "values": "Values"
+  },
+  "footer": {
+    "tagline": "African Art for the World.",
+    "rights": "© 2025 Ekton Afrik Arts. All rights reserved.",
+    "made_in": "Made in Luanda, Angola 🇦🇴"
+  }
+}
