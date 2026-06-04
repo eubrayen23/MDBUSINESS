@@ -1,0 +1,46 @@
+
+> ekton-afrik-arts@1.0.0 dev
+> vite
+
+
+  VITE v5.4.21  ready in 1066 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+4:01:13 AM [vite] hmr update /src/styles/globals.css
+4:02:27 AM [vite] page reload src/locales/pt.json
+4:02:29 AM [vite] page reload src/locales/en.json
+4:02:29 AM [vite] page reload src/locales/fr.json
+4:07:17 AM [vite] hmr update /src/pages/Home.tsx, /src/styles/globals.css
+4:07:27 AM [vite] hmr update /src/components/Navbar.tsx, /src/styles/globals.css
+4:09:37 AM [vite] hmr update /src/App.tsx, /src/styles/globals.css
+4:09:44 AM [vite] hmr update /src/components/LanguageSwitcher.tsx, /src/styles/globals.css
+4:10:25 AM [vite] hmr update /src/components/Footer.tsx, /src/styles/globals.css
+4:11:08 AM [vite] hmr update /src/styles/globals.css
+4:12:54 AM [vite] ✨ new dependencies optimized: framer-motion
+4:12:54 AM [vite] ✨ optimized dependencies changed. reloading
+4:12:55 AM [vite] ✨ new dependencies optimized: clsx
+4:12:55 AM [vite] ✨ optimized dependencies changed. reloading
+4:16:51 AM [vite] hmr update /src/pages/Home.tsx, /src/styles/globals.css
+4:20:02 AM [vite] hmr update /src/styles/globals.css, /src/pages/Shop.tsx, /src/pages/ProductDetail.tsx
+4:21:09 AM [vite] hmr update /src/App.tsx, /src/styles/globals.css
+4:21:19 AM [vite] hmr update /src/App.tsx, /src/styles/globals.css
+4:22:56 AM [vite] hmr update /src/styles/globals.css, /src/pages/Shop.tsx, /src/pages/ProductDetail.tsx
+4:23:03 AM [vite] hmr update /src/pages/Shop.tsx, /src/styles/globals.css
+4:25:49 AM [vite] page reload src/locales/pt.json
+4:25:50 AM [vite] page reload src/locales/en.json
+4:25:51 AM [vite] page reload src/locales/fr.json
+4:26:16 AM [vite] hmr update /src/components/ArtCarousel.tsx, /src/styles/globals.css
+8:31:08 AM [vite] hmr update /src/components/HeroSection.tsx, /src/styles/globals.css
+8:37:09 AM [vite] hmr update /src/pages/Home.tsx, /src/styles/globals.css
+8:39:26 AM [vite] hmr update /src/components/Navbar.tsx, /src/styles/globals.css
+8:39:33 AM [vite] hmr update /src/styles/globals.css
+8:44:11 AM [vite] hmr update /src/components/Navbar.tsx, /src/styles/globals.css
+11:30:23 AM [vite] hmr update /src/styles/globals.css, /src/pages/Shop.tsx, /src/pages/ProductDetail.tsx, /src/components/FeaturedProducts.tsx
+11:32:37 AM [vite] hmr update /src/pages/Home.tsx, /src/styles/globals.css
+11:34:52 AM [vite] page reload src/locales/pt.json
+11:35:49 AM [vite] page reload src/locales/en.json
+11:35:55 AM [vite] page reload src/locales/fr.json
+11:53:14 AM [vite] hmr update /src/pages/Home.tsx, /src/styles/globals.css
+11:55:38 AM [vite] hmr update /src/components/Navbar.tsx, /src/styles/globals.css
+11:56:51 AM [vite] hmr update /src/App.tsx, /src/styles/globals.css

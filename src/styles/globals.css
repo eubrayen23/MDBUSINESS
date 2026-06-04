@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-terracotta: #8B3A1E;
+  --color-ochre-gold: #C9882A;
+  --color-ebony-black: #0E0E0E;
+  --color-cream-white: #F5EFE0;
+  --color-dusty-sand: #D4B896;
+
+  --color-studio-dark: #051A24;
+  --color-studio-accent: #0D212C;
+  --color-studio-muted: #273C46;
+  --color-studio-light: #F6FCFF;
+  --color-studio-ice: #E0EBF0;
+
+  --font-display: "Cormorant Garamond", serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "Space Mono", monospace;
+  --font-serif-accent: "PP Mondwest", serif;
+  --font-body-accent: "PP Neue Montreal", sans-serif;
+
+  --shadow-primary: 0 1px 2px 0 rgba(5,26,36,0.1), 0 4px 4px 0 rgba(5,26,36,0.09), 0 9px 6px 0 rgba(5,26,36,0.05), 0 17px 7px 0 rgba(5,26,36,0.01), 0 26px 7px 0 rgba(5,26,36,0), inset 0 2px 8px 0 rgba(255,255,255,0.5);
+  --shadow-secondary: 0 0 0 0.5px rgba(0,0,0,0.05), 0 4px 30px rgba(0,0,0,0.08);
+  --shadow-float: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+@layer base {
+  body {
+    @apply bg-cream-white text-ebony-black font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  /* Selection colors */
+  ::selection {
+    @apply bg-terracotta text-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-ebony-black text-white rounded-full px-10 py-4 font-sans text-xs uppercase tracking-widest font-bold hover:bg-terracotta transition-all shadow-xl active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-white border border-ebony-black/10 text-ebony-black rounded-full px-10 py-4 font-sans text-xs uppercase tracking-widest font-bold hover:bg-ebony-black hover:text-white transition-all shadow-sm active:scale-95;
+  }
+
+  .kuba-pattern {
+    background-color: var(--color-terracotta);
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 20px,
+      rgba(201, 136, 42, 0.2) 20px,
+      rgba(201, 136, 42, 0.2) 40px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 20px,
+      rgba(139, 58, 30, 0.2) 20px,
+      rgba(139, 58, 30, 0.2) 40px
+    );
+  }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .animate-marquee {
+    animation-duration: 10s;
+  }
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-ebony-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-terracotta rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-ochre-gold;
+}

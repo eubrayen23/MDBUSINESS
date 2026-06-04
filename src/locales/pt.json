@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "home": "Início",
+    "shop": "Loja",
+    "about": "Sobre",
+    "contact": "Contacto",
+    "cart": "Carrinho"
+  },
+  "studio": {
+    "tagline": "A galeria criativa da Ekton Afrik",
+    "heading1": "Curando a próxima vaga,",
+    "heading2": "à maneira Africana.",
+    "p1": "Sete anos a selecionar os melhores artefactos em todo o continente. Fundámos a Ekton para trazer a alma de Luanda para o palco global.",
+    "p2": "A nossa curadoria é deliberadamente exclusiva. Cada peça é selecionada à mão pelos nossos especialistas, garantindo uma proveniência autêntica e qualidade inigualável.",
+    "p3": "Consultas privadas começam em $5.000 por aquisição.",
+    "cta_chat": "Iniciar conversa",
+    "cta_projects": "Ver coleção",
+    "quote": "Fundei a Ekton para construir a galeria da qual sempre quis ser colecionador.",
+    "founder": "Ekton Oddy, Fundador",
+    "pricing_partnership_title": "Gestão Anual de Coleções",
+    "pricing_partnership_desc": "Uma equipa de curadoria dedicada ao seu espólio privado. / Acesso direto à nossa rede.",
+    "pricing_project_title": "Aquisição Específica",
+    "pricing_project_desc": "Âmbito fixo para obras-primas individuais. / Mesmo rigor, mesma excelência.",
+    "builders_say_1": "O que dizem os",
+    "builders_say_2": "colecionadores",
+    "clutch": "Património 5/5",
+    "partner_heading": "Seja nosso parceiro",
+    "start_chat_with": "Falar com o Curador"
+  },
+  "hero": {
+    "eyebrow": "GALERIA DE ARTE ANGOLANA",
+    "headline": "A Alma de Angola,\nMoldurada em Arte.",
+    "subtext": "Peças únicas de artistas angolanos — pinturas, esculturas, artefactos e muito mais.",
+    "cta_primary": "Explorar Galeria",
+    "cta_secondary": "Conhecer a Nossa História",
+    "partner": "Parceiro Oficial"
+  },
+  "sections": {
+    "partners": "Os Nossos Parceiros Culturais",
+    "featured": "Obras em Destaque",
+    "categories": "Categorias de Arte"
+  },
+  "categories": {
+    "pinturas": "Pinturas",
+    "esculturas": "Esculturas",
+    "paisagens": "Paisagens",
+    "artefactos": "Artefactos",
+    "artesanato": "Artesanato"
+  },
+  "shop": {
+    "filters": "Filtros",
+    "category": "Categoria",
+    "price_range": "Faixa de Preço",
+    "artist": "Artista",
+    "availability": "Disponibilidade",
+    "in_stock": "Em Stock",
+    "all": "Todos",
+    "sort": "Ordenar",
+    "recent": "Mais Recente",
+    "price_asc": "Preço: Menor",
+    "price_desc": "Preço: Maior",
+    "load_more": "Carregar Mais"
+  },
+  "product": {
+    "add_to_cart": "Adicionar ao Carrinho",
+    "buy_now": "Comprar Agora",
+    "dimensions": "Dimensões",
+    "medium": "Técnica",
+    "year": "Ano",
+    "authenticity": "Certificado de Autenticidade",
+    "shipping": "Informações de Envio",
+    "added_success": "Adicionado ao carrinho ✓",
+    "view_details": "Ver Detalhes"
+  },
+  "cart": {
+    "title": "O seu Carrinho",
+    "empty": "O seu carrinho está vazio",
+    "summary": "Resumo do Pedido",
+    "subtotal": "Subtotal",
+    "shipping": "Envio",
+    "free": "Grátis",
+    "total": "Total",
+    "checkout": "Finalizar Compra",
+    "whatsapp_msg": "Olá! Gostaria de finalizar a minha compra na Ekton Afrik Arts:"
+  },
+  "about": {
+    "story_title": "A Nossa História",
+    "story_text": "A Ekton Afrik Arts foi fundada para conectar colecionadores globais com o rico património artístico de Angola e da África Central. As nossas peças são obtidas de forma ética junto de comunidades locais e mestres artesãos.",
+    "mission": "Missão",
+    "values": "Valores",
+    "roots_desc": "Desde os planaltos da Huíla às margens do Mussulo, Ekton Afrik Arts celebra a continuidade da alma angolana através da matéria e da forma."
+  },
+  "footer": {
+    "tagline": "Arte Africana para o Mundo.",
+    "rights": "© 2025 Ekton Afrik Arts. Todos os direitos reservados.",
+    "made_in": "Feito em Luanda, Angola 🇦🇴"
+  },
+  "common": {
+    "view_all": "Ver Galeria Completa",
+    "start_collecting": "Começar Colecção"
+  }
+}
