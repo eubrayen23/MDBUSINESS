@@ -1,5 +1,16 @@
 import { Product } from './productStore';
 
+import p1 from '../assets/product1.jpg';
+import p2 from '../assets/product2.jpg';
+import p3 from '../assets/product3.jpg';
+import p4 from '../assets/product4.jpg';
+import p5 from '../assets/product5.jpg';
+import p6 from '../assets/product6.jpg';
+import p7 from '../assets/product7.jpg';
+import p8 from '../assets/product8.jpg';
+import p9 from '../assets/product9.jpg';
+import p10 from '../assets/product10.jpg';
+
 export const initialProducts: Product[] = [
   {
     id: 'p1',
@@ -8,7 +19,7 @@ export const initialProducts: Product[] = [
     category: 'pinturas',
     price: 1200,
     currency: 'USD',
-    images: ['https://picsum.photos/seed/p1/800/1000'],
+    images: [p1],
     description: {
       pt: 'Uma representação contemporânea da introspeção africana.',
       en: 'A contemporary representation of African introspection.',
@@ -27,7 +38,7 @@ export const initialProducts: Product[] = [
     category: 'esculturas',
     price: 850,
     currency: 'USD',
-    images: ['https://picsum.photos/seed/p2/800/1000'],
+    images: [p2],
     description: {
       pt: 'Escultura em bronze celebrando a força das mulheres da Huíla.',
       en: 'Bronze sculpture celebrating the strength of Huila women.',
@@ -46,7 +57,7 @@ export const initialProducts: Product[] = [
     category: 'paisagens',
     price: 600,
     currency: 'USD',
-    images: ['https://picsum.photos/seed/p3/800/1000'],
+    images: [p3],
     description: {
       pt: 'A serenidade das águas de Luanda ao entardecer.',
       en: 'The serenity of Luanda waters at dusk.',
@@ -65,7 +76,7 @@ export const initialProducts: Product[] = [
     category: 'artefactos',
     price: 2500,
     currency: 'USD',
-    images: ['https://picsum.photos/seed/p4/800/1000'],
+    images: [p4],
     description: {
       pt: 'Réplica autêntica de máscara ritual Chokwe.',
       en: 'Authentic replica of Chokwe ritual mask.',
@@ -84,7 +95,7 @@ export const initialProducts: Product[] = [
     category: 'pinturas',
     price: 950,
     currency: 'USD',
-    images: ['https://picsum.photos/seed/p5/800/1000'],
+    images: [p5],
     description: {
       pt: 'O caos vibrante e a energia de Luanda.',
       en: 'The vibrant chaos and energy of Luanda.',
@@ -103,7 +114,7 @@ export const initialProducts: Product[] = [
     category: 'esculturas',
     price: 1800,
     currency: 'USD',
-    images: ['https://picsum.photos/seed/p6/800/1000'],
+    images: [p6],
     description: {
       pt: 'Diálogo entre o passado e o presente.',
       en: 'Dialogue between past and present.',
@@ -122,7 +133,7 @@ export const initialProducts: Product[] = [
     category: 'paisagens',
     price: 1100,
     currency: 'USD',
-    images: ['https://picsum.photos/seed/p7/800/1000'],
+    images: [p7],
     description: {
       pt: 'A majestade das quedas de Kalandula.',
       en: 'The majesty of Kalandula falls.',
@@ -141,7 +152,7 @@ export const initialProducts: Product[] = [
     category: 'artesanato',
     price: 150,
     currency: 'USD',
-    images: ['https://picsum.photos/seed/p8/800/1000'],
+    images: [p8],
     description: {
       pt: 'Tecelagem tradicional com fibras naturais.',
       en: 'Traditional weaving with natural fibers.',
@@ -160,7 +171,7 @@ export const initialProducts: Product[] = [
     category: 'pinturas',
     price: 750,
     currency: 'USD',
-    images: ['https://picsum.photos/seed/p9/800/1000'],
+    images: [p9],
     description: {
       pt: 'Homenagem aos pescadores da Ilha do Cabo.',
       en: 'Tribute to the fishermen of Ilha do Cabo.',
@@ -174,19 +185,19 @@ export const initialProducts: Product[] = [
   },
   {
     id: 'p10',
-    name: { pt: 'Pensador de Angola', en: 'Angolan Thinker', fr: 'Penseur d\'Angola' },
+    name: { pt: 'Tecidos Africanos', en: 'African Textiles', fr: 'Textiles Africains' },
     artist: 'Mestre Kapela',
-    category: 'esculturas',
+    category: 'artesanato',
     price: 450,
     currency: 'USD',
-    images: ['https://picsum.photos/seed/p10/800/1000'],
+    images: [p10],
     description: {
-      pt: 'Ícone nacional esculpido em pau-preto.',
-      en: 'National icon carved in ebony.',
-      fr: 'Icône nationale sculptée en ébène.'
+      pt: 'Coleção de tecidos tradicionais com padrões africanos autênticos.',
+      en: 'Collection of traditional fabrics with authentic African patterns.',
+      fr: 'Collection de tissus traditionnels aux motifs africains authentiques.'
     },
-    dimensions: '25cm',
-    medium: 'Pau-preto',
+    dimensions: 'Variável',
+    medium: 'Algodão',
     year: 2024,
     inStock: true,
     featured: false
@@ -198,7 +209,7 @@ export const initialProducts: Product[] = [
     category: 'pinturas',
     price: 1400,
     currency: 'USD',
-    images: ['https://picsum.photos/seed/p11/800/1000'],
+    images: [p1],
     description: {
       pt: 'Memória visual de um dos maiores mercados de África.',
       en: 'Visual memory of one of Africa\'s largest markets.',
@@ -217,11 +228,11 @@ export const initialProducts: Product[] = [
     category: 'artesanato',
     price: 300,
     currency: 'USD',
-    images: ['https://picsum.photos/seed/p12/800/1000'],
+    images: [p2],
     description: {
       pt: 'Pequena estatueta em madeira representando a fertilidade.',
       en: 'Small wooden statuette representing fertility.',
-      fr: 'Petite statuette en bois représentant la fertilité.'
+      fr: 'Petite statuette en bois representando la fertilité.'
     },
     dimensions: '20cm',
     medium: 'Madeira',
